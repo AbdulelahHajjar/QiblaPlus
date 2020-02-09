@@ -1,0 +1,753 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0665C82867BB790BD2DDDADF /* Pods_QiblaPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0605CE7CFC128E9E92BB0B /* Pods_QiblaPlus.framework */; };
+		4BB44705D9C298B765410E27 /* Pods_QiblaPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C808A5BB4E18CA245CD9DE39 /* Pods_QiblaPlusTests.framework */; };
+		9BF1309BBA8221ECE5D5C6A3 /* Pods_QiblaPlusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90F1D8747197AD3B79310CA /* Pods_QiblaPlusUITests.framework */; };
+		EB44ACCF232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
+		EB44ACD0232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
+		EB44ACD1232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
+		EB44ACD2232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */; };
+		EB44ACD3232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */; };
+		EB44ACD4232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */; };
+		EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */; };
+		EB9B553D232D2F0A001B2E8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553C232D2F0A001B2E8C /* ViewController.swift */; };
+		EB9B5540232D2F0A001B2E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9B553E232D2F0A001B2E8C /* Main.storyboard */; };
+		EB9B5542232D2F0B001B2E8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9B5541232D2F0B001B2E8C /* Assets.xcassets */; };
+		EB9B5545232D2F0B001B2E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9B5543232D2F0B001B2E8C /* LaunchScreen.storyboard */; };
+		EB9B5550232D2F0B001B2E8C /* QiblaPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B554F232D2F0B001B2E8C /* QiblaPlusTests.swift */; };
+		EB9B555B232D2F0B001B2E8C /* QiblaPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B555A232D2F0B001B2E8C /* QiblaPlusUITests.swift */; };
+		EBAF197A232FE6B60021AD79 /* Dubai-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBAF1979232FE6B60021AD79 /* Dubai-Light.ttf */; };
+		EBC4217123F0AE32001505D4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EBC4217023F0AE32001505D4 /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB9B554C232D2F0B001B2E8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB9B552F232D2F0A001B2E8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB9B5536232D2F0A001B2E8C;
+			remoteInfo = QiblaPlus;
+		};
+		EB9B5557232D2F0B001B2E8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB9B552F232D2F0A001B2E8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB9B5536232D2F0A001B2E8C;
+			remoteInfo = QiblaPlus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21AE6871A1165292C755C7FE /* Pods-QiblaPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiblaPlusTests.release.xcconfig"; path = "Target Support Files/Pods-QiblaPlusTests/Pods-QiblaPlusTests.release.xcconfig"; sourceTree = "<group>"; };
+		6771A633114B1F17F1498FF2 /* Pods-QiblaPlusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiblaPlusUITests.release.xcconfig"; path = "Target Support Files/Pods-QiblaPlusUITests/Pods-QiblaPlusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		70FB3B9D8A63C15BEAB8FD79 /* Pods-QiblaPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiblaPlusTests.debug.xcconfig"; path = "Target Support Files/Pods-QiblaPlusTests/Pods-QiblaPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		725EC323DADE8C5BE97B9D37 /* Pods-QiblaPlusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiblaPlusUITests.debug.xcconfig"; path = "Target Support Files/Pods-QiblaPlusUITests/Pods-QiblaPlusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA0605CE7CFC128E9E92BB0B /* Pods_QiblaPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiblaPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C808A5BB4E18CA245CD9DE39 /* Pods_QiblaPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiblaPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90F1D8747197AD3B79310CA /* Pods_QiblaPlusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiblaPlusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
+		EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
+		EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiblaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EB9B553C232D2F0A001B2E8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB9B553F232D2F0A001B2E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB9B5541232D2F0B001B2E8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB9B5544232D2F0B001B2E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EB9B5546232D2F0B001B2E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB9B554B232D2F0B001B2E8C /* QiblaPlusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiblaPlusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9B554F232D2F0B001B2E8C /* QiblaPlusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaPlusTests.swift; sourceTree = "<group>"; };
+		EB9B5551232D2F0B001B2E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB9B5556232D2F0B001B2E8C /* QiblaPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiblaPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9B555A232D2F0B001B2E8C /* QiblaPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaPlusUITests.swift; sourceTree = "<group>"; };
+		EB9B555C232D2F0B001B2E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBAF1979232FE6B60021AD79 /* Dubai-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dubai-Light.ttf"; sourceTree = "<group>"; };
+		EBC4217023F0AE32001505D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F132CBF9E1B731CAB36E1E22 /* Pods-QiblaPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiblaPlus.debug.xcconfig"; path = "Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		FD483695A890C168B2E4577D /* Pods-QiblaPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiblaPlus.release.xcconfig"; path = "Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB9B5534232D2F0A001B2E8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0665C82867BB790BD2DDDADF /* Pods_QiblaPlus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB9B5548232D2F0B001B2E8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BB44705D9C298B765410E27 /* Pods_QiblaPlusTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB9B5553232D2F0B001B2E8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BF1309BBA8221ECE5D5C6A3 /* Pods_QiblaPlusUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBB247A0F33778ACB3225CC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA0605CE7CFC128E9E92BB0B /* Pods_QiblaPlus.framework */,
+				C808A5BB4E18CA245CD9DE39 /* Pods_QiblaPlusTests.framework */,
+				E90F1D8747197AD3B79310CA /* Pods_QiblaPlusUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2355501833B476B3767A384 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F132CBF9E1B731CAB36E1E22 /* Pods-QiblaPlus.debug.xcconfig */,
+				FD483695A890C168B2E4577D /* Pods-QiblaPlus.release.xcconfig */,
+				70FB3B9D8A63C15BEAB8FD79 /* Pods-QiblaPlusTests.debug.xcconfig */,
+				21AE6871A1165292C755C7FE /* Pods-QiblaPlusTests.release.xcconfig */,
+				725EC323DADE8C5BE97B9D37 /* Pods-QiblaPlusUITests.debug.xcconfig */,
+				6771A633114B1F17F1498FF2 /* Pods-QiblaPlusUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB9B552E232D2F0A001B2E8C = {
+			isa = PBXGroup;
+			children = (
+				EBC4217023F0AE32001505D4 /* README.md */,
+				EB9B5539232D2F0A001B2E8C /* QiblaPlus */,
+				EB9B554E232D2F0B001B2E8C /* QiblaPlusTests */,
+				EB9B5559232D2F0B001B2E8C /* QiblaPlusUITests */,
+				EB9B5538232D2F0A001B2E8C /* Products */,
+				E2355501833B476B3767A384 /* Pods */,
+				DBB247A0F33778ACB3225CC2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EB9B5538232D2F0A001B2E8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */,
+				EB9B554B232D2F0B001B2E8C /* QiblaPlusTests.xctest */,
+				EB9B5556232D2F0B001B2E8C /* QiblaPlusUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB9B5539232D2F0A001B2E8C /* QiblaPlus */ = {
+			isa = PBXGroup;
+			children = (
+				EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */,
+				EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */,
+				EBAF1979232FE6B60021AD79 /* Dubai-Light.ttf */,
+				EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */,
+				EB9B553C232D2F0A001B2E8C /* ViewController.swift */,
+				EB9B553E232D2F0A001B2E8C /* Main.storyboard */,
+				EB9B5541232D2F0B001B2E8C /* Assets.xcassets */,
+				EB9B5543232D2F0B001B2E8C /* LaunchScreen.storyboard */,
+				EB9B5546232D2F0B001B2E8C /* Info.plist */,
+			);
+			path = QiblaPlus;
+			sourceTree = "<group>";
+		};
+		EB9B554E232D2F0B001B2E8C /* QiblaPlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB9B554F232D2F0B001B2E8C /* QiblaPlusTests.swift */,
+				EB9B5551232D2F0B001B2E8C /* Info.plist */,
+			);
+			path = QiblaPlusTests;
+			sourceTree = "<group>";
+		};
+		EB9B5559232D2F0B001B2E8C /* QiblaPlusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EB9B555A232D2F0B001B2E8C /* QiblaPlusUITests.swift */,
+				EB9B555C232D2F0B001B2E8C /* Info.plist */,
+			);
+			path = QiblaPlusUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB9B5536232D2F0A001B2E8C /* QiblaPlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB9B555F232D2F0B001B2E8C /* Build configuration list for PBXNativeTarget "QiblaPlus" */;
+			buildPhases = (
+				C2115E150BA06DF05828194F /* [CP] Check Pods Manifest.lock */,
+				EB9B5533232D2F0A001B2E8C /* Sources */,
+				EB9B5534232D2F0A001B2E8C /* Frameworks */,
+				EB9B5535232D2F0A001B2E8C /* Resources */,
+				7C4CC6C9C938400C3163568F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QiblaPlus;
+			productName = QiblaPlus;
+			productReference = EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EB9B554A232D2F0B001B2E8C /* QiblaPlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB9B5562232D2F0B001B2E8C /* Build configuration list for PBXNativeTarget "QiblaPlusTests" */;
+			buildPhases = (
+				0C2A66BDD492799EA29100DC /* [CP] Check Pods Manifest.lock */,
+				EB9B5547232D2F0B001B2E8C /* Sources */,
+				EB9B5548232D2F0B001B2E8C /* Frameworks */,
+				EB9B5549232D2F0B001B2E8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB9B554D232D2F0B001B2E8C /* PBXTargetDependency */,
+			);
+			name = QiblaPlusTests;
+			productName = QiblaPlusTests;
+			productReference = EB9B554B232D2F0B001B2E8C /* QiblaPlusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EB9B5555232D2F0B001B2E8C /* QiblaPlusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB9B5565232D2F0B001B2E8C /* Build configuration list for PBXNativeTarget "QiblaPlusUITests" */;
+			buildPhases = (
+				4A8706CFBE405AFDAB8977F0 /* [CP] Check Pods Manifest.lock */,
+				EB9B5552232D2F0B001B2E8C /* Sources */,
+				EB9B5553232D2F0B001B2E8C /* Frameworks */,
+				EB9B5554232D2F0B001B2E8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB9B5558232D2F0B001B2E8C /* PBXTargetDependency */,
+			);
+			name = QiblaPlusUITests;
+			productName = QiblaPlusUITests;
+			productReference = EB9B5556232D2F0B001B2E8C /* QiblaPlusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB9B552F232D2F0A001B2E8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Abdulelah Hajjar";
+				TargetAttributes = {
+					EB9B5536232D2F0A001B2E8C = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					EB9B554A232D2F0B001B2E8C = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = EB9B5536232D2F0A001B2E8C;
+					};
+					EB9B5555232D2F0B001B2E8C = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = EB9B5536232D2F0A001B2E8C;
+					};
+				};
+			};
+			buildConfigurationList = EB9B5532232D2F0A001B2E8C /* Build configuration list for PBXProject "QiblaPlus" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB9B552E232D2F0A001B2E8C;
+			productRefGroup = EB9B5538232D2F0A001B2E8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB9B5536232D2F0A001B2E8C /* QiblaPlus */,
+				EB9B554A232D2F0B001B2E8C /* QiblaPlusTests */,
+				EB9B5555232D2F0B001B2E8C /* QiblaPlusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EB9B5535232D2F0A001B2E8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB44ACCF232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */,
+				EBAF197A232FE6B60021AD79 /* Dubai-Light.ttf in Resources */,
+				EB44ACD2232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */,
+				EBC4217123F0AE32001505D4 /* README.md in Resources */,
+				EB9B5545232D2F0B001B2E8C /* LaunchScreen.storyboard in Resources */,
+				EB9B5542232D2F0B001B2E8C /* Assets.xcassets in Resources */,
+				EB9B5540232D2F0A001B2E8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB9B5549232D2F0B001B2E8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB44ACD3232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */,
+				EB44ACD0232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB9B5554232D2F0B001B2E8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB44ACD4232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */,
+				EB44ACD1232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C2A66BDD492799EA29100DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QiblaPlusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A8706CFBE405AFDAB8977F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QiblaPlusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C4CC6C9C938400C3163568F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2115E150BA06DF05828194F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QiblaPlus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB9B5533232D2F0A001B2E8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB9B553D232D2F0A001B2E8C /* ViewController.swift in Sources */,
+				EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB9B5547232D2F0B001B2E8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB9B5550232D2F0B001B2E8C /* QiblaPlusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB9B5552232D2F0B001B2E8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB9B555B232D2F0B001B2E8C /* QiblaPlusUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB9B554D232D2F0B001B2E8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB9B5536232D2F0A001B2E8C /* QiblaPlus */;
+			targetProxy = EB9B554C232D2F0B001B2E8C /* PBXContainerItemProxy */;
+		};
+		EB9B5558232D2F0B001B2E8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB9B5536232D2F0A001B2E8C /* QiblaPlus */;
+			targetProxy = EB9B5557232D2F0B001B2E8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EB9B553E232D2F0A001B2E8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB9B553F232D2F0A001B2E8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EB9B5543232D2F0B001B2E8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB9B5544232D2F0B001B2E8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EB9B555D232D2F0B001B2E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB9B555E232D2F0B001B2E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EB9B5560232D2F0B001B2E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F132CBF9E1B731CAB36E1E22 /* Pods-QiblaPlus.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TP338A8XKT;
+				INFOPLIST_FILE = QiblaPlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hajjar.AccuQibla;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EB9B5561232D2F0B001B2E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD483695A890C168B2E4577D /* Pods-QiblaPlus.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TP338A8XKT;
+				INFOPLIST_FILE = QiblaPlus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hajjar.AccuQibla;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EB9B5563232D2F0B001B2E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70FB3B9D8A63C15BEAB8FD79 /* Pods-QiblaPlusTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TP338A8XKT;
+				INFOPLIST_FILE = QiblaPlusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hajjar.QiblaPlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QiblaPlus.app/QiblaPlus";
+			};
+			name = Debug;
+		};
+		EB9B5564232D2F0B001B2E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21AE6871A1165292C755C7FE /* Pods-QiblaPlusTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TP338A8XKT;
+				INFOPLIST_FILE = QiblaPlusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hajjar.QiblaPlusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QiblaPlus.app/QiblaPlus";
+			};
+			name = Release;
+		};
+		EB9B5566232D2F0B001B2E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 725EC323DADE8C5BE97B9D37 /* Pods-QiblaPlusUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TP338A8XKT;
+				INFOPLIST_FILE = QiblaPlusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hajjar.QiblaPlusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QiblaPlus;
+			};
+			name = Debug;
+		};
+		EB9B5567232D2F0B001B2E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6771A633114B1F17F1498FF2 /* Pods-QiblaPlusUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TP338A8XKT;
+				INFOPLIST_FILE = QiblaPlusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hajjar.QiblaPlusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QiblaPlus;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB9B5532232D2F0A001B2E8C /* Build configuration list for PBXProject "QiblaPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB9B555D232D2F0B001B2E8C /* Debug */,
+				EB9B555E232D2F0B001B2E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB9B555F232D2F0B001B2E8C /* Build configuration list for PBXNativeTarget "QiblaPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB9B5560232D2F0B001B2E8C /* Debug */,
+				EB9B5561232D2F0B001B2E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB9B5562232D2F0B001B2E8C /* Build configuration list for PBXNativeTarget "QiblaPlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB9B5563232D2F0B001B2E8C /* Debug */,
+				EB9B5564232D2F0B001B2E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB9B5565232D2F0B001B2E8C /* Build configuration list for PBXNativeTarget "QiblaPlusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB9B5566232D2F0B001B2E8C /* Debug */,
+				EB9B5567232D2F0B001B2E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB9B552F232D2F0A001B2E8C /* Project object */;
+}
