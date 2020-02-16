@@ -5,7 +5,7 @@ DEPENDENCIES:
   - SwiftGifOrigin
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - SwiftGifOrigin
 
 SPEC CHECKSUMS:
@@ -13,4 +13,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 1892945d66fe02f649ca31cc35dfcf9ec96dff3f
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

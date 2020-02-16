@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0665C82867BB790BD2DDDADF /* Pods_QiblaPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0605CE7CFC128E9E92BB0B /* Pods_QiblaPlus.framework */; };
 		4BB44705D9C298B765410E27 /* Pods_QiblaPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C808A5BB4E18CA245CD9DE39 /* Pods_QiblaPlusTests.framework */; };
 		9BF1309BBA8221ECE5D5C6A3 /* Pods_QiblaPlusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90F1D8747197AD3B79310CA /* Pods_QiblaPlusUITests.framework */; };
+		EB10649E23F99AD800F2EED1 /* Pods_QiblaPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0605CE7CFC128E9E92BB0B /* Pods_QiblaPlus.framework */; };
 		EB44ACCF232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
 		EB44ACD0232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
 		EB44ACD1232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0665C82867BB790BD2DDDADF /* Pods_QiblaPlus.framework in Frameworks */,
+				EB10649E23F99AD800F2EED1 /* Pods_QiblaPlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
