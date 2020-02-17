@@ -53,9 +53,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Qibla finding methods (Core)
     func findQibla() {
-        let error = errorMessages()
         
-        if error.count == 0 {
+        if LogicController().canFindQibla() {
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
             
@@ -64,41 +63,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 showCalibrationDisplay()
             }
         }
+            
         else {
-            showWarning(warningText: error)
+            showWarning(warningText: LogicController().getErrorMessage(appLanguage: currentLangauge))
         }
     }
-    
-    func errorMessages() -> String {
-        if CLLocationManager.locationServicesEnabled() == false {
-            if currentLangauge == "en" {
-                return "⚠\nPlease enable location services from your device's settings."
-            }
-            else {
-                return "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."
-            }
-        }
-        else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-            if currentLangauge == "en" {
-                return "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction."
-            }
-            else {
-                return "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."
-            }
-        }
-        else if CLLocationManager.headingAvailable() == false {
-            if currentLangauge == "en" {
-                return "⚠\nYour device does not support true heading directions."
-            }
-            else {
-                return "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."
-            }
-        }
-        else {
-            return ""
-        }
-    }
-    
+
     func getBearing(newLat: Double, newLon: Double) -> Double {
         let x = cos(makkahLat) * sin(makkahLon - newLon)
         let y = cos(newLat) * sin(makkahLat) - sin(newLat) * cos(makkahLat) * cos(makkahLon - newLon)
