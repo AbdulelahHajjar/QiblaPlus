@@ -19,6 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var arTips: UILabel!
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
+    let logicController = LogicController()
     let locationManager = CLLocationManager()
     let defaults = UserDefaults.standard
     let makkahLat = 0.3738927226761722      //21.4224750 deg
@@ -42,6 +43,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         setObservers()
         setLocationSettings()
         findQibla()
+        
+        //Method to check installation date of the application
+        let urlToDocumentsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+           //installDate is NSDate of install
+        let installDate = (try! FileManager.default.attributesOfItem(atPath: urlToDocumentsFolder.path)[FileAttributeKey.creationDate])
+        print("This app was installed by the user on \(String(describing: installDate))")
     }
     
     //MARK: Qibla finding methods (Core)
@@ -52,14 +59,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
             
-            if let diff = Calendar.current.dateComponents([.minute], from: lastTimeCalibDisplayShown, to: Date()).minute, diff > 40 {
-                devicePassed40Mins = true
-            }
-            else {
-                devicePassed40Mins = false
-            }
-            
-            if (firstLaunch || devicePassed40Mins) && animationDone {
+            if (firstLaunch || LogicController().mustCalibrate()) && animationDone {
                 firstLaunch = false
                 showCalibrationDisplay()
             }
