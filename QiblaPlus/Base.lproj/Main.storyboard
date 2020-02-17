@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,11 +18,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="B2X-eH-2zf" userLabel="enTips">
-                                <rect key="frame" x="20" y="756" width="374" height="120"/>
+                                <rect key="frame" x="20" y="652" width="335" height="120"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Tips for better qibla accuracy:
@@ -193,7 +191,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="none" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="W9u-Lf-3pC" userLabel="arTips">
-                                <rect key="frame" x="20" y="756" width="374" height="120"/>
+                                <rect key="frame" x="20" y="652" width="335" height="120"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">نصائح لقبلة أدق:
@@ -265,7 +263,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C26-Eu-9JE">
-                                <rect key="frame" x="353" y="44" width="31" height="31"/>
+                                <rect key="frame" x="314" y="44" width="31" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="C26-Eu-9JE" secondAttribute="height" multiplier="1:1" id="Lcy-mz-8kC"/>
                                 </constraints>
@@ -277,25 +275,25 @@ Cg
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OqI-Zi-cR6" userLabel="CompassView">
-                                <rect key="frame" x="60" y="452" width="294" height="294"/>
+                                <rect key="frame" x="60" y="387" width="255" height="255"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeedleBase" translatesAutoresizingMaskIntoConstraints="NO" id="sEP-MQ-m7g">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="294"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="X23-WY-u5b">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="294"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CorrectQiblaNeedle" translatesAutoresizingMaskIntoConstraints="NO" id="G9Q-pV-5Rj" userLabel="CorrectNeedle">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="294"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ErrorMessages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-gi-I6J" userLabel="ErrorLabel">
-                                        <rect key="frame" x="40" y="0.0" width="214" height="294"/>
+                                        <rect key="frame" x="40" y="0.0" width="175" height="255"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7sh-5O-MZu">
-                                        <rect key="frame" x="72" y="236" width="150" height="2"/>
+                                        <rect key="frame" x="72" y="197" width="111" height="2"/>
                                     </progressView>
                                 </subviews>
                                 <constraints>
@@ -322,7 +320,7 @@ Cg
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbi-li-CLC">
-                                <rect key="frame" x="117" y="94" width="180" height="60"/>
+                                <rect key="frame" x="97.666666666666686" y="94" width="180" height="60"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="lWF-zf-UeS">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -331,7 +329,7 @@ Cg
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qibla+" lineBreakMode="tailTruncation" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-x8-dKx">
-                                        <rect key="frame" x="72" y="0.0" width="108" height="60"/>
+                                        <rect key="frame" x="71.999999999999986" y="0.0" width="108.00000000000001" height="60"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Thin" family="SF Pro Display" pointSize="41"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -358,12 +356,13 @@ Cg
                             <constraint firstItem="Rbi-li-CLC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Clu-fj-Ggq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C26-Eu-9JE" secondAttribute="trailing" constant="30" id="EOd-Bt-NXR"/>
                             <constraint firstItem="C26-Eu-9JE" firstAttribute="leading" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="353" id="H2P-Fv-CfJ"/>
-                            <constraint firstAttribute="bottom" secondItem="B2X-eH-2zf" secondAttribute="bottom" constant="20" id="HoF-NH-Q6G"/>
+                            <constraint firstAttribute="bottom" secondItem="B2X-eH-2zf" secondAttribute="bottom" constant="40" id="HoF-NH-Q6G"/>
                             <constraint firstItem="W9u-Lf-3pC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="LWX-IQ-79p"/>
                             <constraint firstAttribute="trailing" secondItem="W9u-Lf-3pC" secondAttribute="trailing" constant="20" id="NAZ-qk-JhY"/>
                             <constraint firstItem="Rbi-li-CLC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Njg-Jc-f5i"/>
                             <constraint firstItem="B2X-eH-2zf" firstAttribute="top" secondItem="OqI-Zi-cR6" secondAttribute="bottom" constant="10" id="Oa1-oX-9dO"/>
-                            <constraint firstAttribute="bottom" secondItem="W9u-Lf-3pC" secondAttribute="bottom" constant="20" id="WxH-2p-LNN"/>
+                            <constraint firstItem="OqI-Zi-cR6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Rbi-li-CLC" secondAttribute="bottom" constant="20" id="Tia-LG-Vic"/>
+                            <constraint firstAttribute="bottom" secondItem="W9u-Lf-3pC" secondAttribute="bottom" constant="40" id="WxH-2p-LNN"/>
                             <constraint firstAttribute="trailing" secondItem="B2X-eH-2zf" secondAttribute="trailing" constant="20" id="atH-4f-Y1M"/>
                             <constraint firstAttribute="trailing" secondItem="OqI-Zi-cR6" secondAttribute="trailing" constant="60" id="dhF-QY-D07"/>
                             <constraint firstItem="OqI-Zi-cR6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="eaz-An-9P7"/>
@@ -373,6 +372,7 @@ Cg
                     </view>
                     <connections>
                         <outlet property="arTips" destination="W9u-Lf-3pC" id="xid-yP-sjE"/>
+                        <outlet property="backgroundView" destination="8bC-Xf-vdC" id="rgV-SJ-vvc"/>
                         <outlet property="calibrationProgressBar" destination="7sh-5O-MZu" id="7gs-Vd-ghP"/>
                         <outlet property="correctNeedle" destination="G9Q-pV-5Rj" id="uJA-w8-LMw"/>
                         <outlet property="enTips" destination="B2X-eH-2zf" id="qc9-Oy-Def"/>

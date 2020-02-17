@@ -345,16 +345,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         calibrationProgressBar.alpha = 0
     }
     
+    @IBOutlet var backgroundView: UIView!
     func setBackground() {
-        let backgroundImageView = UIImageView()
-        view.addSubview(backgroundImageView)
-        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        backgroundImageView.image = UIImage(named: "background.png")
-        backgroundImageView.contentMode = UIView.ContentMode.scaleAspectFill
-        view.sendSubviewToBack(backgroundImageView)
+        let gradient = CAGradientLayer()
+        gradient.frame = backgroundView.bounds
+        gradient.colors = [UIColor(red:0.34, green:0.49, blue:0.71, alpha:1.0)
+.cgColor, UIColor(red:0.18, green:0.25, blue:0.36, alpha:1.0)
+.cgColor]
+        gradient.endPoint = CGPoint.init(x: 0, y: 1)
+        gradient.startPoint = CGPoint.init(x: 1  , y: 0)
+        backgroundView.layer.insertSublayer(gradient, at: 0)
     }
 }
