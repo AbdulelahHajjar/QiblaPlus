@@ -53,19 +53,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Qibla finding methods (Core)
     func findQibla() {
-        
-        if LogicController().canFindQibla() {
+        if logicController.canFindQibla() {
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
             
-            if (firstLaunch || LogicController().mustCalibrate()) && animationDone {
+            if (firstLaunch || logicController.mustCalibrate()) && animationDone {
                 firstLaunch = false
                 showCalibrationDisplay()
             }
         }
-            
         else {
-            showWarning(warningText: LogicController().getErrorMessage(appLanguage: currentLangauge))
+            showWarning(warningText: logicController.getErrorMessage(appLanguage: currentLangauge))
         }
     }
 
@@ -74,7 +72,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let y = cos(newLat) * sin(makkahLat) - sin(newLat) * cos(makkahLat) * cos(makkahLon - newLon)
         return atan2(x, y)
     }
-    
     
     //MARK: Language-related methods
     @IBAction func langBtn(_ sender: UIButton) {
@@ -319,9 +316,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func setBackground() {
         let gradient = CAGradientLayer()
         gradient.frame = backgroundView.bounds
-        gradient.colors = [UIColor(red:0.34, green:0.49, blue:0.71, alpha:1.0)
-.cgColor, UIColor(red:0.18, green:0.25, blue:0.36, alpha:1.0)
-.cgColor]
+        gradient.colors = [UIColor(red:0.34, green:0.49, blue:0.71, alpha:1.0).cgColor, UIColor(red:0.18, green:0.25, blue:0.36, alpha:1.0).cgColor]
         gradient.endPoint = CGPoint.init(x: 0, y: 1)
         gradient.startPoint = CGPoint.init(x: 1  , y: 0)
         backgroundView.layer.insertSublayer(gradient, at: 0)

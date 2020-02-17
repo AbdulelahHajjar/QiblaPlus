@@ -14,7 +14,6 @@ class LogicController {
     var enError = ""
     var arError = ""
     
-    
     func setLastCalibrated(calibrationDate: Date) {
         lastCalibrated = calibrationDate
     }
@@ -44,10 +43,19 @@ class LogicController {
             arError = "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."
             return false
         }
+        else {
+            enError = ""
+            arError = ""
+        }
         return true
     }
     
     func getErrorMessage(appLanguage: String) -> String {
-        return appLanguage == "en" ? enError : arError
+        if appLanguage == "en" {
+            return enError
+        }
+        else {
+            return arError
+        }
     }
 }

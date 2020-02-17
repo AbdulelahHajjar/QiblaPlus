@@ -11,7 +11,6 @@
 		9BF1309BBA8221ECE5D5C6A3 /* Pods_QiblaPlusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90F1D8747197AD3B79310CA /* Pods_QiblaPlusUITests.framework */; };
 		EB10649E23F99AD800F2EED1 /* Pods_QiblaPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0605CE7CFC128E9E92BB0B /* Pods_QiblaPlus.framework */; };
 		EB1BDE7C23FB3C9700CA5B9C /* LogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BDE7B23FB3C9700CA5B9C /* LogicController.swift */; };
-		EB1BDE7E23FB40B200CA5B9C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BDE7D23FB40B200CA5B9C /* Model.swift */; };
 		EB44ACCF232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
 		EB44ACD0232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
 		EB44ACD1232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
@@ -55,7 +54,6 @@
 		C808A5BB4E18CA245CD9DE39 /* Pods_QiblaPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiblaPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90F1D8747197AD3B79310CA /* Pods_QiblaPlusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiblaPlusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1BDE7B23FB3C9700CA5B9C /* LogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicController.swift; sourceTree = "<group>"; };
-		EB1BDE7D23FB40B200CA5B9C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiblaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +158,6 @@
 				EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */,
 				EB9B553C232D2F0A001B2E8C /* ViewController.swift */,
 				EB1BDE7B23FB3C9700CA5B9C /* LogicController.swift */,
-				EB1BDE7D23FB40B200CA5B9C /* Model.swift */,
 				EB9B553E232D2F0A001B2E8C /* Main.storyboard */,
 				EB9B5541232D2F0B001B2E8C /* Assets.xcassets */,
 				EB9B5543232D2F0B001B2E8C /* LaunchScreen.storyboard */,
@@ -419,7 +416,6 @@
 				EB9B553D232D2F0A001B2E8C /* ViewController.swift in Sources */,
 				EB1BDE7C23FB3C9700CA5B9C /* LogicController.swift in Sources */,
 				EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */,
-				EB1BDE7E23FB40B200CA5B9C /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
