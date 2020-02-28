@@ -13,6 +13,7 @@ import LGButton
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var needleImage: UIImageView!
     @IBOutlet weak var correctNeedle: UIImageView!
     @IBOutlet weak var warningLabel: UILabel!
@@ -34,7 +35,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var lastTimeCalibDisplayShown = Date()  //Assign the current time of the device.
     var devicePassed40Mins: Bool = false    //On first launch, device did not pass 40 mins.
     
-    @IBOutlet weak var langBtnOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -309,7 +309,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         calibrationProgressBar.alpha = 0
     }
     
-    @IBOutlet var backgroundView: UIView!
     func setBackground() {
         let gradient = CAGradientLayer()
         gradient.frame = backgroundView.bounds
