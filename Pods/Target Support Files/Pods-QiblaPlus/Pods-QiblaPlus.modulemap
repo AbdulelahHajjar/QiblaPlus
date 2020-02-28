@@ -1,0 +1,6 @@
+framework module Pods_QiblaPlus {
+  umbrella header "Pods-QiblaPlus-umbrella.h"
+
+  export *
+  module * { export * }
+}

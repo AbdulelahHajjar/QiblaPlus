@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import SwiftGifOrigin
+import LGButton
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -74,15 +75,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //MARK: Language-related methods
-    @IBAction func langBtn(_ sender: UIButton) {
-        if sender.titleLabel!.text! == "عربي" {
-            setLanguage(lang: "ar")
+    
+    @IBAction func langBtn(_ sender: LGButton) {
+             if sender.titleString == "عربي" {
+            currentLangauge = "ar"
+            sender.titleString = "English"
+            
+            UIView.animate(withDuration: 0.250) {
+                self.enTips.alpha = 0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
+                UIView.animate(withDuration: 0.250) {
+                    self.arTips.alpha = 1
+                }
+            }
             defaults.set("ar", forKey: "Language")
         }
         else {
-            setLanguage(lang: "en")
+            currentLangauge = "en"
+            sender.titleString = "عربي"
+            UIView.animate(withDuration: 0.250) {
+                self.arTips.alpha = 0
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
+                UIView.animate(withDuration: 0.250) {
+                    self.enTips.alpha = 1
+                }
+            }
             defaults.set("en", forKey: "Language")
         }
+        findQibla()
     }
     
     func findDeviceLanguage() {
@@ -105,32 +127,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func setLanguage(lang: String) {
-        if lang == "ar" {
-            currentLangauge = "ar"
-            langBtnOutlet.setTitle("English", for: .normal)
-            
-            UIView.animate(withDuration: 0.250) {
-                self.enTips.alpha = 0
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-                UIView.animate(withDuration: 0.250) {
-                    self.arTips.alpha = 1
-                }
-            }
-        }
-        else {
-            currentLangauge = "en"
-            langBtnOutlet.setTitle("عربي", for: .normal)
-            UIView.animate(withDuration: 0.250) {
-                self.arTips.alpha = 0
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-                UIView.animate(withDuration: 0.250) {
-                    self.enTips.alpha = 1
-                }
-            }
-        }
-        findQibla()
+        
     }
     
     //MARK: Misc. methods

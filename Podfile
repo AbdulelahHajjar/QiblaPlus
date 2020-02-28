@@ -6,6 +6,7 @@ target 'QiblaPlus' do
 
   # Pods for QiblaPlus
   pod 'SwiftGifOrigin'
+  pod 'LGButton'
   target 'QiblaPlusTests' do
     inherit! :search_paths
     # Pods for testing

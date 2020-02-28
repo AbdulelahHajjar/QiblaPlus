@@ -1,0 +1,1221 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		008B2A13D8D7CA35B9BD70676D147BAD /* themify.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7B3E340FCC2981A9ED174DE7205810F /* themify.ttf */; };
+		0141A95DB1F647899CC5D4DB824C065C /* SwiftGifOrigin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F17E41B0D7EA3C7938CD608660F4D4 /* SwiftGifOrigin-dummy.m */; };
+		0362E7E64BB3B1DC5F6258BA9CFDADDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		06117D18554D3BD2C4D581DD3ED76AD5 /* FontOpenic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A87B1BF907DDB34FBCF29DBD4C3B83 /* FontOpenic.swift */; };
+		0B620FC0E897E491429E1DE603E84842 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD4CCA7164F530299EA403E78235904C /* FontAwesome.ttf */; };
+		10CDE1E6E1EB050D376A90122DF596D3 /* open-iconic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 761C36DACAE88F31624EF9FAF9643E1E /* open-iconic.ttf */; };
+		10D252471EAE4073A8131FC6073FCB19 /* Pods-QiblaPlusUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8377E5E7A573E7AE07D365493ED2B386 /* Pods-QiblaPlusUITests-dummy.m */; };
+		116FDB8D280B50B3E12CEB7CA626A905 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65651C652AC6D88B6F43A08C2B966109 /* FontAwesome.swift */; };
+		158377F7759475572908B0AD1ACDD6E6 /* FontOct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660A9D07D3C301F8580CCCD126766A2 /* FontOct.swift */; };
+		224BAD87E92E0520DBB7D12E01998F0A /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0FAF0BBBF31683D9764A171DC16680 /* UIImage+Gif.swift */; };
+		383DE6D599012BD0C46619730E05E4D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3B2FA2FD0C59AF348BC487EB7C2477AB /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EF92AC19396E865353C0CB8E3AD77E /* FontLoader.swift */; };
+		4A76FB7C82C6D27E2218F56EB90F9D28 /* map-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D25BB7E158F0840B3B8C0DBBB749827F /* map-icons.ttf */; };
+		4D8C3DD2C233267CC1CB90F8C41A2B60 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 717984AF6F031E17FC6F5C7A0F48B4A6 /* Ionicons.ttf */; };
+		559EFA708395041AF9D9F20CB68373DB /* FontMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651FECE33B5DF887D64551723309B6ED /* FontMap.swift */; };
+		5DD436522AA643D435BBB56532398C5C /* LGButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 169E0648A7590996237DE881F577E3AF /* LGButton.xib */; };
+		6F312DB0B6D9FD711696D2C3425E8F41 /* LGButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 554B42A23FF0F38B9BE2C209222B445D /* LGButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		883D14219C3EDFD168E04896E6255FC8 /* Pods-QiblaPlusTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 459084B6EAA99D07F3C50BD13B603041 /* Pods-QiblaPlusTests-dummy.m */; };
+		8991C75CE8321B02706767B01D29890A /* SwiftGifOrigin-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF5EE5B881ABC2019F353F91ECE1E76C /* SwiftGifOrigin-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97AD6F24F3B06BD613C6208F2184E74A /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8EADB1C55D5C3648AC33F041071BC45 /* MaterialIcons-Regular.ttf */; };
+		99957B690912720394FD9EA8E64221C5 /* SwiftIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23672B35F64CC1E77BC9274A160D50E3 /* SwiftIconFont.swift */; };
+		A34A98DD62B110BD2DFAD832FE42DC45 /* SwiftIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8F264A96D08A80D29513FC442DBE3F /* SwiftIconLabel.swift */; };
+		ABA14370EC7EA9B6925A00A3F2574D9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		B9A87A4398B696857F72746C8707B9E2 /* Pods-QiblaPlusUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 10F0F3D354E07E5C366304B3FD2D37F0 /* Pods-QiblaPlusUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFB6309660473CE20E1F98165D2190D2 /* LGButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF86BE386B7481025C780CB238D82E0 /* LGButton-dummy.m */; };
+		C16C9FFF0BBEF2523F89D5CEC3A51CA7 /* FontIon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111F1B928ACBC27404D61643D1D788B8 /* FontIon.swift */; };
+		C7801902CC6C231E616106A058A19C39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		C9E3E1BED332170FC1FDD12950536494 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		D7C5DEB56E431931836C74EA0446A3DA /* FontThemify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8E19490CC5032850B25DADDA5F8F2F /* FontThemify.swift */; };
+		D9CEC4F9FF884C4EA511E513A6AA756E /* Pods-QiblaPlus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 565CBD5F8820BEB33F2C602D6B7175B8 /* Pods-QiblaPlus-dummy.m */; };
+		E04E162655F36D1EDAD8F58868BE3447 /* LGButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407C5C54F0B53D07AD078B209138F0A /* LGButton.swift */; };
+		E572817C212DC653B0BC1D1BE77DF9C4 /* Pods-QiblaPlus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4214C8EE0DDAAED68E1D94D9F92C4CD1 /* Pods-QiblaPlus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E72F7EFD2EB30E920C7E9013221E608D /* Pods-QiblaPlusTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE0428EAD27A91ABB9D29FAB36F954E9 /* Pods-QiblaPlusTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2ED4AC1567C9E3D31486B3AB8B9E1CB /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A289B7759C4431DF25D4B76DF8BDDE98 /* octicons.ttf */; };
+		FA0FB5AA52DE609FFCA1A84D791E37DC /* FontMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F933B830960F804683C62701EEC075F /* FontMaterial.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09786EF5AF26C1E582794A680DC64E70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D92B13EBF0304F7E0566679927C284B;
+			remoteInfo = "Pods-QiblaPlus";
+		};
+		19B4DA6B7D1512F94A6E73DB64DB88C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7F9119A842E66F127E010A97169E4F4;
+			remoteInfo = SwiftGifOrigin;
+		};
+		845D8F9CF9FD0F2EED7B17AAE5F9B497 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD999FE212F29E29DEEA0A85E1DC4D4E;
+			remoteInfo = LGButton;
+		};
+		EC9997FC4DBC6A53432DE2282CAA8D3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D92B13EBF0304F7E0566679927C284B;
+			remoteInfo = "Pods-QiblaPlus";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00CE32D84180657C7EDE788A496253E7 /* Pods-QiblaPlusUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QiblaPlusUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0407C5C54F0B53D07AD078B209138F0A /* LGButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LGButton.swift; path = LGButton/Classes/LGButton.swift; sourceTree = "<group>"; };
+		10F0F3D354E07E5C366304B3FD2D37F0 /* Pods-QiblaPlusUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QiblaPlusUITests-umbrella.h"; sourceTree = "<group>"; };
+		111F1B928ACBC27404D61643D1D788B8 /* FontIon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontIon.swift; path = LGButton/Classes/SwiftIconFont/FontIon.swift; sourceTree = "<group>"; };
+		15AE870EDE330B9E234321190F0CAA7D /* LGButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LGButton.modulemap; sourceTree = "<group>"; };
+		169E0648A7590996237DE881F577E3AF /* LGButton.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LGButton.xib; path = LGButton/Resources/LGButton.xib; sourceTree = "<group>"; };
+		23672B35F64CC1E77BC9274A160D50E3 /* SwiftIconFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconFont.swift; path = LGButton/Classes/SwiftIconFont/SwiftIconFont.swift; sourceTree = "<group>"; };
+		27A277A19A3EDD748ECFA17E87D8632E /* Pods-QiblaPlusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QiblaPlusTests.release.xcconfig"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		38458637A368D88EDA6A87AA09615FF7 /* LGButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LGButton-prefix.pch"; sourceTree = "<group>"; };
+		3A22590577837E782179E8EFD1744CB6 /* SwiftGifOrigin.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftGifOrigin.modulemap; sourceTree = "<group>"; };
+		4214C8EE0DDAAED68E1D94D9F92C4CD1 /* Pods-QiblaPlus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QiblaPlus-umbrella.h"; sourceTree = "<group>"; };
+		424D2370C36A0706A1229A03EAB4AC7F /* Pods-QiblaPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QiblaPlus.release.xcconfig"; sourceTree = "<group>"; };
+		459084B6EAA99D07F3C50BD13B603041 /* Pods-QiblaPlusTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QiblaPlusTests-dummy.m"; sourceTree = "<group>"; };
+		4A8F264A96D08A80D29513FC442DBE3F /* SwiftIconLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconLabel.swift; path = LGButton/Classes/SwiftIconFont/SwiftIconLabel.swift; sourceTree = "<group>"; };
+		4F933B830960F804683C62701EEC075F /* FontMaterial.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontMaterial.swift; path = LGButton/Classes/SwiftIconFont/FontMaterial.swift; sourceTree = "<group>"; };
+		554B42A23FF0F38B9BE2C209222B445D /* LGButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LGButton-umbrella.h"; sourceTree = "<group>"; };
+		565CBD5F8820BEB33F2C602D6B7175B8 /* Pods-QiblaPlus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QiblaPlus-dummy.m"; sourceTree = "<group>"; };
+		5B8E19490CC5032850B25DADDA5F8F2F /* FontThemify.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontThemify.swift; path = LGButton/Classes/SwiftIconFont/FontThemify.swift; sourceTree = "<group>"; };
+		5BDE417D49D32CCB827D2DCC56237207 /* Pods-QiblaPlus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QiblaPlus.modulemap"; sourceTree = "<group>"; };
+		5F0FAF0BBBF31683D9764A171DC16680 /* UIImage+Gif.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Gif.swift"; path = "SwiftGifCommon/UIImage+Gif.swift"; sourceTree = "<group>"; };
+		5FE01424A99D70F150239533C7245170 /* Pods-QiblaPlusUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QiblaPlusUITests-Info.plist"; sourceTree = "<group>"; };
+		651FECE33B5DF887D64551723309B6ED /* FontMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontMap.swift; path = LGButton/Classes/SwiftIconFont/FontMap.swift; sourceTree = "<group>"; };
+		65651C652AC6D88B6F43A08C2B966109 /* FontAwesome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesome.swift; path = LGButton/Classes/SwiftIconFont/FontAwesome.swift; sourceTree = "<group>"; };
+		665E59542278C51BC53DEC494FD836D5 /* Pods-QiblaPlusTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QiblaPlusTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6CF483E383356F1E422741B93068D434 /* Pods-QiblaPlusTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QiblaPlusTests-Info.plist"; sourceTree = "<group>"; };
+		6FF86BE386B7481025C780CB238D82E0 /* LGButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LGButton-dummy.m"; sourceTree = "<group>"; };
+		70E534AD953A878B3355F0C379CF8A98 /* Pods-QiblaPlusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QiblaPlusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		717984AF6F031E17FC6F5C7A0F48B4A6 /* Ionicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = Ionicons.ttf; path = LGButton/Resources/Ionicons.ttf; sourceTree = "<group>"; };
+		761C36DACAE88F31624EF9FAF9643E1E /* open-iconic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "open-iconic.ttf"; path = "LGButton/Resources/open-iconic.ttf"; sourceTree = "<group>"; };
+		7A0A24E9524AEC0150A732A55470FB0E /* Pods-QiblaPlusUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QiblaPlusUITests.modulemap"; sourceTree = "<group>"; };
+		7A8AB60458AE6CA2717BF4CE3865C283 /* Pods-QiblaPlusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QiblaPlusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D803CC47F754A916038969B4466EC9F /* Pods-QiblaPlusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QiblaPlusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8377E5E7A573E7AE07D365493ED2B386 /* Pods-QiblaPlusUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-QiblaPlusUITests-dummy.m"; sourceTree = "<group>"; };
+		857777CC45C777AEB1151E366981A002 /* Pods_QiblaPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QiblaPlusTests.framework; path = "Pods-QiblaPlusTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftGifOrigin.framework; path = SwiftGifOrigin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		907B7C19AA18FCD94DA9201EFB39882C /* SwiftGifOrigin-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftGifOrigin-Info.plist"; sourceTree = "<group>"; };
+		9A82BC527843450138AF9B85AD750D09 /* Pods-QiblaPlus-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-QiblaPlus-frameworks.sh"; sourceTree = "<group>"; };
+		9B84DBDFE32647C7172A7E6EC2097F59 /* Pods-QiblaPlusUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QiblaPlusUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9BE342A2BF96F6F2D0593AE50CBB68E3 /* Pods-QiblaPlusTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-QiblaPlusTests.modulemap"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A289B7759C4431DF25D4B76DF8BDDE98 /* octicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = octicons.ttf; path = LGButton/Resources/octicons.ttf; sourceTree = "<group>"; };
+		A8EADB1C55D5C3648AC33F041071BC45 /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "MaterialIcons-Regular.ttf"; path = "LGButton/Resources/MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
+		A9EF92AC19396E865353C0CB8E3AD77E /* FontLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontLoader.swift; path = LGButton/Classes/SwiftIconFont/FontLoader.swift; sourceTree = "<group>"; };
+		AA699ADD14BAB472D3E07AA211B8B729 /* Pods-QiblaPlusTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QiblaPlusTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		AD4CCA7164F530299EA403E78235904C /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = FontAwesome.ttf; path = LGButton/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
+		B06C2354F233AB1BA7BB40B9E93EB172 /* Pods-QiblaPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-QiblaPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		B226D25A879DE82F1B8288DAAF8BFA37 /* Pods-QiblaPlus-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-QiblaPlus-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B5638BA629EE662601B48A541C295694 /* LGButton-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LGButton-Info.plist"; sourceTree = "<group>"; };
+		B7B3E340FCC2981A9ED174DE7205810F /* themify.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = themify.ttf; path = LGButton/Resources/themify.ttf; sourceTree = "<group>"; };
+		BE0428EAD27A91ABB9D29FAB36F954E9 /* Pods-QiblaPlusTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-QiblaPlusTests-umbrella.h"; sourceTree = "<group>"; };
+		BEB5730D0C9DB3D9997CC93D0C703557 /* LGButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LGButton.framework; path = LGButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C635DDF088260711DB13B8D7AB23427F /* Pods_QiblaPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QiblaPlus.framework; path = "Pods-QiblaPlus.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C660A9D07D3C301F8580CCCD126766A2 /* FontOct.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontOct.swift; path = LGButton/Classes/SwiftIconFont/FontOct.swift; sourceTree = "<group>"; };
+		CEAA3442CA99783CBF62007D0450B2DF /* Pods_QiblaPlusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_QiblaPlusUITests.framework; path = "Pods-QiblaPlusUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF5EE5B881ABC2019F353F91ECE1E76C /* SwiftGifOrigin-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-umbrella.h"; sourceTree = "<group>"; };
+		D25BB7E158F0840B3B8C0DBBB749827F /* map-icons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; name = "map-icons.ttf"; path = "LGButton/Resources/map-icons.ttf"; sourceTree = "<group>"; };
+		D4F17E41B0D7EA3C7938CD608660F4D4 /* SwiftGifOrigin-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftGifOrigin-dummy.m"; sourceTree = "<group>"; };
+		DCB5B4AC948527DBAF8661E3169382C4 /* LGButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LGButton.xcconfig; sourceTree = "<group>"; };
+		E47D432B8FB0FB1EA21CD455AFC7432F /* SwiftGifOrigin-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-prefix.pch"; sourceTree = "<group>"; };
+		E4A87B1BF907DDB34FBCF29DBD4C3B83 /* FontOpenic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontOpenic.swift; path = LGButton/Classes/SwiftIconFont/FontOpenic.swift; sourceTree = "<group>"; };
+		E84CD89E2CA9FF9601B05297A26D3B78 /* SwiftGifOrigin.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGifOrigin.xcconfig; sourceTree = "<group>"; };
+		EE09E3A3549703A3E3D462C7A67CE8A2 /* Pods-QiblaPlus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QiblaPlus-Info.plist"; sourceTree = "<group>"; };
+		FBF3134D4AC03ED84488529AAED7E580 /* Pods-QiblaPlus-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-QiblaPlus-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DE444A16F16095CFD8E3EC6A63EB82A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABA14370EC7EA9B6925A00A3F2574D9A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		992FF52D9506BC88E31A1FFB78F7AD68 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0362E7E64BB3B1DC5F6258BA9CFDADDE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9930667B52F75058AF846EB602EE2FFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				383DE6D599012BD0C46619730E05E4D4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C844CEE815202DAC5090EA5A54FCA01C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9E3E1BED332170FC1FDD12950536494 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3EE3DCC605EE693B0837E3F4295868B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7801902CC6C231E616106A058A19C39 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0B154D99611A7EBD2E1A34277D1BD3B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AD4CCA7164F530299EA403E78235904C /* FontAwesome.ttf */,
+				717984AF6F031E17FC6F5C7A0F48B4A6 /* Ionicons.ttf */,
+				169E0648A7590996237DE881F577E3AF /* LGButton.xib */,
+				D25BB7E158F0840B3B8C0DBBB749827F /* map-icons.ttf */,
+				A8EADB1C55D5C3648AC33F041071BC45 /* MaterialIcons-Regular.ttf */,
+				A289B7759C4431DF25D4B76DF8BDDE98 /* octicons.ttf */,
+				761C36DACAE88F31624EF9FAF9643E1E /* open-iconic.ttf */,
+				B7B3E340FCC2981A9ED174DE7205810F /* themify.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		479A5E02A04BB1616BF1C8494A72FC59 /* Pods-QiblaPlusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7A0A24E9524AEC0150A732A55470FB0E /* Pods-QiblaPlusUITests.modulemap */,
+				00CE32D84180657C7EDE788A496253E7 /* Pods-QiblaPlusUITests-acknowledgements.markdown */,
+				9B84DBDFE32647C7172A7E6EC2097F59 /* Pods-QiblaPlusUITests-acknowledgements.plist */,
+				8377E5E7A573E7AE07D365493ED2B386 /* Pods-QiblaPlusUITests-dummy.m */,
+				5FE01424A99D70F150239533C7245170 /* Pods-QiblaPlusUITests-Info.plist */,
+				10F0F3D354E07E5C366304B3FD2D37F0 /* Pods-QiblaPlusUITests-umbrella.h */,
+				7A8AB60458AE6CA2717BF4CE3865C283 /* Pods-QiblaPlusUITests.debug.xcconfig */,
+				70E534AD953A878B3355F0C379CF8A98 /* Pods-QiblaPlusUITests.release.xcconfig */,
+			);
+			name = "Pods-QiblaPlusUITests";
+			path = "Target Support Files/Pods-QiblaPlusUITests";
+			sourceTree = "<group>";
+		};
+		4AC77D367CCFDE21383C30376DA71242 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEB5730D0C9DB3D9997CC93D0C703557 /* LGButton.framework */,
+				C635DDF088260711DB13B8D7AB23427F /* Pods_QiblaPlus.framework */,
+				857777CC45C777AEB1151E366981A002 /* Pods_QiblaPlusTests.framework */,
+				CEAA3442CA99783CBF62007D0450B2DF /* Pods_QiblaPlusUITests.framework */,
+				8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F490988541BA47639EE0652416E7EC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC25CD973ED75CC49B9F92E60B697C09 /* LGButton */,
+				EC233102F879BD074A8C6654F7AFEA7B /* SwiftGifOrigin */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B6718A3ED88CD387C7EB51BE2282338 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EAE8BE84CEDD44FC72CAAE47915C0849 /* Pods-QiblaPlus */,
+				8E653484F515EEDB705A2B1C1855CB0D /* Pods-QiblaPlusTests */,
+				479A5E02A04BB1616BF1C8494A72FC59 /* Pods-QiblaPlusUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8E653484F515EEDB705A2B1C1855CB0D /* Pods-QiblaPlusTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BE342A2BF96F6F2D0593AE50CBB68E3 /* Pods-QiblaPlusTests.modulemap */,
+				665E59542278C51BC53DEC494FD836D5 /* Pods-QiblaPlusTests-acknowledgements.markdown */,
+				AA699ADD14BAB472D3E07AA211B8B729 /* Pods-QiblaPlusTests-acknowledgements.plist */,
+				459084B6EAA99D07F3C50BD13B603041 /* Pods-QiblaPlusTests-dummy.m */,
+				6CF483E383356F1E422741B93068D434 /* Pods-QiblaPlusTests-Info.plist */,
+				BE0428EAD27A91ABB9D29FAB36F954E9 /* Pods-QiblaPlusTests-umbrella.h */,
+				7D803CC47F754A916038969B4466EC9F /* Pods-QiblaPlusTests.debug.xcconfig */,
+				27A277A19A3EDD748ECFA17E87D8632E /* Pods-QiblaPlusTests.release.xcconfig */,
+			);
+			name = "Pods-QiblaPlusTests";
+			path = "Target Support Files/Pods-QiblaPlusTests";
+			sourceTree = "<group>";
+		};
+		AF53400624CC8D3DAC82F14281EBB669 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3A22590577837E782179E8EFD1744CB6 /* SwiftGifOrigin.modulemap */,
+				E84CD89E2CA9FF9601B05297A26D3B78 /* SwiftGifOrigin.xcconfig */,
+				D4F17E41B0D7EA3C7938CD608660F4D4 /* SwiftGifOrigin-dummy.m */,
+				907B7C19AA18FCD94DA9201EFB39882C /* SwiftGifOrigin-Info.plist */,
+				E47D432B8FB0FB1EA21CD455AFC7432F /* SwiftGifOrigin-prefix.pch */,
+				CF5EE5B881ABC2019F353F91ECE1E76C /* SwiftGifOrigin-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftGifOrigin";
+			sourceTree = "<group>";
+		};
+		BC25CD973ED75CC49B9F92E60B697C09 /* LGButton */ = {
+			isa = PBXGroup;
+			children = (
+				65651C652AC6D88B6F43A08C2B966109 /* FontAwesome.swift */,
+				111F1B928ACBC27404D61643D1D788B8 /* FontIon.swift */,
+				A9EF92AC19396E865353C0CB8E3AD77E /* FontLoader.swift */,
+				651FECE33B5DF887D64551723309B6ED /* FontMap.swift */,
+				4F933B830960F804683C62701EEC075F /* FontMaterial.swift */,
+				C660A9D07D3C301F8580CCCD126766A2 /* FontOct.swift */,
+				E4A87B1BF907DDB34FBCF29DBD4C3B83 /* FontOpenic.swift */,
+				5B8E19490CC5032850B25DADDA5F8F2F /* FontThemify.swift */,
+				0407C5C54F0B53D07AD078B209138F0A /* LGButton.swift */,
+				23672B35F64CC1E77BC9274A160D50E3 /* SwiftIconFont.swift */,
+				4A8F264A96D08A80D29513FC442DBE3F /* SwiftIconLabel.swift */,
+				0B154D99611A7EBD2E1A34277D1BD3B7 /* Resources */,
+				C7FB97BB1848FDABC1A5DF68033AC512 /* Support Files */,
+			);
+			name = LGButton;
+			path = LGButton;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C7FB97BB1848FDABC1A5DF68033AC512 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				15AE870EDE330B9E234321190F0CAA7D /* LGButton.modulemap */,
+				DCB5B4AC948527DBAF8661E3169382C4 /* LGButton.xcconfig */,
+				6FF86BE386B7481025C780CB238D82E0 /* LGButton-dummy.m */,
+				B5638BA629EE662601B48A541C295694 /* LGButton-Info.plist */,
+				38458637A368D88EDA6A87AA09615FF7 /* LGButton-prefix.pch */,
+				554B42A23FF0F38B9BE2C209222B445D /* LGButton-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LGButton";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				4F490988541BA47639EE0652416E7EC5 /* Pods */,
+				4AC77D367CCFDE21383C30376DA71242 /* Products */,
+				7B6718A3ED88CD387C7EB51BE2282338 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAE8BE84CEDD44FC72CAAE47915C0849 /* Pods-QiblaPlus */ = {
+			isa = PBXGroup;
+			children = (
+				5BDE417D49D32CCB827D2DCC56237207 /* Pods-QiblaPlus.modulemap */,
+				B226D25A879DE82F1B8288DAAF8BFA37 /* Pods-QiblaPlus-acknowledgements.markdown */,
+				FBF3134D4AC03ED84488529AAED7E580 /* Pods-QiblaPlus-acknowledgements.plist */,
+				565CBD5F8820BEB33F2C602D6B7175B8 /* Pods-QiblaPlus-dummy.m */,
+				9A82BC527843450138AF9B85AD750D09 /* Pods-QiblaPlus-frameworks.sh */,
+				EE09E3A3549703A3E3D462C7A67CE8A2 /* Pods-QiblaPlus-Info.plist */,
+				4214C8EE0DDAAED68E1D94D9F92C4CD1 /* Pods-QiblaPlus-umbrella.h */,
+				B06C2354F233AB1BA7BB40B9E93EB172 /* Pods-QiblaPlus.debug.xcconfig */,
+				424D2370C36A0706A1229A03EAB4AC7F /* Pods-QiblaPlus.release.xcconfig */,
+			);
+			name = "Pods-QiblaPlus";
+			path = "Target Support Files/Pods-QiblaPlus";
+			sourceTree = "<group>";
+		};
+		EC233102F879BD074A8C6654F7AFEA7B /* SwiftGifOrigin */ = {
+			isa = PBXGroup;
+			children = (
+				5F0FAF0BBBF31683D9764A171DC16680 /* UIImage+Gif.swift */,
+				AF53400624CC8D3DAC82F14281EBB669 /* Support Files */,
+			);
+			name = SwiftGifOrigin;
+			path = SwiftGifOrigin;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		22788CC25A65E0028314E2F4B89F30D7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E72F7EFD2EB30E920C7E9013221E608D /* Pods-QiblaPlusTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		598143E26F664C417C6A7C78305DF2A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E572817C212DC653B0BC1D1BE77DF9C4 /* Pods-QiblaPlus-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F732E6CB34318904F87228241FB5F95 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9A87A4398B696857F72746C8707B9E2 /* Pods-QiblaPlusUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE1B505D0EE381DC8EE59D9F09B1705A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F312DB0B6D9FD711696D2C3425E8F41 /* LGButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E81EFC3392CB1BBF5061F4F7F2B41563 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8991C75CE8321B02706767B01D29890A /* SwiftGifOrigin-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0D92B13EBF0304F7E0566679927C284B /* Pods-QiblaPlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4079B94018BB1D6A9C405CE93BEDE34C /* Build configuration list for PBXNativeTarget "Pods-QiblaPlus" */;
+			buildPhases = (
+				598143E26F664C417C6A7C78305DF2A2 /* Headers */,
+				56E555145B73EEBCACDDE21714C37509 /* Sources */,
+				992FF52D9506BC88E31A1FFB78F7AD68 /* Frameworks */,
+				15847FDEEA681BFCC6DB9E9716673471 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB9EF44FF99D453F3E59894E9E60BA97 /* PBXTargetDependency */,
+				FDB2B6E5DE72FBD38DD6E21B9B4156FD /* PBXTargetDependency */,
+			);
+			name = "Pods-QiblaPlus";
+			productName = "Pods-QiblaPlus";
+			productReference = C635DDF088260711DB13B8D7AB23427F /* Pods_QiblaPlus.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6C816787EAE9671D750A55D701E93FDA /* Pods-QiblaPlusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27557B55862167915B30EF649CA8420F /* Build configuration list for PBXNativeTarget "Pods-QiblaPlusUITests" */;
+			buildPhases = (
+				7F732E6CB34318904F87228241FB5F95 /* Headers */,
+				4682D85ACBC2169C9F860E3D8DFB8248 /* Sources */,
+				F3EE3DCC605EE693B0837E3F4295868B /* Frameworks */,
+				38BE2EE53A7F4DDF9A3FEA50DC5B6698 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B74AF26A69E5102D0023C6FEC4F7175A /* PBXTargetDependency */,
+			);
+			name = "Pods-QiblaPlusUITests";
+			productName = "Pods-QiblaPlusUITests";
+			productReference = CEAA3442CA99783CBF62007D0450B2DF /* Pods_QiblaPlusUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8CC74219CAC3904F3B1AE6D5905CFFA0 /* Pods-QiblaPlusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7DA5E4F111978C56348423AC300E1DE5 /* Build configuration list for PBXNativeTarget "Pods-QiblaPlusTests" */;
+			buildPhases = (
+				22788CC25A65E0028314E2F4B89F30D7 /* Headers */,
+				2D093296F4C2A877B5EB87D57B90F2DE /* Sources */,
+				4DE444A16F16095CFD8E3EC6A63EB82A /* Frameworks */,
+				C5669B0946A6BB77D625502EBDB1F8F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D704A695BC4BD9527E560691F799D9A /* PBXTargetDependency */,
+			);
+			name = "Pods-QiblaPlusTests";
+			productName = "Pods-QiblaPlusTests";
+			productReference = 857777CC45C777AEB1151E366981A002 /* Pods_QiblaPlusTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A7F9119A842E66F127E010A97169E4F4 /* SwiftGifOrigin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99A19CAE5BD75E33445174D268501EC6 /* Build configuration list for PBXNativeTarget "SwiftGifOrigin" */;
+			buildPhases = (
+				E81EFC3392CB1BBF5061F4F7F2B41563 /* Headers */,
+				A8EB3FE901BE9442AF03C2DB361C7B9E /* Sources */,
+				C844CEE815202DAC5090EA5A54FCA01C /* Frameworks */,
+				4BE15D81617252BA65FECC14EA3D8A4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftGifOrigin;
+			productName = SwiftGifOrigin;
+			productReference = 8E11114EB42D9DA49AD3DCEAD6567E79 /* SwiftGifOrigin.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FD999FE212F29E29DEEA0A85E1DC4D4E /* LGButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B38D7C16F5C838BB40C30518C3A23842 /* Build configuration list for PBXNativeTarget "LGButton" */;
+			buildPhases = (
+				DE1B505D0EE381DC8EE59D9F09B1705A /* Headers */,
+				70219176BA49B29EFD79D5600A50F05E /* Sources */,
+				9930667B52F75058AF846EB602EE2FFE /* Frameworks */,
+				3459A5ADAD2268801F26DAB90B620C62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LGButton;
+			productName = LGButton;
+			productReference = BEB5730D0C9DB3D9997CC93D0C703557 /* LGButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 4AC77D367CCFDE21383C30376DA71242 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD999FE212F29E29DEEA0A85E1DC4D4E /* LGButton */,
+				0D92B13EBF0304F7E0566679927C284B /* Pods-QiblaPlus */,
+				8CC74219CAC3904F3B1AE6D5905CFFA0 /* Pods-QiblaPlusTests */,
+				6C816787EAE9671D750A55D701E93FDA /* Pods-QiblaPlusUITests */,
+				A7F9119A842E66F127E010A97169E4F4 /* SwiftGifOrigin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15847FDEEA681BFCC6DB9E9716673471 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3459A5ADAD2268801F26DAB90B620C62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B620FC0E897E491429E1DE603E84842 /* FontAwesome.ttf in Resources */,
+				4D8C3DD2C233267CC1CB90F8C41A2B60 /* Ionicons.ttf in Resources */,
+				5DD436522AA643D435BBB56532398C5C /* LGButton.xib in Resources */,
+				4A76FB7C82C6D27E2218F56EB90F9D28 /* map-icons.ttf in Resources */,
+				97AD6F24F3B06BD613C6208F2184E74A /* MaterialIcons-Regular.ttf in Resources */,
+				F2ED4AC1567C9E3D31486B3AB8B9E1CB /* octicons.ttf in Resources */,
+				10CDE1E6E1EB050D376A90122DF596D3 /* open-iconic.ttf in Resources */,
+				008B2A13D8D7CA35B9BD70676D147BAD /* themify.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38BE2EE53A7F4DDF9A3FEA50DC5B6698 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BE15D81617252BA65FECC14EA3D8A4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5669B0946A6BB77D625502EBDB1F8F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D093296F4C2A877B5EB87D57B90F2DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				883D14219C3EDFD168E04896E6255FC8 /* Pods-QiblaPlusTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4682D85ACBC2169C9F860E3D8DFB8248 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10D252471EAE4073A8131FC6073FCB19 /* Pods-QiblaPlusUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56E555145B73EEBCACDDE21714C37509 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9CEC4F9FF884C4EA511E513A6AA756E /* Pods-QiblaPlus-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70219176BA49B29EFD79D5600A50F05E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				116FDB8D280B50B3E12CEB7CA626A905 /* FontAwesome.swift in Sources */,
+				C16C9FFF0BBEF2523F89D5CEC3A51CA7 /* FontIon.swift in Sources */,
+				3B2FA2FD0C59AF348BC487EB7C2477AB /* FontLoader.swift in Sources */,
+				559EFA708395041AF9D9F20CB68373DB /* FontMap.swift in Sources */,
+				FA0FB5AA52DE609FFCA1A84D791E37DC /* FontMaterial.swift in Sources */,
+				158377F7759475572908B0AD1ACDD6E6 /* FontOct.swift in Sources */,
+				06117D18554D3BD2C4D581DD3ED76AD5 /* FontOpenic.swift in Sources */,
+				D7C5DEB56E431931836C74EA0446A3DA /* FontThemify.swift in Sources */,
+				BFB6309660473CE20E1F98165D2190D2 /* LGButton-dummy.m in Sources */,
+				E04E162655F36D1EDAD8F58868BE3447 /* LGButton.swift in Sources */,
+				99957B690912720394FD9EA8E64221C5 /* SwiftIconFont.swift in Sources */,
+				A34A98DD62B110BD2DFAD832FE42DC45 /* SwiftIconLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8EB3FE901BE9442AF03C2DB361C7B9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0141A95DB1F647899CC5D4DB824C065C /* SwiftGifOrigin-dummy.m in Sources */,
+				224BAD87E92E0520DBB7D12E01998F0A /* UIImage+Gif.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D704A695BC4BD9527E560691F799D9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-QiblaPlus";
+			target = 0D92B13EBF0304F7E0566679927C284B /* Pods-QiblaPlus */;
+			targetProxy = 09786EF5AF26C1E582794A680DC64E70 /* PBXContainerItemProxy */;
+		};
+		B74AF26A69E5102D0023C6FEC4F7175A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-QiblaPlus";
+			target = 0D92B13EBF0304F7E0566679927C284B /* Pods-QiblaPlus */;
+			targetProxy = EC9997FC4DBC6A53432DE2282CAA8D3C /* PBXContainerItemProxy */;
+		};
+		CB9EF44FF99D453F3E59894E9E60BA97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LGButton;
+			target = FD999FE212F29E29DEEA0A85E1DC4D4E /* LGButton */;
+			targetProxy = 845D8F9CF9FD0F2EED7B17AAE5F9B497 /* PBXContainerItemProxy */;
+		};
+		FDB2B6E5DE72FBD38DD6E21B9B4156FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftGifOrigin;
+			target = A7F9119A842E66F127E010A97169E4F4 /* SwiftGifOrigin */;
+			targetProxy = 19B4DA6B7D1512F94A6E73DB64DB88C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		03DD25370C049B07D04D812EE0634B4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCB5B4AC948527DBAF8661E3169382C4 /* LGButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LGButton/LGButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LGButton/LGButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LGButton/LGButton.modulemap";
+				PRODUCT_MODULE_NAME = LGButton;
+				PRODUCT_NAME = LGButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		33A9946B5E188F830718A2F094FF7F03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCB5B4AC948527DBAF8661E3169382C4 /* LGButton.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LGButton/LGButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LGButton/LGButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/LGButton/LGButton.modulemap";
+				PRODUCT_MODULE_NAME = LGButton;
+				PRODUCT_NAME = LGButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		34C4A29308E156856BCE997DA752B48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A8AB60458AE6CA2717BF4CE3865C283 /* Pods-QiblaPlusUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QiblaPlusUITests/Pods-QiblaPlusUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QiblaPlusUITests/Pods-QiblaPlusUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		60CB5AEE82B3564FB1DE86FABEEAD045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E84CD89E2CA9FF9601B05297A26D3B78 /* SwiftGifOrigin.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftGifOrigin/SwiftGifOrigin-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftGifOrigin/SwiftGifOrigin-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftGifOrigin/SwiftGifOrigin.modulemap";
+				PRODUCT_MODULE_NAME = SwiftGifOrigin;
+				PRODUCT_NAME = SwiftGifOrigin;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6B7484ACE84F33E56B26B953971AD760 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E84CD89E2CA9FF9601B05297A26D3B78 /* SwiftGifOrigin.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftGifOrigin/SwiftGifOrigin-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftGifOrigin/SwiftGifOrigin-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftGifOrigin/SwiftGifOrigin.modulemap";
+				PRODUCT_MODULE_NAME = SwiftGifOrigin;
+				PRODUCT_NAME = SwiftGifOrigin;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		71F4D23FDDA351A715D01A01DDE3F5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B06C2354F233AB1BA7BB40B9E93EB172 /* Pods-QiblaPlus.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		916E0404255105F480DC4950B7625F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		97D55EE8F0B340BF0451C9A6EB6CF704 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 424D2370C36A0706A1229A03EAB4AC7F /* Pods-QiblaPlus.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ACC55CDF504C196C7207325B4009AD9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D803CC47F754A916038969B4466EC9F /* Pods-QiblaPlusTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QiblaPlusTests/Pods-QiblaPlusTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QiblaPlusTests/Pods-QiblaPlusTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D56EB78C49DCC551B85923CD4120E22F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70E534AD953A878B3355F0C379CF8A98 /* Pods-QiblaPlusUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QiblaPlusUITests/Pods-QiblaPlusUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QiblaPlusUITests/Pods-QiblaPlusUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F5B8E10A6908F09019656BE0A97B30C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27A277A19A3EDD748ECFA17E87D8632E /* Pods-QiblaPlusTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-QiblaPlusTests/Pods-QiblaPlusTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-QiblaPlusTests/Pods-QiblaPlusTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27557B55862167915B30EF649CA8420F /* Build configuration list for PBXNativeTarget "Pods-QiblaPlusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34C4A29308E156856BCE997DA752B48D /* Debug */,
+				D56EB78C49DCC551B85923CD4120E22F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4079B94018BB1D6A9C405CE93BEDE34C /* Build configuration list for PBXNativeTarget "Pods-QiblaPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71F4D23FDDA351A715D01A01DDE3F5AA /* Debug */,
+				97D55EE8F0B340BF0451C9A6EB6CF704 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				916E0404255105F480DC4950B7625F7A /* Debug */,
+				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7DA5E4F111978C56348423AC300E1DE5 /* Build configuration list for PBXNativeTarget "Pods-QiblaPlusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACC55CDF504C196C7207325B4009AD9F /* Debug */,
+				F5B8E10A6908F09019656BE0A97B30C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99A19CAE5BD75E33445174D268501EC6 /* Build configuration list for PBXNativeTarget "SwiftGifOrigin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B7484ACE84F33E56B26B953971AD760 /* Debug */,
+				60CB5AEE82B3564FB1DE86FABEEAD045 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B38D7C16F5C838BB40C30518C3A23842 /* Build configuration list for PBXNativeTarget "LGButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33A9946B5E188F830718A2F094FF7F03 /* Debug */,
+				03DD25370C049B07D04D812EE0634B4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

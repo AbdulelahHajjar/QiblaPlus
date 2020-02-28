@@ -24,6 +24,7 @@
 		EB9B5545232D2F0B001B2E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9B5543232D2F0B001B2E8C /* LaunchScreen.storyboard */; };
 		EB9B5550232D2F0B001B2E8C /* QiblaPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B554F232D2F0B001B2E8C /* QiblaPlusTests.swift */; };
 		EB9B555B232D2F0B001B2E8C /* QiblaPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B555A232D2F0B001B2E8C /* QiblaPlusUITests.swift */; };
+		EBA566CA240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBA566C9240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf */; };
 		EBAF197A232FE6B60021AD79 /* Dubai-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBAF1979232FE6B60021AD79 /* Dubai-Light.ttf */; };
 		EBC4217123F0AE32001505D4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EBC4217023F0AE32001505D4 /* README.md */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		EB9B5556232D2F0B001B2E8C /* QiblaPlusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QiblaPlusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9B555A232D2F0B001B2E8C /* QiblaPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaPlusUITests.swift; sourceTree = "<group>"; };
 		EB9B555C232D2F0B001B2E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBA566C9240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		EBAF1979232FE6B60021AD79 /* Dubai-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dubai-Light.ttf"; sourceTree = "<group>"; };
 		EBC4217023F0AE32001505D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F132CBF9E1B731CAB36E1E22 /* Pods-QiblaPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiblaPlus.debug.xcconfig"; path = "Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */,
 				EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */,
+				EBA566C9240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf */,
 				EBAF1979232FE6B60021AD79 /* Dubai-Light.ttf */,
 				EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */,
 				EB9B553C232D2F0A001B2E8C /* ViewController.swift */,
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB44ACCF232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */,
+				EBA566CA240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				EBAF197A232FE6B60021AD79 /* Dubai-Light.ttf in Resources */,
 				EB44ACD2232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */,
 				EBC4217123F0AE32001505D4 /* README.md in Resources */,
