@@ -337,13 +337,13 @@ Cg
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
-                                <rect key="frame" x="284.66666666666669" y="54.000000000000007" width="70.333333333333314" height="29.333333333333336"/>
+                                <rect key="frame" x="284.33333333333331" y="54.000000000000007" width="70.666666666666686" height="29.333333333333336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="6TM-qL-dvi" secondAttribute="height" multiplier="60:25" id="9Fv-9Y-eRk"/>
+                                    <constraint firstAttribute="width" secondItem="6TM-qL-dvi" secondAttribute="height" multiplier="70:29" id="M85-8Y-hDN"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="gradientRotation">

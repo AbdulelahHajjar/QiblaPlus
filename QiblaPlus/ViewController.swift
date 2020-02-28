@@ -313,7 +313,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func setBackground() {
         let gradient = CAGradientLayer()
         gradient.frame = backgroundView.bounds
-        gradient.colors = [UIColor(red:0.34, green:0.49, blue:0.71, alpha:1.0).cgColor, UIColor(red:0.18, green:0.25, blue:0.36, alpha:1.0).cgColor]
+        gradient.colors = [UIColor(red: 0.29, green: 0.48, blue: 0.63, alpha: 1.00).cgColor, UIColor(red: 0.15, green: 0.23, blue: 0.30, alpha: 1.00).cgColor]
+        
+        //[UIColor colorWithRed:0.15 green:0.23 blue:0.30 alpha:1.00]
         gradient.endPoint = CGPoint.init(x: 0, y: 1)
         gradient.startPoint = CGPoint.init(x: 1  , y: 0)
         backgroundView.layer.insertSublayer(gradient, at: 0)
