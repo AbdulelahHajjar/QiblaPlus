@@ -77,7 +77,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: Language-related methods
     
     @IBAction func langBtn(_ sender: LGButton) {
-             if sender.titleString == "عربي" {
+             if sender.titleString == "عــربــي" {
             currentLangauge = "ar"
             sender.titleString = "English"
             
@@ -93,7 +93,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         else {
             currentLangauge = "en"
-            sender.titleString = "عربي"
+            sender.titleString = "عــربــي"
             UIView.animate(withDuration: 0.250) {
                 self.arTips.alpha = 0
             }
