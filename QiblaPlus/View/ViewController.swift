@@ -105,7 +105,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         defaults.set(lang, forKey: "Language")
     }
     
-    func findDeviceLanguage() -> String {
+    func getDeviceLanguage() -> String {
         let prefLangArray = Locale.preferredLanguages.first!
         if prefLangArray.contains("ar") {
             return "ar"
@@ -120,7 +120,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             setLanguage(lang: savedLanguage)
         }
         else {
-            findDeviceLanguage()
+            getDeviceLanguage()
         }
     }
     
@@ -142,7 +142,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             setLanguage(lang: savedLanguage)
         }
         else {
-            findDeviceLanguage()
+            getDeviceLanguage()
         }
         findQibla()
     }
