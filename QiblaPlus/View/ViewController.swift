@@ -19,7 +19,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
-    
     let logicController = LogicController()
     let locationManager = CLLocationManager()
     let constants = Constants()
@@ -30,7 +29,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var animationDone: Bool = true          //No animation on first launch.
     var firstLaunch: Bool = true            //On first launch, this is true.
-    var lastTimeCalibDisplayShown = Date()  //Assign the current time of the device.
     var devicePassed40Mins: Bool = false    //On first launch, device did not pass 40 mins.
     
     
@@ -103,7 +101,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.tipsLabel.alpha = 0
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-            self.tipsLabel.attributedText = self.constants.tips[lang]
+            self.tipsLabel.attributedText = self.logicController.getTips(lang: lang)
             UIView.animate(withDuration: 0.250) {
                 self.tipsLabel.alpha = 1.0
             }
@@ -220,7 +218,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
         
-        lastTimeCalibDisplayShown = Date()  //Update last time calib display shown
+        logicController.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
         
         needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge.uppercased() + ".png")
         calibrationProgressBar.setProgress(0, animated: false)
@@ -283,7 +281,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         gradient.frame = backgroundView.bounds
         gradient.colors = [UIColor(red: 0.29, green: 0.48, blue: 0.63, alpha: 1.00).cgColor, UIColor(red: 0.15, green: 0.23, blue: 0.30, alpha: 1.00).cgColor]
         
-        //[UIColor colorWithRed:0.15 green:0.23 blue:0.30 alpha:1.00]
         gradient.endPoint = CGPoint.init(x: 0, y: 1)
         gradient.startPoint = CGPoint.init(x: 1  , y: 0)
         backgroundView.layer.insertSublayer(gradient, at: 0)

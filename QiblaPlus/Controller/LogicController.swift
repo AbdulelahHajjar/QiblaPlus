@@ -11,7 +11,6 @@ import CoreLocation
 
 class LogicController {
     let constants = Constants()
-    var lastCalibrated = Date()
     var enError = ""
     var arError = ""
     
@@ -39,15 +38,15 @@ class LogicController {
     }
     
     func getTips(lang: String) -> NSAttributedString {
-        return constants.tips[lang]
+        return constants.tips[lang]!
     }
     
     func setLastCalibrated(calibrationDate: Date) {
-        lastCalibrated = calibrationDate
+        constants.lastCalibrated = calibrationDate
     }
     
     func mustCalibrate() -> Bool {
-        if let diff = Calendar.current.dateComponents([.minute], from: lastCalibrated, to: Date()).minute, diff > 40 {
+        if let diff = Calendar.current.dateComponents([.minute], from: constants.lastCalibrated, to: Date()).minute, diff > 40 {
             return true
         }
         else {
