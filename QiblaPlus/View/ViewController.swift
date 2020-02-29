@@ -76,37 +76,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Language-related methods
     
-    @IBAction func langBtn(_ sender: LGButton) {
-        
-        if sender.titleString == "عــربــي" {
-            currentLangauge = "ar"
-            sender.titleString = "English"
-            UIView.animate(withDuration: 0.250) {
-                self.tipsLabel.alpha = 0
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-                self.tipsLabel.attributedText = self.model.tips["ar"]
-                UIView.animate(withDuration: 0.250) {
-                    self.tipsLabel.alpha = 1.0
-                }
-            }
-            defaults.set("ar", forKey: "Language")
+    
+    
+    @IBOutlet weak var langBtnOutlet: LGButton!
+    @IBAction func changeLanguageBtn() {
+        if currentLangauge == "en" {
+            setLanguage(lang: "ar")
         }
         else {
-            currentLangauge = "en"
-            sender.titleString = "عــربــي"
-            UIView.animate(withDuration: 0.250) {
-                self.tipsLabel.alpha = 0
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-                self.tipsLabel.attributedText = self.model.tips["en"]
-                UIView.animate(withDuration: 0.250) {
-                    self.tipsLabel.alpha = 1.0
-                }
-            }
-            defaults.set("en", forKey: "Language")
+            setLanguage(lang: "en")
         }
         findQibla()
+    }
+    
+    func setLanguage(lang: String) {
+        currentLangauge = lang
+        langBtnOutlet.titleString = "English"
+        UIView.animate(withDuration: 0.250) {
+            self.tipsLabel.alpha = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
+            self.tipsLabel.attributedText = self.model.tips[lang]
+            UIView.animate(withDuration: 0.250) {
+                self.tipsLabel.alpha = 1.0
+            }
+        }
+        defaults.set(lang, forKey: "Language")
     }
     
     func findDeviceLanguage() {
@@ -128,9 +123,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func setLanguage(lang: String) {
-        
-    }
+
     
     //MARK: Misc. methods
     func setObservers() {
