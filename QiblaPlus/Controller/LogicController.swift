@@ -38,6 +38,10 @@ class LogicController {
         }
     }
     
+    func getTips(lang: String) -> NSAttributedString {
+        return constants.tips[lang]
+    }
+    
     func setLastCalibrated(calibrationDate: Date) {
         lastCalibrated = calibrationDate
     }
