@@ -15,6 +15,28 @@ class LogicController {
     var enError = ""
     var arError = ""
     
+    func setPrefLanguage(_ lang: String) {
+        constants.defaults.set(lang, forKey: "Language")
+    }
+    
+    func getPrefLanguage() -> String? {
+        if let savedLanguage: String = constants.defaults.object(forKey: "Language") as? String {
+            return savedLanguage
+        }
+        else {
+            return nil
+        }
+    }
+    
+    func getDeviceLanguage() -> String {
+        let prefLangArray = Locale.preferredLanguages.first!
+        if prefLangArray.contains("ar") {
+            return "ar"
+        }
+        else {
+            return "en"
+        }
+    }
     
     func setLastCalibrated(calibrationDate: Date) {
         lastCalibrated = calibrationDate

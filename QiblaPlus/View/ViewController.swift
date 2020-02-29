@@ -24,7 +24,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     let constants = Constants()
     
-    let defaults = UserDefaults.standard
     var bearing : Double = 0
     var locationArray = [CLLocation]()
     var currentLangauge = ""
@@ -39,7 +38,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         setBackground()
         hideAllComponents()
-        setAppLanguage()
+        
+        if(logicController.getPrefLanguage() == nil) {
+            setLanguage(lang: logicController.getDeviceLanguage())
+        }
+        else {
+            setLanguage(lang: logicController.getPrefLanguage()!)
+        }
+        
         setObservers()
         setLocationSettings()
         findQibla()
@@ -102,26 +108,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.tipsLabel.alpha = 1.0
             }
         }
-        defaults.set(lang, forKey: "Language")
-    }
-    
-    func getDeviceLanguage() -> String {
-        let prefLangArray = Locale.preferredLanguages.first!
-        if prefLangArray.contains("ar") {
-            return "ar"
-        }
-        else {
-            return "en"
-        }
-    }
-    
-    func setAppLanguage() {
-        if let savedLanguage: String = defaults.object(forKey: "Language") as? String {
-            setLanguage(lang: savedLanguage)
-        }
-        else {
-            getDeviceLanguage()
-        }
+        logicController.setPrefLanguage(lang)
     }
     
     //MARK: Misc. methods
@@ -138,11 +125,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @objc func appCameToForeground() {
-        if let savedLanguage: String = defaults.object(forKey: "Language") as? String {
-            setLanguage(lang: savedLanguage)
+        if(logicController.getPrefLanguage() == nil) {
+            setLanguage(lang: logicController.getDeviceLanguage())
         }
         else {
-            getDeviceLanguage()
+            setLanguage(lang: logicController.getPrefLanguage()!)
         }
         findQibla()
     }
