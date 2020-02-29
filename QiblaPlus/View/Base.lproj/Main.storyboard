@@ -21,84 +21,120 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="B2X-eH-2zf" userLabel="enTips">
-                                <rect key="frame" x="20" y="652" width="335" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2X-eH-2zf" userLabel="enTips">
+                                <rect key="frame" x="20" y="676" width="335" height="96"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Tips for better qibla accuracy:
 </string>
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Light"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="♾">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="AppleColorEmoji"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="AppleColorEmoji"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="29.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="29.649999618530273">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="29.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="29.649999618530273">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content"> Calibrate compass by moving iPhone in an 8-figure
+                                        <string key="content">Calibrate compass by moving iPhone in an 8-figure
 </string>
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="29.649999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="29.649999618530273">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                     <fragment content="🧲">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="AppleColorEmoji"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="AppleColorEmoji"/>
                                             <font key="NSOriginalFont" size="12" name="AppleColorEmoji"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="  ">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <font key="NSOriginalFont" size="12" name="SFProDisplay-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Move away">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <font key="NSOriginalFont" size="12" name="SFProDisplay-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="from e">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="lectronic ">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <font key="NSOriginalFont" size="12" name="SFProDisplay-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="d">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -106,164 +142,103 @@
                                         <string key="content">evices
 </string>
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <font key="NSOriginalFont" size="12" name="SFProDisplay-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="📱">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="AppleColorEmoji"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="AppleColorEmoji"/>
                                             <font key="NSOriginalFont" size="12" name="AppleColorEmoji"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="Lay ">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <font key="NSOriginalFont" size="12" name="SFProDisplay-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="y">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="our ">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <font key="NSOriginalFont" size="12" name="SFProDisplay-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="p">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="hone ">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <font key="NSOriginalFont" size="12" name="SFProDisplay-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="f">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="lat">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <font key="NSOriginalFont" size="12" name="SFProDisplay-Thin"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="21" name="SFProDisplay-Thin"/>
+                                            <color key="NSBackgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="15" name="SFProDisplay-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="none" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="W9u-Lf-3pC" userLabel="arTips">
-                                <rect key="frame" x="20" y="652" width="335" height="120"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">نصائح لقبلة أدق:
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="Dubai-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="♾">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="AppleColorEmoji"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content"> عاير البوصلة بتدوير الجهاز على شكل 8
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="Dubai-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="🧲">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="AppleColorEmoji"/>
-                                            <font key="NSOriginalFont" size="12" name="AppleColorEmoji"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" ابتعد عن الأجهزة الإلكترونية">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="Dubai-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="Dubai-Light"/>
-                                            <font key="NSOriginalFont" size="12" name="SFProDisplay-Thin"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="📱">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="AppleColorEmoji"/>
-                                            <font key="NSOriginalFont" size="12" name="AppleColorEmoji"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" ضع هاتفك بشكل مسطح">
-                                        <attributes>
-                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="16" name="Dubai-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="truncatingTail" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OqI-Zi-cR6" userLabel="CompassView">
-                                <rect key="frame" x="60" y="387" width="255" height="255"/>
+                                <rect key="frame" x="60" y="411" width="255" height="255"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeedleBase" translatesAutoresizingMaskIntoConstraints="NO" id="sEP-MQ-m7g">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
@@ -337,7 +312,7 @@ Cg
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
-                                <rect key="frame" x="284.33333333333331" y="54.000000000000007" width="70.666666666666686" height="29.333333333333336"/>
+                                <rect key="frame" x="288.33333333333331" y="60.000000000000007" width="70.666666666666686" height="29.333333333333336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
@@ -392,31 +367,26 @@ Cg
                         </subviews>
                         <color key="backgroundColor" red="0.25882352941176467" green="0.37254901960784315" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="W9u-Lf-3pC" firstAttribute="top" secondItem="OqI-Zi-cR6" secondAttribute="bottom" constant="10" id="3GZ-12-Nuh"/>
                             <constraint firstItem="Rbi-li-CLC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Clu-fj-Ggq"/>
                             <constraint firstAttribute="bottom" secondItem="B2X-eH-2zf" secondAttribute="bottom" constant="40" id="HoF-NH-Q6G"/>
-                            <constraint firstItem="W9u-Lf-3pC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="LWX-IQ-79p"/>
-                            <constraint firstAttribute="trailing" secondItem="W9u-Lf-3pC" secondAttribute="trailing" constant="20" id="NAZ-qk-JhY"/>
                             <constraint firstItem="Rbi-li-CLC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Njg-Jc-f5i"/>
                             <constraint firstItem="B2X-eH-2zf" firstAttribute="top" secondItem="OqI-Zi-cR6" secondAttribute="bottom" constant="10" id="Oa1-oX-9dO"/>
                             <constraint firstItem="OqI-Zi-cR6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Rbi-li-CLC" secondAttribute="bottom" constant="20" id="Tia-LG-Vic"/>
-                            <constraint firstAttribute="bottom" secondItem="W9u-Lf-3pC" secondAttribute="bottom" constant="40" id="WxH-2p-LNN"/>
                             <constraint firstAttribute="trailing" secondItem="B2X-eH-2zf" secondAttribute="trailing" constant="20" id="atH-4f-Y1M"/>
                             <constraint firstAttribute="trailing" secondItem="OqI-Zi-cR6" secondAttribute="trailing" constant="60" id="dhF-QY-D07"/>
                             <constraint firstItem="OqI-Zi-cR6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="eaz-An-9P7"/>
-                            <constraint firstItem="6TM-qL-dvi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="gqq-7Y-cks"/>
+                            <constraint firstItem="6TM-qL-dvi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="gqq-7Y-cks"/>
                             <constraint firstItem="B2X-eH-2zf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="h7p-Ru-oWT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6TM-qL-dvi" secondAttribute="trailing" constant="20" id="twJ-6C-msN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6TM-qL-dvi" secondAttribute="trailing" constant="16" id="twJ-6C-msN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="arTips" destination="W9u-Lf-3pC" id="xid-yP-sjE"/>
                         <outlet property="backgroundView" destination="8bC-Xf-vdC" id="rgV-SJ-vvc"/>
                         <outlet property="calibrationProgressBar" destination="7sh-5O-MZu" id="7gs-Vd-ghP"/>
                         <outlet property="correctNeedle" destination="G9Q-pV-5Rj" id="uJA-w8-LMw"/>
-                        <outlet property="enTips" destination="B2X-eH-2zf" id="qc9-Oy-Def"/>
                         <outlet property="needleImage" destination="X23-WY-u5b" id="wbE-vR-OAn"/>
+                        <outlet property="tipsLabel" destination="B2X-eH-2zf" id="fl7-1W-iIx"/>
                         <outlet property="warningLabel" destination="Djo-gi-I6J" id="sFZ-8L-Yky"/>
                     </connections>
                 </viewController>

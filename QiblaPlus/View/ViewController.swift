@@ -14,12 +14,12 @@ import LGButton
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var backgroundView: UIView!
+    @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var needleImage: UIImageView!
     @IBOutlet weak var correctNeedle: UIImageView!
     @IBOutlet weak var warningLabel: UILabel!
-    @IBOutlet weak var enTips: UILabel!
-    @IBOutlet weak var arTips: UILabel!
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
+    let model = QiblaModel()
     
     let logicController = LogicController()
     let locationManager = CLLocationManager()
@@ -82,11 +82,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             sender.titleString = "English"
             
             UIView.animate(withDuration: 0.250) {
-                self.enTips.alpha = 0
+                //CTE
+                
+                self.tipsLabel.attributedText = self.model.tips["en"]
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
                 UIView.animate(withDuration: 0.250) {
-                    self.arTips.alpha = 1
+                    //CTA
+                self.tipsLabel.attributedText = self.model.tips["ar"]
                 }
             }
             defaults.set("ar", forKey: "Language")
@@ -95,11 +98,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             currentLangauge = "en"
             sender.titleString = "عــربــي"
             UIView.animate(withDuration: 0.250) {
-                self.arTips.alpha = 0
+                //CTA
+                self.tipsLabel.attributedText = self.model.tips["ar"]
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
                 UIView.animate(withDuration: 0.250) {
-                    self.enTips.alpha = 1
+                    //CTE
+                    self.tipsLabel.attributedText = self.model.tips["en"]
+
                 }
             }
             defaults.set("en", forKey: "Language")
