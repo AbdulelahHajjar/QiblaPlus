@@ -77,19 +77,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: Language-related methods
     
     @IBAction func langBtn(_ sender: LGButton) {
-             if sender.titleString == "عــربــي" {
+        
+        if sender.titleString == "عــربــي" {
             currentLangauge = "ar"
             sender.titleString = "English"
-            
-            UIView.animate(withDuration: 0) {
-                //CTE
-                
-                self.tipsLabel.attributedText = self.model.tips["en"]
+            UIView.animate(withDuration: 0.250) {
+                self.tipsLabel.alpha = 0
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-                UIView.animate(withDuration: 0) {
-                    //CTA
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
                 self.tipsLabel.attributedText = self.model.tips["ar"]
+                UIView.animate(withDuration: 0.250) {
+                    self.tipsLabel.alpha = 1.0
                 }
             }
             defaults.set("ar", forKey: "Language")
@@ -97,15 +95,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         else {
             currentLangauge = "en"
             sender.titleString = "عــربــي"
-            UIView.animate(withDuration: 0) {
-                //CTA
-                self.tipsLabel.attributedText = self.model.tips["ar"]
+            UIView.animate(withDuration: 0.250) {
+                self.tipsLabel.alpha = 0
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-                UIView.animate(withDuration: 0) {
-                    //CTE
-                    self.tipsLabel.attributedText = self.model.tips["en"]
-
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
+                self.tipsLabel.attributedText = self.model.tips["en"]
+                UIView.animate(withDuration: 0.250) {
+                    self.tipsLabel.alpha = 1.0
                 }
             }
             defaults.set("en", forKey: "Language")
