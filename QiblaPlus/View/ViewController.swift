@@ -30,18 +30,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var animationIsPlaying: Bool = false    //No animation on first launch.
     var firstLaunch: Bool = true            //On first launch, this is true.
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        super.loadView()
         setBackground()
         hideAllComponents()
-        
         if(logicController.getPrefLanguage() == nil) {
             setLanguage(lang: logicController.getDeviceLanguage())
         }
         else {
             setLanguage(lang: logicController.getPrefLanguage()!)
         }
-        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setObservers()
         setLocationSettings()
         findQibla()
@@ -70,9 +71,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //MARK: Language-related methods
-    
-    
-    
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
         if currentLangauge == "en" {
@@ -167,21 +165,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         else {
             if !animationIsPlaying {
                 showNeedle()
-                
                 heading *= Double.pi/180.0
                 let rotationAngle = self.bearing - heading + Double.pi * 2
                 
                 UIView.animate(withDuration: 0.200) {
                     self.needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
-                }
-                
-                if rotationAngle > -0.050 && rotationAngle < 0.050 {
-                    UIView.animate(withDuration: 0.250) {
-                    }
-                }
-                else {
-                    UIView.animate(withDuration: 0.250) {
-                    }
                 }
             }
         }
@@ -213,17 +201,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: UI-related methods
     func showCalibrationDisplay() {
         animationIsPlaying = true
-        
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
-        
         logicController.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
-        
         needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge.uppercased() + ".png")
         calibrationProgressBar.setProgress(0, animated: false)
-        
         needleImage.alpha = 1
         warningLabel.alpha = 0
-        
         UIView.animate(withDuration: 0.400, animations: {
             self.calibrationProgressBar.alpha = 1
             self.needleImage.alpha = 1
@@ -243,12 +226,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                                 UIView.animate(withDuration: 0.400, animations: {
                                     self.needleImage.alpha = 1
                                 })
-                                self.animationIsPlaying = false
-                            })
-                        })
-                    })
-                })
-            })
+                                self.animationIsPlaying = false }) }) }) }) })
         }
     }
     
