@@ -105,13 +105,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         defaults.set(lang, forKey: "Language")
     }
     
-    func findDeviceLanguage() {
+    func findDeviceLanguage() -> String {
         let prefLangArray = Locale.preferredLanguages.first!
         if prefLangArray.contains("ar") {
-            setLanguage(lang: "ar")
+            return "ar"
         }
         else {
-            setLanguage(lang: "en")
+            return "en"
         }
     }
     
