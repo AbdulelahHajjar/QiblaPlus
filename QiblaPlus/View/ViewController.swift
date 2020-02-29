@@ -105,6 +105,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         else {
             setLanguage(lang: "en", buttonTitle: "English")
         }
+        findQibla()
     }
     
     func setLangSettings() {
