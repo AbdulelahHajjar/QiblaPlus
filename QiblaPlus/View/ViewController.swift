@@ -16,7 +16,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var needleImage: UIImageView!
-    @IBOutlet weak var correctNeedle: UIImageView!
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     let model = QiblaModel()
@@ -191,17 +190,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 
                 UIView.animate(withDuration: 0.200) {
                     self.needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
-                    self.correctNeedle.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
                 }
                 
                 if rotationAngle > -0.050 && rotationAngle < 0.050 {
                     UIView.animate(withDuration: 0.250) {
-                        self.correctNeedle.alpha = 1
                     }
                 }
                 else {
                     UIView.animate(withDuration: 0.250) {
-                        self.correctNeedle.alpha = 0
                     }
                 }
             }
@@ -236,22 +232,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         animationDone = false
         
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
-        correctNeedle.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
         
         lastTimeCalibDisplayShown = Date()  //Update last time calib display shown
         
         needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge.uppercased() + ".png")
-        correctNeedle.image = UIImage.gif(asset: "Calibration")
         calibrationProgressBar.setProgress(0, animated: false)
         
         needleImage.alpha = 1
-        correctNeedle.alpha = 1
         warningLabel.alpha = 0
         
         UIView.animate(withDuration: 0.400, animations: {
             self.calibrationProgressBar.alpha = 1
             self.needleImage.alpha = 1
-            self.correctNeedle.alpha = 1
         }) { (Bool) in
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.400, execute: {
                 UIView.animate(withDuration: 3, animations: {
@@ -261,12 +253,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                         
                         UIView.animate(withDuration: 0.400, animations: {
                             self.needleImage.alpha = 0
-                            self.correctNeedle.alpha = 0
                             self.calibrationProgressBar.alpha = 0
                         }, completion: { (Bool) in
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.400, execute: {
                                 self.needleImage.image = UIImage(named: "Needle.png")
-                                self.correctNeedle.image = UIImage(named: "CorrectQiblaNeedle.png")
                                 UIView.animate(withDuration: 0.400, animations: {
                                     self.needleImage.alpha = 1
                                 })
@@ -283,7 +273,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if animationDone { //Only show the warning if the calibration display is not being shown at the moment
             warningLabel.text = warningText
             needleImage.alpha = 0   //Hide the needle
-            correctNeedle.alpha = 0 //Hide the correct needle if available
             warningLabel.alpha = 1  //Show the warning
         }
     }
@@ -293,14 +282,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             needleImage.image = UIImage(named: "Needle.png")
             warningLabel.alpha = 0  //Hide the warning if any
             needleImage.alpha = 1   //Show needle
-            correctNeedle.alpha = 0 //Hide correct needle to be showed by other methods
         }
     }
     
     func hideAllComponents() {
         warningLabel.alpha = 0
         needleImage.alpha = 0
-        correctNeedle.alpha = 0
         calibrationProgressBar.alpha = 0
     }
     

@@ -246,9 +246,6 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="X23-WY-u5b">
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CorrectQiblaNeedle" translatesAutoresizingMaskIntoConstraints="NO" id="G9Q-pV-5Rj" userLabel="CorrectNeedle">
-                                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ErrorMessages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-gi-I6J" userLabel="ErrorLabel">
                                         <rect key="frame" x="40" y="0.0" width="175" height="255"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
@@ -260,11 +257,9 @@
                                     </progressView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="G9Q-pV-5Rj" firstAttribute="leading" secondItem="OqI-Zi-cR6" secondAttribute="leading" id="02Z-6X-h2e"/>
                                     <constraint firstAttribute="trailing" secondItem="X23-WY-u5b" secondAttribute="trailing" id="39T-NC-R0a"/>
                                     <constraint firstItem="X23-WY-u5b" firstAttribute="top" secondItem="OqI-Zi-cR6" secondAttribute="top" id="3cI-sO-tp2"/>
                                     <constraint firstItem="sEP-MQ-m7g" firstAttribute="top" secondItem="OqI-Zi-cR6" secondAttribute="top" id="CVf-e5-LWa"/>
-                                    <constraint firstAttribute="bottom" secondItem="G9Q-pV-5Rj" secondAttribute="bottom" id="D1n-Lx-7gv"/>
                                     <constraint firstAttribute="trailing" secondItem="sEP-MQ-m7g" secondAttribute="trailing" id="M8V-hU-HVD"/>
                                     <constraint firstAttribute="trailing" secondItem="Djo-gi-I6J" secondAttribute="trailing" constant="40" id="MOn-hF-HGC"/>
                                     <constraint firstAttribute="bottom" secondItem="Djo-gi-I6J" secondAttribute="bottom" id="P2q-WS-cKY"/>
@@ -273,10 +268,8 @@
                                     <constraint firstAttribute="bottom" secondItem="sEP-MQ-m7g" secondAttribute="bottom" id="c1k-uR-Nvj"/>
                                     <constraint firstItem="7sh-5O-MZu" firstAttribute="leading" secondItem="OqI-Zi-cR6" secondAttribute="leading" constant="72" id="e7A-lq-iTi"/>
                                     <constraint firstItem="Djo-gi-I6J" firstAttribute="leading" secondItem="OqI-Zi-cR6" secondAttribute="leading" constant="40" id="gtw-V6-DsT"/>
-                                    <constraint firstAttribute="trailing" secondItem="G9Q-pV-5Rj" secondAttribute="trailing" id="hmc-DO-7Nc"/>
                                     <constraint firstAttribute="trailing" secondItem="7sh-5O-MZu" secondAttribute="trailing" constant="72" id="j5C-de-JBe"/>
                                     <constraint firstAttribute="bottom" secondItem="X23-WY-u5b" secondAttribute="bottom" id="jal-Qm-1jp"/>
-                                    <constraint firstItem="G9Q-pV-5Rj" firstAttribute="top" secondItem="OqI-Zi-cR6" secondAttribute="top" id="pZl-Jh-Gpo"/>
                                     <constraint firstItem="sEP-MQ-m7g" firstAttribute="leading" secondItem="OqI-Zi-cR6" secondAttribute="leading" id="uQU-ln-2Na"/>
                                     <constraint firstAttribute="width" secondItem="OqI-Zi-cR6" secondAttribute="height" multiplier="1:1" id="vW1-o1-leP"/>
                                     <constraint firstItem="Djo-gi-I6J" firstAttribute="top" secondItem="OqI-Zi-cR6" secondAttribute="top" id="x8U-Qa-E1B"/>
@@ -384,7 +377,6 @@
                     <connections>
                         <outlet property="backgroundView" destination="8bC-Xf-vdC" id="rgV-SJ-vvc"/>
                         <outlet property="calibrationProgressBar" destination="7sh-5O-MZu" id="7gs-Vd-ghP"/>
-                        <outlet property="correctNeedle" destination="G9Q-pV-5Rj" id="uJA-w8-LMw"/>
                         <outlet property="langBtnOutlet" destination="6TM-qL-dvi" id="AHd-8c-aVz"/>
                         <outlet property="needleImage" destination="X23-WY-u5b" id="wbE-vR-OAn"/>
                         <outlet property="tipsLabel" destination="B2X-eH-2zf" id="fl7-1W-iIx"/>
@@ -397,7 +389,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CorrectQiblaNeedle" width="600" height="600"/>
         <image name="Needle" width="600" height="600"/>
         <image name="NeedleBase" width="600" height="600"/>
         <image name="logo" width="177" height="186.33332824707031"/>
