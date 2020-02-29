@@ -27,10 +27,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationArray = [CLLocation]()
     var currentLangauge = ""
     
-    var animationDone: Bool = true          //No animation on first launch.
+    var animationIsPlaying: Bool = false    //No animation on first launch.
     var firstLaunch: Bool = true            //On first launch, this is true.
-    var devicePassed40Mins: Bool = false    //On first launch, device did not pass 40 mins.
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +59,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
             
-            if (firstLaunch || logicController.mustCalibrate()) && animationDone {
+            if (firstLaunch || logicController.mustCalibrate()) && !animationIsPlaying {
                 firstLaunch = false
                 showCalibrationDisplay()
             }
@@ -167,7 +165,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
             
         else {
-            if animationDone {
+            if !animationIsPlaying {
                 showNeedle()
                 
                 heading *= Double.pi/180.0
@@ -214,7 +212,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: UI-related methods
     func showCalibrationDisplay() {
-        animationDone = false
+        animationIsPlaying = true
         
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
         
@@ -245,7 +243,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                                 UIView.animate(withDuration: 0.400, animations: {
                                     self.needleImage.alpha = 1
                                 })
-                                self.animationDone = true
+                                self.animationIsPlaying = false
                             })
                         })
                     })
@@ -255,7 +253,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func showWarning(warningText: String) {
-        if animationDone { //Only show the warning if the calibration display is not being shown at the moment
+        if !animationIsPlaying { //Only show the warning if the calibration display is not being shown at the moment
             warningLabel.text = warningText
             needleImage.alpha = 0   //Hide the needle
             warningLabel.alpha = 1  //Show the warning
@@ -263,7 +261,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func showNeedle() {
-        if animationDone { //Only show the needle if the calibration display is not being shown at the moment
+        if !animationIsPlaying { //Only show the needle if the calibration display is not being shown at the moment
             needleImage.image = UIImage(named: "Needle.png")
             warningLabel.alpha = 0  //Hide the warning if any
             needleImage.alpha = 1   //Show needle
