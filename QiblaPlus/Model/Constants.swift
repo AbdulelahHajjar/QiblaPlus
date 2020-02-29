@@ -9,12 +9,12 @@
 import UIKit
 
 
-class QiblaModel {
+class Constants {
     let tips: [String : NSAttributedString]
     
     
     init() {
-        tips = QiblaModel.initTipsLabel()
+        tips = Constants.initTipsLabel()
     }
     
     static func initTipsLabel() -> [String : NSAttributedString] {

@@ -18,10 +18,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var needleImage: UIImageView!
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
-    let model = QiblaModel()
+    
     
     let logicController = LogicController()
     let locationManager = CLLocationManager()
+    let constants = Constants()
+    
     let defaults = UserDefaults.standard
     let makkahLat = 0.3738927226761722      //21.4224750 deg
     let makkahLon = 0.6950985611585316      //39.8262139 deg
@@ -44,11 +46,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         setLocationSettings()
         findQibla()
         
-        //Method to check installation date of the application
-        let urlToDocumentsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-           //installDate is NSDate of install
-        let installDate = (try! FileManager.default.attributesOfItem(atPath: urlToDocumentsFolder.path)[FileAttributeKey.creationDate])
-        print("This app was installed by the user on \(String(describing: installDate))")
+//        //Method to check installation date of the application
+//        let urlToDocumentsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+//        //installDate is NSDate of install
+//        let installDate = (try! FileManager.default.attributesOfItem(atPath: urlToDocumentsFolder.path)[FileAttributeKey.creationDate])
+//        print("This app was installed by the user on \(String(describing: installDate))")
     }
     
     //MARK: Qibla finding methods (Core)
