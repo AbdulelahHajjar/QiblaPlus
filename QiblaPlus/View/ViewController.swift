@@ -81,13 +81,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             currentLangauge = "ar"
             sender.titleString = "English"
             
-            UIView.animate(withDuration: 0.250) {
+            UIView.animate(withDuration: 0) {
                 //CTE
                 
                 self.tipsLabel.attributedText = self.model.tips["en"]
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-                UIView.animate(withDuration: 0.250) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+                UIView.animate(withDuration: 0) {
                     //CTA
                 self.tipsLabel.attributedText = self.model.tips["ar"]
                 }
@@ -97,12 +97,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         else {
             currentLangauge = "en"
             sender.titleString = "عــربــي"
-            UIView.animate(withDuration: 0.250) {
+            UIView.animate(withDuration: 0) {
                 //CTA
                 self.tipsLabel.attributedText = self.model.tips["ar"]
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-                UIView.animate(withDuration: 0.250) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
+                UIView.animate(withDuration: 0) {
                     //CTE
                     self.tipsLabel.attributedText = self.model.tips["en"]
 
