@@ -25,8 +25,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let constants = Constants()
     
     let defaults = UserDefaults.standard
-    let makkahLat = 0.3738927226761722      //21.4224750 deg
-    let makkahLon = 0.6950985611585316      //39.8262139 deg
     var bearing : Double = 0
     var locationArray = [CLLocation]()
     var currentLangauge = ""
@@ -68,12 +66,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             showWarning(warningText: logicController.getErrorMessage(appLanguage: currentLangauge))
         }
     }
-
-    func getBearing(newLat: Double, newLon: Double) -> Double {
-        let x = cos(makkahLat) * sin(makkahLon - newLon)
-        let y = cos(newLat) * sin(makkahLat) - sin(newLat) * cos(makkahLat) * cos(makkahLon - newLon)
-        return atan2(x, y)
-    }
     
     //MARK: Language-related methods
     
@@ -82,22 +74,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
         if currentLangauge == "en" {
-            setLanguage(lang: "ar")
+            setLanguage(lang: "ar", "عـــربـــي")
         }
         else {
-            setLanguage(lang: "en")
+            setLanguage(lang: "en", "English")
         }
         findQibla()
     }
     
-    func setLanguage(lang: String) {
+    func setLanguage(lang: String, buttonTitle: String) {
         currentLangauge = lang
-        langBtnOutlet.titleString = "English"
+        langBtnOutlet.titleString = buttonTitle
         UIView.animate(withDuration: 0.250) {
             self.tipsLabel.alpha = 0
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-            self.tipsLabel.attributedText = self.model.tips[lang]
+            self.tipsLabel.attributedText = self.constants.tips[lang]
             UIView.animate(withDuration: 0.250) {
                 self.tipsLabel.alpha = 1.0
             }
@@ -108,10 +100,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func findDeviceLanguage() {
         let prefLangArray = Locale.preferredLanguages.first!
         if prefLangArray.contains("ar") {
-            setLanguage(lang: "ar")
+            setLanguage(lang: "ar", "عـــربـــي")
         }
         else {
-            setLanguage(lang: "en")
+            setLanguage(lang: "en", "English")
         }
     }
     
@@ -123,8 +115,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             findDeviceLanguage()
         }
     }
-    
-
     
     //MARK: Misc. methods
     func setObservers() {
@@ -157,7 +147,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if (lastLocation.horizontalAccuracy > 0) {
             let lat = lastLocation.coordinate.latitude * Double.pi / 180.0
             let lon = lastLocation.coordinate.longitude * Double.pi / 180.0
-            bearing = getBearing(newLat: lat, newLon: lon)
+            bearing = logicController.getBearing(newLat: lat, newLon: lon)
         }
         else {
             if currentLangauge == "en" {

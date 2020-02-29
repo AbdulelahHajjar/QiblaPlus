@@ -10,9 +10,11 @@ import Foundation
 import CoreLocation
 
 class LogicController {
+    let constants = Constants()
     var lastCalibrated = Date()
     var enError = ""
     var arError = ""
+    
     
     func setLastCalibrated(calibrationDate: Date) {
         lastCalibrated = calibrationDate
@@ -25,6 +27,12 @@ class LogicController {
         else {
             return false
         }
+    }
+    
+    func getBearing(newLat: Double, newLon: Double) -> Double {
+        let x = cos(constants.makkahLat) * sin(constants.makkahLon - newLon)
+        let y = cos(newLat) * sin(constants.makkahLat) - sin(newLat) * cos(constants.makkahLat) * cos(constants.makkahLon - newLon)
+        return atan2(x, y)
     }
     
     func canFindQibla() -> Bool {
