@@ -74,10 +74,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
         if currentLangauge == "en" {
-            setLanguage(lang: "ar", "عـــربـــي")
+            setLanguage(lang: "ar", buttonTitle: "عـــربـــي")
         }
         else {
-            setLanguage(lang: "en", "English")
+            setLanguage(lang: "en", buttonTitle: "English")
         }
         findQibla()
     }
@@ -100,10 +100,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func findDeviceLanguage() {
         let prefLangArray = Locale.preferredLanguages.first!
         if prefLangArray.contains("ar") {
-            setLanguage(lang: "ar", "عـــربـــي")
+            setLanguage(lang: "ar", buttonTitle: "عـــربـــي")
         }
         else {
-            setLanguage(lang: "en", "English")
+            setLanguage(lang: "en", buttonTitle: "English")
         }
     }
     
