@@ -39,7 +39,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         setBackground()
         hideAllComponents()
-        setLangSettings()
+        setAppLanguage()
         setObservers()
         setLocationSettings()
         findQibla()
@@ -115,7 +115,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func setLangSettings() {
+    func setAppLanguage() {
         if let savedLanguage: String = defaults.object(forKey: "Language") as? String {
             setLanguage(lang: savedLanguage)
         }
