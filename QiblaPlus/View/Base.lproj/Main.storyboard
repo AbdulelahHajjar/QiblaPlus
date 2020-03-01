@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2X-eH-2zf" userLabel="enTips">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2X-eH-2zf" userLabel="tips">
                                 <rect key="frame" x="20" y="676" width="335" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="B2X-eH-2zf" secondAttribute="height" multiplier="335:96" id="00N-cH-9cG"/>
