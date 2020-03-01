@@ -86,10 +86,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         currentLangauge = lang
         
         if(lang == "en") {
-            langBtnOutlet.titleString = "English"
+            langBtnOutlet.titleString = "عــربــي"
         }
         else {
-            langBtnOutlet.titleString = "عــربــي"
+            langBtnOutlet.titleString = "English"
 
         }
         

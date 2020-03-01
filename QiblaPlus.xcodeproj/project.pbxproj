@@ -138,6 +138,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		EB4644AB240B33CC002992C6 /* Addons */ = {
+			isa = PBXGroup;
+			children = (
+				EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */,
+				EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */,
+				EBA566C9240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf */,
+				EBAF1979232FE6B60021AD79 /* Dubai-Light.ttf */,
+			);
+			path = Addons;
+			sourceTree = "<group>";
+		};
 		EB5D33AE2409E66200C51112 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,14 +192,11 @@
 		EB9B5539232D2F0A001B2E8C /* QiblaPlus */ = {
 			isa = PBXGroup;
 			children = (
-				EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */,
-				EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */,
-				EBA566C9240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf */,
-				EBAF1979232FE6B60021AD79 /* Dubai-Light.ttf */,
 				EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */,
 				EB5D33B12409E79A00C51112 /* Model */,
 				EB5D33AE2409E66200C51112 /* View */,
 				EB0EB2DD240A7B0A00BD37FC /* Controller */,
+				EB4644AB240B33CC002992C6 /* Addons */,
 				EB9B5541232D2F0B001B2E8C /* Assets.xcassets */,
 				EB9B5543232D2F0B001B2E8C /* LaunchScreen.storyboard */,
 				EB9B5546232D2F0B001B2E8C /* Info.plist */,
