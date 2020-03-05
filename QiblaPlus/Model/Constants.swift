@@ -48,7 +48,7 @@ class Constants {
     }
     
     
-    func getBearing(newLat: Double, newLon: Double) -> Double {
+    static func getBearing(newLat: Double, newLon: Double) -> Double {
         let x = cos(makkahLat) * sin(makkahLon - newLon)
         let y = cos(newLat) * sin(makkahLat) - sin(newLat) * cos(makkahLat) * cos(makkahLon - newLon)
         return atan2(x, y)

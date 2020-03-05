@@ -22,7 +22,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         if (lastLocation.horizontalAccuracy > 0) {
             let lat = lastLocation.coordinate.latitude * Double.pi / 180.0
             let lon = lastLocation.coordinate.longitude * Double.pi / 180.0
-            bearingAngle = logicController.getBearing(newLat: lat, newLon: lon)
+            bearingAngle = Constants.getBearing(newLat: lat, newLon: lon)
         }
         else {
             if currentLangauge == "en" {
