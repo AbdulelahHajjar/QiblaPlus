@@ -130,23 +130,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     //MARK: Location delegate methods
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationArray = locations
-        let lastLocation = locationArray.last!
-        if (lastLocation.horizontalAccuracy > 0) {
-            let lat = lastLocation.coordinate.latitude * Double.pi / 180.0
-            let lon = lastLocation.coordinate.longitude * Double.pi / 180.0
-            bearing = logicController.getBearing(newLat: lat, newLon: lon)
-        }
-        else {
-            if currentLangauge == "en" {
-                showWarning(warningText: "⚠\nUnable to find device's location.")
-            }
-            else {
-                showWarning(warningText: "⚠\nتعذر الحصول على معلومات الموقع الحالي.")
-            }
-        }
-    }
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         locationManager.startUpdatingLocation()
