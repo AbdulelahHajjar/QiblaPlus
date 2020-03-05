@@ -11,11 +11,12 @@ import CoreLocation
 
 protocol QiblaDirectionProtocol {
     func didSuccessfullyFindHeading(heading: Double)
-    func didFindError(error: String)
+    func didFindError(error: [String : String])
 }
 
 class LocationController: NSObject, CLLocationManagerDelegate {
     var bearingAngle: Double?
+    var qiblaDirectionDelegate: QiblaDirectionProtocol?
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last!
@@ -25,14 +26,8 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             bearingAngle = Constants.getBearing(newLat: lat, newLon: lon)
         }
         else {
-            if currentLangauge == "en" {
-                showWarning(warningText: "⚠\nUnable to find device's location.")
-            }
-            else {
-                showWarning(warningText: "⚠\nتعذر الحصول على معلومات الموقع الحالي.")
-            }
+            let errorD = ["en" : "⚠\nUnable to find device's location.", "ar" : "⚠\nتعذر الحصول على معلومات الموقع الحالي."]
+            qiblaDirectionDelegate?.didFindError(error: errorD)
         }
     }
-    
-    
 }
