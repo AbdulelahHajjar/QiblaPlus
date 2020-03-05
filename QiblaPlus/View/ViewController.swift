@@ -129,8 +129,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @objc func appMovedToBackground() {
-        locationManager.stopUpdatingHeading()
-        locationManager.stopUpdatingLocation()
+        locationController.locationManager.stopUpdatingHeading()
+        locationController.locationManager.stopUpdatingLocation()
     }
     
     @objc func appCameToForeground() {
@@ -146,9 +146,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Location delegate methods
     
-    func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
-        showWarning(warningText: "Loading...")
-    }
+
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         findQibla()
