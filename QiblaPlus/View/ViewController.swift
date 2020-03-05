@@ -20,6 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
     let logicController = LogicController()
+    let locationController = LocationController()
     let locationManager = CLLocationManager()
     let constants = Constants()
     
@@ -128,7 +129,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @objc func appMovedToBackground() {
-        locationArray.removeAll()
         locationManager.stopUpdatingHeading()
         locationManager.stopUpdatingLocation()
     }
