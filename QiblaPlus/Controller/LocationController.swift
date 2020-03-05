@@ -15,6 +15,7 @@ protocol QiblaDirectionProtocol {
 }
 
 class LocationController: NSObject, CLLocationManagerDelegate {
+    
     var bearingAngle: Double?
     var locationManager = CLLocationManager()
     var qiblaDirectionDelegate: QiblaDirectionProtocol?

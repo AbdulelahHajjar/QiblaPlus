@@ -121,39 +121,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //MARK: Misc. methods
-    func setObservers() {
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-    }
     
-    @objc func appMovedToBackground() {
-        locationArray.removeAll()
-        locationManager.stopUpdatingHeading()
-        locationManager.stopUpdatingLocation()
-    }
-    
-    @objc func appCameToForeground() {
-        if(logicController.getPrefLanguage() == nil) {
-            setLanguage(lang: logicController.getDeviceLanguage())
-        }
-        else {
-            setLanguage(lang: logicController.getPrefLanguage()!)
-        }
-        findQibla()
-    }
     
     
     //MARK: Location delegate methods
-
-    
-    
-    
-    func setLocationSettings() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.requestWhenInUseAuthorization()
-    }
     
     func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
         showWarning(warningText: "Loading...")
