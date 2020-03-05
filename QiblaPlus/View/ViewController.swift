@@ -132,32 +132,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: Location delegate methods
 
     
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        locationManager.startUpdatingLocation()
-        
-        var heading = newHeading.trueHeading
-        
-        if heading == -1.0 {
-            if currentLangauge == "en" {
-                showWarning(warningText: "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.")
-            }
-            else {
-                showWarning(warningText: "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.")
-            }
-        }
-            
-        else {
-            if !animationIsPlaying {
-                showNeedle()
-                heading *= Double.pi/180.0
-                let rotationAngle = self.bearing - heading + Double.pi * 2
-                
-                UIView.animate(withDuration: 0.200) {
-                    self.needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
-                }
-            }
-        }
-    }
+    
     
     func setLocationSettings() {
         locationManager.delegate = self
