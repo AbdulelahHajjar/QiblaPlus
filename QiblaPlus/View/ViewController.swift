@@ -70,6 +70,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    /*
+     did find heading important part
+     else {
+         if !animationIsPlaying {
+             showNeedle()
+             heading *= Double.pi/180.0
+             let rotationAngle = self.bearing - heading + Double.pi * 2
+             
+             UIView.animate(withDuration: 0.200) {
+                 self.needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
+             }
+         }
+     }
+     */
+    
     //MARK: Language-related methods
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
