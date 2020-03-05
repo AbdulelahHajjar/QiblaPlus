@@ -16,7 +16,13 @@ protocol QiblaDirectionProtocol {
 
 class LocationController: NSObject, CLLocationManagerDelegate {
     var bearingAngle: Double?
+    var locationDelegate: CLLocationManagerDelegate?
     var qiblaDirectionDelegate: QiblaDirectionProtocol?
+    
+    override init() {
+        super.init()
+        locationDelegate = self
+    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last!
