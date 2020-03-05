@@ -19,6 +19,9 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var qiblaDirectionDelegate: QiblaDirectionProtocol?
     
+    let unableToFindLocationError = ["en" : "⚠\nUnable to find device's location.", "ar" : "⚠\nتعذر الحصول على معلومات الموقع الحالي."]
+    let compassCalibrationError = ["en" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.", "ar" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services."]
+    
     override init() {
         super.init()
         locationManager.delegate = self
@@ -32,7 +35,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             bearingAngle = Constants.getBearing(newLat: lat, newLon: lon)
         }
         else {
-            
+            qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
         }
     }
     
@@ -41,16 +44,16 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         var heading = newHeading.trueHeading
         
         if heading == -1.0 {
-            let errorD = ["en" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.", "ar" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services."]
-            qiblaDirectionDelegate?.didFindError(error: errorD)
+            qiblaDirectionDelegate?.didFindError(error: compassCalibrationError)
         }
             
         else {
             heading *= Double.pi/180.0
-            let rotationAngle = self.bearing - heading + Double.pi * 2
-            
-            UIView.animate(withDuration: 0.200) {
-                self.needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
+            if(bearingAngle == nil) {
+                qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
+            }
+            else {
+                qiblaDirectionDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
             }
         }
     }
