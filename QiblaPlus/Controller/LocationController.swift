@@ -32,12 +32,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        if currentLangauge == "en" {
-            showWarning(warningText: "⚠\nUnable to find device's location.")
-        }
-        else {
-            showWarning(warningText: "⚠\nتعذر الحصول على معلومات الموقع الحالي.")
-        }
+        qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
