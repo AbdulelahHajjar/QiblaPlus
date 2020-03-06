@@ -19,11 +19,11 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
-    let logicController = LogicController()
-    let locationController = LocationController()
-    let constants = Constants()
+    let logicController =       LogicController()
+    let locationController =    LocationController()
+    let constants =             Constants()
     
-    var currentLangauge = ""
+    var currentLangauge: String?
     var animationIsPlaying: Bool = false    //No animation on first launch.
     var firstLaunch: Bool = true            //On first launch, this is true.
     
@@ -58,7 +58,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
             }
         }
         else {
-            showWarning(warningText: logicController.getErrorMessage(appLanguage: currentLangauge))
+            showWarning(warningText: logicController.getErrorMessage(appLanguage: currentLangauge!))
         }
     }
     
@@ -71,7 +71,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     }
     
     func didFindError(error: [String : String]) {
-        showWarning(warningText: error[currentLangauge]!)
+        showWarning(warningText: error[currentLangauge!]!)
     }
     
     //MARK: Language-related methods
@@ -131,12 +131,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         }
         findQibla()
     }
-    
-    
-    //MARK: Location delegate methods
-    
 
-    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         findQibla()
     }
@@ -146,7 +141,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         animationIsPlaying = true
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
         logicController.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
-        needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge.uppercased() + ".png")
+        needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge!.uppercased() + ".png")
         calibrationProgressBar.setProgress(0, animated: false)
         needleImage.alpha = 1
         warningLabel.alpha = 0
