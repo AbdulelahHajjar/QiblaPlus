@@ -45,7 +45,6 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         
         locationController.qiblaDirectionDelegate = self
         locationController.startProcess()
-        
         findQibla()
     }
     
@@ -60,7 +59,8 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     func didSuccessfullyFindHeading(rotationAngle: Double) {
         if !animationIsPlaying {
             UIView.animate(withDuration: 0.200) {
-            self.needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
+                self.showNeedle()
+                self.needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
             }
         }
     }
@@ -124,8 +124,9 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         else {
             setLanguage(lang: logicController.getPrefLanguage()!)
         }
-        locationController = LocationController()
-        locationController.qiblaDirectionDelegate = self
+                
+        locationController.startProcess()
+        
         findQibla()
     }
   

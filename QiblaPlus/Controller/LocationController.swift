@@ -74,7 +74,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         locationManager.startUpdatingLocation()
         var heading = newHeading.trueHeading
-        
+
         if heading == -1.0 {
             qiblaDirectionDelegate?.didFindError(error: Constants.cannotCalibrate)
         }
