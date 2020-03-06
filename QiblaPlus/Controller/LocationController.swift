@@ -37,28 +37,6 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        qiblaDirectionDelegate?.didFindError(error: ["en" : "Error", "ar" : "خطأ"])
-    }
-    
-    func findErrors() {
-        if(CLLocationManager.headingAvailable() == false) {
-            qiblaDirectionDelegate?.didFindError(error: Constants.noTrueHeadingError)
-            existsError = true
-        }
-        else if CLLocationManager.locationServicesEnabled() == false {
-            qiblaDirectionDelegate?.didFindError(error: Constants.locationDisabled)
-            existsError = true
-        }
-        else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-            qiblaDirectionDelegate?.didFindError(error: Constants.wrongAuthInSettings)
-            existsError = true
-        }
-        else {
-            existsError = false
-        }
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last!
         if (lastLocation.horizontalAccuracy > 0) {
@@ -90,6 +68,24 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    func findErrors() {
+        if(CLLocationManager.headingAvailable() == false) {
+            qiblaDirectionDelegate?.didFindError(error: Constants.noTrueHeadingError)
+            existsError = true
+        }
+        else if CLLocationManager.locationServicesEnabled() == false {
+            qiblaDirectionDelegate?.didFindError(error: Constants.locationDisabled)
+            existsError = true
+        }
+        else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
+            qiblaDirectionDelegate?.didFindError(error: Constants.wrongAuthInSettings)
+            existsError = true
+        }
+        else {
+            existsError = false
+        }
+    }
+
     func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
         qiblaDirectionDelegate?.didFindError(error: ["en" : "Loading...", "ar" : "الرجاء الانتظار..."])
     }
