@@ -10,7 +10,6 @@ import UIKit
 
 
 class Constants {
-    static let tips: [String : NSAttributedString]
     static let makkahLat = 0.3738927226761722      //21.4224750 deg
     static let makkahLon = 0.6950985611585316      //39.8262139 deg
     static let defaults = UserDefaults.standard
@@ -21,12 +20,8 @@ class Constants {
     static let locationDisabled = ["en" : "⚠\nPlease enable location services from your device's settings.", "ar" : "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."]
     static let wrongAuthInSettings = ["en" : "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction.", "ar" : "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."]
     static let noTrueHeadingError = ["en" : "⚠\nYour device does not support true heading directions.", "ar" : "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."]
-    
-    init() {
-        tips = Constants.initTipsLabel()
-    }
-    
-    static func initTipsLabel() -> [String : NSAttributedString] {
+
+    static func getTips() -> [String : NSAttributedString] {
         //Setting paragraph style for the tips
         let enParagraphStyle = NSMutableParagraphStyle()
         enParagraphStyle.lineSpacing = 8

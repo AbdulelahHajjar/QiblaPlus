@@ -24,7 +24,6 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     
     var currentLangauge: String?
     var animationIsPlaying: Bool = false    //No animation on first launch.
-    var firstLaunch: Bool = true            //On first launch, this is true.
     
     override func loadView() {
         super.loadView()
@@ -45,12 +44,13 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         locationController.qiblaDirectionDelegate = self
         locationController.startProcess()
         findQibla()
+        
+        showCalibrationDisplay()
     }
     
     //MARK: Qibla finding methods (Core)
     func findQibla() {
-        if (firstLaunch || logicController.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
-            firstLaunch = false
+        if (logicController.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
             showCalibrationDisplay()
         }
     }
