@@ -85,8 +85,4 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             existsError = false
         }
     }
-
-    func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
-        qiblaDirectionDelegate?.didFindError(error: ["en" : "Loading...", "ar" : "الرجاء الانتظار..."])
-    }
 }
