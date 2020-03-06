@@ -21,10 +21,10 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     var locationManager = CLLocationManager()
     var qiblaDirectionDelegate: QiblaDirectionProtocol?
     
-    let unableToFindLocationError = ["en" : "⚠\nUnable to find device's location.", "ar" : "⚠\nتعذر الحصول على معلومات الموقع الحالي."]
-    let compassCalibrationError = ["en" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.", "ar" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services."]
-    let disabledLocationError = ["en" : "⚠\nPlease enable location services from your device's settings.", "ar" : "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."]
-    let wrongAuthStatusError = ["en" : "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction.", "ar" : "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."]
+    let cannotFindLocation = ["en" : "⚠\nUnable to find device's location.", "ar" : "⚠\nتعذر الحصول على معلومات الموقع الحالي."]
+    let cannotCalibrate = ["en" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.", "ar" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services."]
+    let locationDisabled = ["en" : "⚠\nPlease enable location services from your device's settings.", "ar" : "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."]
+    let wrongAuthInSettings = ["en" : "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction.", "ar" : "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."]
     let noTrueHeadingError = ["en" : "⚠\nYour device does not support true heading directions.", "ar" : "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."]
     
     override init() {
@@ -48,10 +48,10 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             qiblaDirectionDelegate?.didFindError(error: noTrueHeadingError)
         }
         else if CLLocationManager.locationServicesEnabled() == false {
-            qiblaDirectionDelegate?.didFindError(error: disabledLocationError)
+            qiblaDirectionDelegate?.didFindError(error: locationDisabled)
         }
         else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-            qiblaDirectionDelegate?.didFindError(error: wrongAuthStatusError)
+            qiblaDirectionDelegate?.didFindError(error: wrongAuthInSettings)
         }
     }
     
@@ -67,7 +67,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             bearingAngle = Constants.getBearing(newLat: lat, newLon: lon)
         }
         else {
-            qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
+            qiblaDirectionDelegate?.didFindError(error: cannotFindLocation)
         }
     }
 
@@ -75,16 +75,14 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         var heading = newHeading.trueHeading
         
-        
-        
         if heading == -1.0 {
-            qiblaDirectionDelegate?.didFindError(error: compassCalibrationError)
+            qiblaDirectionDelegate?.didFindError(error: cannotCalibrate)
         }
             
         else {
             heading *= Double.pi/180.0
             if(bearingAngle == nil) {
-                qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
+                qiblaDirectionDelegate?.didFindError(error: cannotFindLocation)
             }
             else {
                 qiblaDirectionDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
