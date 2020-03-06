@@ -25,12 +25,9 @@ class LogicController {
     
     func getDeviceLanguage() -> String {
         let prefLangArray = Locale.preferredLanguages.first!
-        if prefLangArray.contains("ar") {
-            return "ar"
-        }
-        else {
-            return "en"
-        }
+        var prefLanguage: String
+        prefLangArray.contains("ar") ? (prefLanguage = "ar") : (prefLanguage = "en")
+        return prefLanguage
     }
     
     func getTips(lang: String) -> NSAttributedString {

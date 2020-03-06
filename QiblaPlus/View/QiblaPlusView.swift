@@ -47,7 +47,6 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         
         locationController.qiblaDirectionDelegate = self
         locationController.startProcess()
-        showCalibrationIfNeeded()
         
         showCalibrationDisplay()
     }
