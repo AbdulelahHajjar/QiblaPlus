@@ -48,7 +48,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     
     //MARK: Qibla finding methods (Core)
     func findQibla() {
-        if logicController.canFindQibla() {
+        if locationController.canFindQibla() {
             locationController.locationManager.startUpdatingLocation()
             locationController.locationManager.startUpdatingHeading()
             
@@ -56,9 +56,6 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
                 firstLaunch = false
                 showCalibrationDisplay()
             }
-        }
-        else {
-            showWarning(warningText: logicController.getErrorMessage(appLanguage: currentLangauge!))
         }
     }
     
@@ -131,11 +128,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         }
         findQibla()
     }
-
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        findQibla()
-    }
-        
+  
     //MARK: UI-related methods
     func showCalibrationDisplay() {
         animationIsPlaying = true

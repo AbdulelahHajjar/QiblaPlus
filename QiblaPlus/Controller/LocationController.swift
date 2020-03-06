@@ -35,28 +35,32 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
     }
     
-//    func canFindQibla() -> Bool {
-//        if CLLocationManager.locationServicesEnabled() == false {
-//            enError = "⚠\nPlease enable location services from your device's settings."
-//            arError = "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."
-//            return false
-//        }
-//        else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-//            enError = "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction."
-//            arError = "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."
-//            return false
-//        }
-//        else if CLLocationManager.headingAvailable() == false {
-//            enError = "⚠\nYour device does not support true heading directions."
-//            arError = "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."
-//            return false
-//        }
-//        else {
-//            enError = ""
-//            arError = ""
-//        }
-//        return true
-//    }
+    func canFindQibla() -> Bool {
+        if CLLocationManager.locationServicesEnabled() == false {
+            enError = "⚠\nPlease enable location services from your device's settings."
+            arError = "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."
+            return false
+        }
+        else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
+            enError = "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction."
+            arError = "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."
+            return false
+        }
+        else if CLLocationManager.headingAvailable() == false {
+            enError = "⚠\nYour device does not support true heading directions."
+            arError = "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."
+            return false
+        }
+        else {
+            enError = ""
+            arError = ""
+        }
+        return true
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        
+    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last!
