@@ -93,6 +93,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         }
         
         logicController.setPrefLanguage(lang)
+        locationController.startProcess()
 
         UIView.animate(withDuration: 0.250) {
             self.tipsLabel.alpha = 0
