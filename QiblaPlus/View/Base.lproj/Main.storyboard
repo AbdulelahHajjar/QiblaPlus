@@ -7,11 +7,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Thin.otf">
-            <string>SFProDisplay-Thin</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -76,27 +71,31 @@
                                             <constraint firstAttribute="width" secondItem="lWF-zf-UeS" secondAttribute="height" multiplier="1:1" id="HcV-q8-CFg"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qibla+" lineBreakMode="tailTruncation" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-x8-dKx">
-                                        <rect key="frame" x="71.999999999999986" y="0.0" width="108.00000000000001" height="60"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Thin" family="SF Pro Display" pointSize="41"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-x8-dKx">
+                                        <rect key="frame" x="72" y="11" width="108" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Qibla+">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="41" name="SFProDisplay-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Pys-x8-dKx" secondAttribute="bottom" id="L43-aV-nFa"/>
                                     <constraint firstItem="lWF-zf-UeS" firstAttribute="top" secondItem="Rbi-li-CLC" secondAttribute="top" id="MCH-KZ-lau"/>
                                     <constraint firstItem="lWF-zf-UeS" firstAttribute="leading" secondItem="Rbi-li-CLC" secondAttribute="leading" id="YKt-N0-1jO"/>
-                                    <constraint firstItem="Pys-x8-dKx" firstAttribute="leading" secondItem="lWF-zf-UeS" secondAttribute="trailing" constant="12" id="YdG-26-krZ"/>
                                     <constraint firstAttribute="height" constant="60" id="daz-tp-qvq"/>
                                     <constraint firstAttribute="width" constant="180" id="iNR-DE-EUu"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pys-x8-dKx" secondAttribute="trailing" id="kRF-AE-b1e"/>
-                                    <constraint firstItem="Pys-x8-dKx" firstAttribute="top" secondItem="Rbi-li-CLC" secondAttribute="top" id="nWY-Eo-exK"/>
                                     <constraint firstAttribute="bottom" secondItem="lWF-zf-UeS" secondAttribute="bottom" id="qGT-bS-kKk"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
                                 <rect key="frame" x="288.33333333333331" y="60.000000000000007" width="70.666666666666686" height="29.333333333333336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration">

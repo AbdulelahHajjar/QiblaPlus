@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class Constants {
     static let makkahLat = 0.3738927226761722      //21.4224750 deg
     static let makkahLon = 0.6950985611585316      //39.8262139 deg
@@ -28,8 +27,9 @@ class Constants {
         enParagraphStyle.alignment = .left
         
         let arParagraphStyle = NSMutableParagraphStyle()
-        arParagraphStyle.lineSpacing = 8
+        arParagraphStyle.lineSpacing = 0
         arParagraphStyle.alignment = .right
+        arParagraphStyle.lineHeightMultiple = 0.91
         
         //Adding attributes to dictionary
         var tipsAttributes = [NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Light", size: 15),
@@ -41,13 +41,13 @@ class Constants {
         
         //Switching alignment of text to right
         tipsAttributes[NSAttributedString.Key.paragraphStyle] = arParagraphStyle
+        tipsAttributes[NSAttributedString.Key.font] = UIFont(name: "Dubai-Light", size: 15)
     
         //Adding attributes to Arabic string
         let arTipsAttributed : NSAttributedString = NSAttributedString(string: "نصائح لقبلة أدق:\n♾ عاير البوصلة بتدوير الجهاز على شكل 8\n🧲  ابتعد عن الأجهزة الإلكترونية\n📱 ضع هاتفك بشكل مسطح", attributes: tipsAttributes as [NSAttributedString.Key : Any])
         
         return ["en" : enTipsAttributed, "ar" : arTipsAttributed]
     }
-    
     
     static func getBearing(newLat: Double, newLon: Double) -> Double {
         let x = cos(makkahLat) * sin(makkahLon - newLon)
