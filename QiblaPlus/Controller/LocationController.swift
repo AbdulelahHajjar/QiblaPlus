@@ -31,6 +31,15 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if currentLangauge == "en" {
+            showWarning(warningText: "⚠\nUnable to find device's location.")
+        }
+        else {
+            showWarning(warningText: "⚠\nتعذر الحصول على معلومات الموقع الحالي.")
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last!
         if (lastLocation.horizontalAccuracy > 0) {

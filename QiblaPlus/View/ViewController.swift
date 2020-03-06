@@ -24,7 +24,6 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     let constants = Constants()
     
     var currentLangauge = ""
-    
     var animationIsPlaying: Bool = false    //No animation on first launch.
     var firstLaunch: Bool = true            //On first launch, this is true.
     
@@ -32,6 +31,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         super.loadView()
         setBackground()
         hideAllComponents()
+        
         if(logicController.getPrefLanguage() == nil) {
             setLanguage(lang: logicController.getDeviceLanguage())
         }
@@ -44,12 +44,6 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         setObservers()
         locationController.qiblaDirectionDelegate = self
         findQibla()
-        
-//        //Method to check installation date of the application
-//        let urlToDocumentsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-//        //installDate is NSDate of install
-//        let installDate = (try! FileManager.default.attributesOfItem(atPath: urlToDocumentsFolder.path)[FileAttributeKey.creationDate])
-//        print("This app was installed by the user on \(String(describing: installDate))")
     }
     
     //MARK: Qibla finding methods (Core)
@@ -103,6 +97,8 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
 
         }
         
+        logicController.setPrefLanguage(lang)
+
         UIView.animate(withDuration: 0.250) {
             self.tipsLabel.alpha = 0
         }
@@ -112,7 +108,6 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
                 self.tipsLabel.alpha = 1.0
             }
         }
-        logicController.setPrefLanguage(lang)
     }
     
     //MARK: Misc. methods
@@ -145,16 +140,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         findQibla()
     }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        if currentLangauge == "en" {
-            showWarning(warningText: "⚠\nUnable to find device's location.")
-        }
-        else {
-            showWarning(warningText: "⚠\nتعذر الحصول على معلومات الموقع الحالي.")
-        }
-    }
-    
+        
     //MARK: UI-related methods
     func showCalibrationDisplay() {
         animationIsPlaying = true
@@ -219,3 +205,9 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         backgroundView.layer.insertSublayer(gradient, at: 0)
     }
 }
+
+//        //Method to check installation date of the application
+//        let urlToDocumentsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
+//        //installDate is NSDate of install
+//        let installDate = (try! FileManager.default.attributesOfItem(atPath: urlToDocumentsFolder.path)[FileAttributeKey.creationDate])
+//        print("This app was installed by the user on \(String(describing: installDate))")
