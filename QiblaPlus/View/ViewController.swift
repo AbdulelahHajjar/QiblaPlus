@@ -11,7 +11,7 @@ import CoreLocation
 import SwiftGifOrigin
 import LGButton
 
-class ViewController: UIViewController, CLLocationManagerDelegate, QiblaDirectionProtocol {
+class ViewController: UIViewController, QiblaDirectionProtocol {
     
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var tipsLabel: UILabel!
@@ -21,7 +21,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, QiblaDirectio
     
     let logicController = LogicController()
     let locationController = LocationController()
-    let locationManager = CLLocationManager()
     let constants = Constants()
     
     var bearing : Double = 0
@@ -58,8 +57,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, QiblaDirectio
     //MARK: Qibla finding methods (Core)
     func findQibla() {
         if logicController.canFindQibla() {
-            locationManager.startUpdatingLocation()
-            locationManager.startUpdatingHeading()
+            locationController.locationManager.startUpdatingLocation()
+            locationController.locationManager.startUpdatingHeading()
             
             if (firstLaunch || logicController.mustCalibrate()) && !animationIsPlaying {
                 firstLaunch = false
