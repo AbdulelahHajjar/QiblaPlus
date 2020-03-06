@@ -17,6 +17,7 @@ protocol QiblaDirectionProtocol {
 class LocationController: NSObject, CLLocationManagerDelegate {
     
     var bearingAngle: Double?
+    
     var locationManager = CLLocationManager()
     var qiblaDirectionDelegate: QiblaDirectionProtocol?
     
@@ -64,6 +65,4 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
         qiblaDirectionDelegate?.didFindError(error: ["en" : "Loading...", "ar" : "الرجاء الانتظار..."])
     }
-    
-    
 }

@@ -11,7 +11,16 @@ import CoreLocation
 import SwiftGifOrigin
 import LGButton
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, QiblaDirectionProtocol {
+    
+    func didSuccessfullyFindHeading(rotationAngle: Double) {
+        <#code#>
+    }
+    
+    func didFindError(error: [String : String]) {
+        <#code#>
+    }
+    
     
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var tipsLabel: UILabel!
@@ -45,7 +54,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setObservers()
-        setLocationSettings()
+        locationController.qiblaDirectionDelegate = self
         findQibla()
         
 //        //Method to check installation date of the application
