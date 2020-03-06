@@ -32,6 +32,13 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.requestWhenInUseAuthorization()
+        
+        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
+        
+        if(CLLocationManager.headingAvailable() == false) {
+            qiblaDirectionDelegate?.didFindError(error: noTrueHeadingError)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -41,9 +48,14 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
             qiblaDirectionDelegate?.didFindError(error: wrongAuthStatusError)
         }
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if(CLLocationManager.headingAvailable() == false) {
+            qiblaDirectionDelegate?.didFindError(error: noTrueHeadingError)
+        }
+        
         let lastLocation = locations.last!
         if (lastLocation.horizontalAccuracy > 0) {
             let lat = lastLocation.coordinate.latitude * Double.pi / 180.0
@@ -59,23 +71,19 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         var heading = newHeading.trueHeading
         
-        if(CLLocationManager.headingAvailable() == false) {
-            qiblaDirectionDelegate?.didFindError(error: noTrueHeadingError)
-        }
         
+        
+        if heading == -1.0 {
+            qiblaDirectionDelegate?.didFindError(error: compassCalibrationError)
+        }
+            
         else {
-            if heading == -1.0 {
-                qiblaDirectionDelegate?.didFindError(error: compassCalibrationError)
+            heading *= Double.pi/180.0
+            if(bearingAngle == nil) {
+                qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
             }
-                
             else {
-                heading *= Double.pi/180.0
-                if(bearingAngle == nil) {
-                    qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
-                }
-                else {
-                    qiblaDirectionDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
-                }
+                qiblaDirectionDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
             }
         }
     }
