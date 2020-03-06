@@ -20,7 +20,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
     let logicController =       LogicController()
-    let locationController =    LocationController()
+    var locationController =    LocationController()
     let constants =             Constants()
     
     var currentLangauge: String?
@@ -124,6 +124,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         else {
             setLanguage(lang: logicController.getPrefLanguage()!)
         }
+        locationController = LocationController()
         findQibla()
     }
   

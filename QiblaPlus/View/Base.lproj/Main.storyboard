@@ -41,7 +41,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ErrorMessages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-gi-I6J" userLabel="ErrorLabel">
                                         <rect key="frame" x="40" y="0.0" width="175" height="255"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7sh-5O-MZu">
@@ -172,7 +172,7 @@
                         <outlet property="langBtnOutlet" destination="6TM-qL-dvi" id="AHd-8c-aVz"/>
                         <outlet property="needleImage" destination="X23-WY-u5b" id="wbE-vR-OAn"/>
                         <outlet property="tipsLabel" destination="B2X-eH-2zf" id="fl7-1W-iIx"/>
-                        <outlet property="warningLabel" destination="Djo-gi-I6J" id="sFZ-8L-Yky"/>
+                        <outlet property="warningLabel" destination="Djo-gi-I6J" id="GNl-or-xJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

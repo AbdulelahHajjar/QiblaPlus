@@ -36,19 +36,23 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
         
-        if(CLLocationManager.headingAvailable() == false) {
-            qiblaDirectionDelegate?.didFindError(error: noTrueHeadingError)
-        }
+        checkErrors()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        if CLLocationManager.locationServicesEnabled() == false {
+        checkErrors()
+    }
+    
+    func checkErrors() {
+        if(CLLocationManager.headingAvailable() == false) {
+            qiblaDirectionDelegate?.didFindError(error: noTrueHeadingError)
+        }
+        else if CLLocationManager.locationServicesEnabled() == false {
             qiblaDirectionDelegate?.didFindError(error: disabledLocationError)
         }
         else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
             qiblaDirectionDelegate?.didFindError(error: wrongAuthStatusError)
         }
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
