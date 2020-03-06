@@ -17,9 +17,9 @@ protocol QiblaDirectionProtocol {
 class LocationController: NSObject, CLLocationManagerDelegate {
     
     var bearingAngle: Double?
-    
     var locationManager = CLLocationManager()
     var qiblaDirectionDelegate: QiblaDirectionProtocol?
+    var existsError: Bool = false
     
     override init() {
         super.init()
@@ -40,16 +40,23 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     func checkErrors() {
         if(CLLocationManager.headingAvailable() == false) {
             qiblaDirectionDelegate?.didFindError(error: Constants.noTrueHeadingError)
+            existsError = true
         }
         else if CLLocationManager.locationServicesEnabled() == false {
             qiblaDirectionDelegate?.didFindError(error: Constants.locationDisabled)
+            existsError = true
         }
         else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
             qiblaDirectionDelegate?.didFindError(error: Constants.wrongAuthInSettings)
+            existsError = true
+        }
+        else {
+            existsError = false
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        checkErrors()
         if(CLLocationManager.headingAvailable() == false) {
             qiblaDirectionDelegate?.didFindError(error: Constants.noTrueHeadingError)
         }
@@ -66,6 +73,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        checkErrors()
         locationManager.startUpdatingLocation()
         var heading = newHeading.trueHeading
         
