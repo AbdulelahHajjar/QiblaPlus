@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QiblaPlusView.swift
 //  AccurateQiblaFinder
 //
 //  Created by Abdulelah Hajjar on 04/08/2019.
@@ -11,7 +11,7 @@ import CoreLocation
 import SwiftGifOrigin
 import LGButton
 
-class ViewController: UIViewController, QiblaDirectionProtocol {
+class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     //MARK:- IBOutlets
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var tipsLabel: UILabel!

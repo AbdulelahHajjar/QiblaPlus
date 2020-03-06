@@ -20,7 +20,7 @@
 		EB450D4A2411BF59003871FF /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450D492411BF59003871FF /* LocationController.swift */; };
 		EB5D33B02409E69600C51112 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D33AF2409E69600C51112 /* Constants.swift */; };
 		EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */; };
-		EB9B553D232D2F0A001B2E8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553C232D2F0A001B2E8C /* ViewController.swift */; };
+		EB9B553D232D2F0A001B2E8C /* QiblaPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553C232D2F0A001B2E8C /* QiblaPlusView.swift */; };
 		EB9B5540232D2F0A001B2E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9B553E232D2F0A001B2E8C /* Main.storyboard */; };
 		EB9B5542232D2F0B001B2E8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9B5541232D2F0B001B2E8C /* Assets.xcassets */; };
 		EB9B5545232D2F0B001B2E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9B5543232D2F0B001B2E8C /* LaunchScreen.storyboard */; };
@@ -63,7 +63,7 @@
 		EB5D33AF2409E69600C51112 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiblaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB9B553C232D2F0A001B2E8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EB9B553C232D2F0A001B2E8C /* QiblaPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaPlusView.swift; sourceTree = "<group>"; };
 		EB9B553F232D2F0A001B2E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB9B5541232D2F0B001B2E8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB9B5544232D2F0B001B2E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				EB9B553E232D2F0A001B2E8C /* Main.storyboard */,
-				EB9B553C232D2F0A001B2E8C /* ViewController.swift */,
+				EB9B553C232D2F0A001B2E8C /* QiblaPlusView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -456,7 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5D33B02409E69600C51112 /* Constants.swift in Sources */,
-				EB9B553D232D2F0A001B2E8C /* ViewController.swift in Sources */,
+				EB9B553D232D2F0A001B2E8C /* QiblaPlusView.swift in Sources */,
 				EB1BDE7C23FB3C9700CA5B9C /* LogicController.swift in Sources */,
 				EB450D4A2411BF59003871FF /* LocationController.swift in Sources */,
 				EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */,
