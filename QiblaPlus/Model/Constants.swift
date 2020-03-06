@@ -10,11 +10,11 @@ import UIKit
 
 
 class Constants {
-    let tips: [String : NSAttributedString]
+    static let tips: [String : NSAttributedString]
     static let makkahLat = 0.3738927226761722      //21.4224750 deg
     static let makkahLon = 0.6950985611585316      //39.8262139 deg
-    let defaults = UserDefaults.standard
-    var lastCalibrated = Date()
+    static let defaults = UserDefaults.standard
+    static var lastCalibrated = Date()
     
     static let cannotFindLocation = ["en" : "⚠\nUnable to find device's location.", "ar" : "⚠\nتعذر الحصول على معلومات الموقع الحالي."]
     static let cannotCalibrate = ["en" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.", "ar" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services."]

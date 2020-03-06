@@ -8,15 +8,13 @@
 
 import Foundation
 
-class LogicController {
-    let constants = Constants()
-    
+class LogicController {    
     func setPrefLanguage(_ lang: String) {
-        constants.defaults.set(lang, forKey: "Language")
+        Constants.defaults.set(lang, forKey: "Language")
     }
     
     func getPrefLanguage() -> String? {
-        if let savedLanguage: String = constants.defaults.object(forKey: "Language") as? String {
+        if let savedLanguage: String = Constants.defaults.object(forKey: "Language") as? String {
             return savedLanguage
         }
         else {
@@ -35,15 +33,15 @@ class LogicController {
     }
     
     func getTips(lang: String) -> NSAttributedString {
-        return constants.tips[lang]!
+        return Constants.tips[lang]!
     }
     
     func setLastCalibrated(calibrationDate: Date) {
-        constants.lastCalibrated = calibrationDate
+        Constants.lastCalibrated = calibrationDate
     }
     
     func mustCalibrate() -> Bool {
-        if let diff = Calendar.current.dateComponents([.minute], from: constants.lastCalibrated, to: Date()).minute, diff > 40 {
+        if let diff = Calendar.current.dateComponents([.minute], from: Constants.lastCalibrated, to: Date()).minute, diff > 40 {
             return true
         }
         else {
