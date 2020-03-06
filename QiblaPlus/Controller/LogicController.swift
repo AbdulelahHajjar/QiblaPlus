@@ -10,8 +10,6 @@ import Foundation
 
 class LogicController {
     let constants = Constants()
-    var enError = ""
-    var arError = ""
     
     func setPrefLanguage(_ lang: String) {
         constants.defaults.set(lang, forKey: "Language")
@@ -50,18 +48,6 @@ class LogicController {
         }
         else {
             return false
-        }
-    }
-
-    
-    
-    
-    func getErrorMessage(appLanguage: String) -> String {
-        if appLanguage == "en" {
-            return enError
-        }
-        else {
-            return arError
         }
     }
 }
