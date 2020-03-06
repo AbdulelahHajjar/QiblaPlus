@@ -12,7 +12,6 @@ import SwiftGifOrigin
 import LGButton
 
 class ViewController: UIViewController, QiblaDirectionProtocol {
-    
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var needleImage: UIImageView!
@@ -37,18 +36,19 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
             setLanguage(lang: logicController.getPrefLanguage()!)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setObservers()
         
         locationController.qiblaDirectionDelegate = self
         locationController.startProcess()
-        findQibla()
+        showCalibrationIfNeeded()
         
         showCalibrationDisplay()
     }
     
-    func findQibla() {
+    func showCalibrationIfNeeded() {
         if (logicController.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
             showCalibrationDisplay()
         }
@@ -70,7 +70,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
         currentLangauge == "en" ? setLanguage(lang: "ar") : setLanguage(lang: "en")
-        findQibla()
+        showCalibrationIfNeeded()
     }
     
     func setLanguage(lang: String) {
@@ -92,8 +92,6 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         }
     }
     
-
-  
     //MARK: UI-related methods
     func showCalibrationDisplay() {
         animationIsPlaying = true
@@ -178,7 +176,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         }
                 
         locationController.startProcess()
-        findQibla()
+        showCalibrationIfNeeded()
     }
 }
 
