@@ -20,7 +20,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
     let logicController =       LogicController()
-    var locationController =    LocationController()
+    var locationController = LocationController()
     let constants =             Constants()
     
     var currentLangauge: String?
@@ -42,16 +42,16 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         setObservers()
+        
         locationController.qiblaDirectionDelegate = self
+        locationController.startProcess()
+        
         findQibla()
     }
     
     //MARK: Qibla finding methods (Core)
     func findQibla() {
-        locationController.locationManager.startUpdatingLocation()
-        locationController.locationManager.startUpdatingHeading()
-        
-        if (firstLaunch || logicController.mustCalibrate()) && !animationIsPlaying {
+        if (firstLaunch || logicController.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
             firstLaunch = false
             showCalibrationDisplay()
         }
@@ -125,6 +125,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
             setLanguage(lang: logicController.getPrefLanguage()!)
         }
         locationController = LocationController()
+        locationController.qiblaDirectionDelegate = self
         findQibla()
     }
   

@@ -17,8 +17,9 @@ protocol QiblaDirectionProtocol {
 class LocationController: NSObject, CLLocationManagerDelegate {
     
     var bearingAngle: Double?
-    var locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     var qiblaDirectionDelegate: QiblaDirectionProtocol?
+    
     var existsError: Bool = false
     
     override init() {
@@ -26,18 +27,21 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.requestWhenInUseAuthorization()
-        
-        locationManager.startUpdatingLocation()
-        locationManager.startUpdatingHeading()
-        
-        checkErrors()
+    }
+    
+    func startProcess() {
+        findErrors()
+        if(!existsError) {
+            locationManager.startUpdatingLocation()
+            locationManager.startUpdatingHeading()
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        checkErrors()
+        qiblaDirectionDelegate?.didFindError(error: ["en" : "Error", "ar" : "خطأ"])
     }
     
-    func checkErrors() {
+    func findErrors() {
         if(CLLocationManager.headingAvailable() == false) {
             qiblaDirectionDelegate?.didFindError(error: Constants.noTrueHeadingError)
             existsError = true
@@ -56,11 +60,6 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        checkErrors()
-        if(CLLocationManager.headingAvailable() == false) {
-            qiblaDirectionDelegate?.didFindError(error: Constants.noTrueHeadingError)
-        }
-        
         let lastLocation = locations.last!
         if (lastLocation.horizontalAccuracy > 0) {
             let lat = lastLocation.coordinate.latitude * Double.pi / 180.0
@@ -73,7 +72,6 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        checkErrors()
         locationManager.startUpdatingLocation()
         var heading = newHeading.trueHeading
         
