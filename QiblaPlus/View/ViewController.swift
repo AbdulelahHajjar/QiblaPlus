@@ -12,18 +12,22 @@ import SwiftGifOrigin
 import LGButton
 
 class ViewController: UIViewController, QiblaDirectionProtocol {
+    //MARK:- IBOutlets
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var needleImage: UIImageView!
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
+    //MARK:- MVC-related Properties
     let logicController =       LogicController()
     var locationController = LocationController()
     
+    //MARK:- Current Status Variables
     var currentLangauge: String?
     var animationIsPlaying: Bool = false    //No animation on first launch.
     
+    //MARK:- Overridden Functions
     override func loadView() {
         super.loadView()
         setBackground()
@@ -48,12 +52,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         showCalibrationDisplay()
     }
     
-    func showCalibrationIfNeeded() {
-        if (logicController.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
-            showCalibrationDisplay()
-        }
-    }
-    
+    //MARK:- QiblaDirectionProtocol Delegate Functions
     func didSuccessfullyFindHeading(rotationAngle: Double) {
         if !animationIsPlaying {
             UIView.animate(withDuration: 0.200) {
@@ -67,6 +66,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         showWarning(warningText: error[currentLangauge!]!)
     }
     
+    //MARK:- Language-related Functions
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
         currentLangauge == "en" ? setLanguage(lang: "ar") : setLanguage(lang: "en")
@@ -92,35 +92,11 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         }
     }
     
-    //MARK: UI-related methods
-    func showCalibrationDisplay() {
-        animationIsPlaying = true
-        needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
-        logicController.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
-        needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge!.uppercased() + ".png")
-        calibrationProgressBar.setProgress(0, animated: false)
-        needleImage.alpha = 1
-        warningLabel.alpha = 0
-        UIView.animate(withDuration: 0.400, animations: {
-            self.calibrationProgressBar.alpha = 1
-            self.needleImage.alpha = 1
-        }) { (Bool) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.400, execute: {
-                UIView.animate(withDuration: 3, animations: {
-                    self.calibrationProgressBar.setProgress(1.0, animated: true)
-                }, completion: { (Bool) in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-                        
-                        UIView.animate(withDuration: 0.400, animations: {
-                            self.needleImage.alpha = 0
-                            self.calibrationProgressBar.alpha = 0
-                        }, completion: { (Bool) in
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.400, execute: {
-                                self.needleImage.image = UIImage(named: "Needle.png")
-                                UIView.animate(withDuration: 0.400, animations: {
-                                    self.needleImage.alpha = 1
-                                })
-                                self.animationIsPlaying = false }) }) }) }) })
+    
+    //MARK:- UI-related Functions
+    func showCalibrationIfNeeded() {
+        if (logicController.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
+            showCalibrationDisplay()
         }
     }
     
@@ -156,6 +132,38 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         backgroundView.layer.insertSublayer(gradient, at: 0)
     }
     
+    func showCalibrationDisplay() {
+        animationIsPlaying = true
+        needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
+        logicController.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
+        needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge!.uppercased() + ".png")
+        calibrationProgressBar.setProgress(0, animated: false)
+        needleImage.alpha = 1
+        warningLabel.alpha = 0
+        UIView.animate(withDuration: 0.400, animations: {
+            self.calibrationProgressBar.alpha = 1
+            self.needleImage.alpha = 1
+        }) { (Bool) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.400, execute: {
+                UIView.animate(withDuration: 3, animations: {
+                    self.calibrationProgressBar.setProgress(1.0, animated: true)
+                }, completion: { (Bool) in
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        
+                        UIView.animate(withDuration: 0.400, animations: {
+                            self.needleImage.alpha = 0
+                            self.calibrationProgressBar.alpha = 0
+                        }, completion: { (Bool) in
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.400, execute: {
+                                self.needleImage.image = UIImage(named: "Needle.png")
+                                UIView.animate(withDuration: 0.400, animations: {
+                                    self.needleImage.alpha = 1
+                                })
+                                self.animationIsPlaying = false }) }) }) }) })
+        }
+    }
+        
+    //MARK:- App Background Activity Observer
     func setObservers() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
