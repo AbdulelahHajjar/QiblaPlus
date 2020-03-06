@@ -48,7 +48,6 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         showCalibrationDisplay()
     }
     
-    //MARK: Qibla finding methods (Core)
     func findQibla() {
         if (logicController.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
             showCalibrationDisplay()
@@ -68,28 +67,16 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         showWarning(warningText: error[currentLangauge!]!)
     }
     
-    //MARK: Language-related methods
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
-        if currentLangauge == "en" {
-            setLanguage(lang: "ar")
-        }
-        else {
-            setLanguage(lang: "en")
-        }
+        currentLangauge == "en" ? setLanguage(lang: "ar") : setLanguage(lang: "en")
         findQibla()
     }
     
     func setLanguage(lang: String) {
         currentLangauge = lang
         
-        if(lang == "en") {
-            langBtnOutlet.titleString = "عــربــي"
-        }
-        else {
-            langBtnOutlet.titleString = "English"
-
-        }
+        lang == "en" ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
         
         logicController.setPrefLanguage(lang)
         locationController.startProcess()
@@ -105,30 +92,7 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         }
     }
     
-    //MARK: Misc. methods
-    func setObservers() {
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
-    }
-    
-    @objc func appMovedToBackground() {
-        locationController.locationManager.stopUpdatingHeading()
-        locationController.locationManager.stopUpdatingLocation()
-    }
-    
-    @objc func appCameToForeground() {
-        if(logicController.getPrefLanguage() == nil) {
-            setLanguage(lang: logicController.getDeviceLanguage())
-        }
-        else {
-            setLanguage(lang: logicController.getPrefLanguage()!)
-        }
-                
-        locationController.startProcess()
-        
-        findQibla()
-    }
+
   
     //MARK: UI-related methods
     func showCalibrationDisplay() {
@@ -193,7 +157,32 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
         gradient.startPoint = CGPoint.init(x: 1  , y: 0)
         backgroundView.layer.insertSublayer(gradient, at: 0)
     }
+    
+    func setObservers() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func appMovedToBackground() {
+        locationController.locationManager.stopUpdatingHeading()
+        locationController.locationManager.stopUpdatingLocation()
+    }
+    
+    @objc func appCameToForeground() {
+        if(logicController.getPrefLanguage() == nil) {
+            setLanguage(lang: logicController.getDeviceLanguage())
+        }
+        else {
+            setLanguage(lang: logicController.getPrefLanguage()!)
+        }
+                
+        locationController.startProcess()
+        findQibla()
+    }
 }
+
+
 
 //        //Method to check installation date of the application
 //        let urlToDocumentsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
