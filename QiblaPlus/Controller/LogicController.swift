@@ -7,19 +7,15 @@
 //
 
 import Foundation
-import CoreLocation
 
-class LogicController {
-    let constants = Constants()
-    var enError = ""
-    var arError = ""
-    
+class LogicController {    
     func setPrefLanguage(_ lang: String) {
-        constants.defaults.set(lang, forKey: "Language")
+        Constants.defaults.set(lang, forKey: "Language")
     }
     
+    //If a user prefers a language, this function will return it, otherwise, it is going to return nil
     func getPrefLanguage() -> String? {
-        if let savedLanguage: String = constants.defaults.object(forKey: "Language") as? String {
+        if let savedLanguage: String = Constants.defaults.object(forKey: "Language") as? String {
             return savedLanguage
         }
         else {
@@ -29,66 +25,27 @@ class LogicController {
     
     func getDeviceLanguage() -> String {
         let prefLangArray = Locale.preferredLanguages.first!
-        if prefLangArray.contains("ar") {
-            return "ar"
-        }
-        else {
-            return "en"
-        }
+        var prefLanguage: String
+        prefLangArray.contains("ar") ? (prefLanguage = "ar") : (prefLanguage = "en")
+        return prefLanguage
     }
     
     func getTips(lang: String) -> NSAttributedString {
-        return constants.tips[lang]!
+        return Constants.getTips()[lang]!
     }
     
+    //Sets the date and time the device has calibrated at, to re-calibrate after 40 minutes
     func setLastCalibrated(calibrationDate: Date) {
-        constants.lastCalibrated = calibrationDate
+        Constants.lastCalibrated = calibrationDate
     }
     
+    //Returns true if the device must calibrate (based on the Date of last calibration)
     func mustCalibrate() -> Bool {
-        if let diff = Calendar.current.dateComponents([.minute], from: constants.lastCalibrated, to: Date()).minute, diff > 40 {
+        if let diff = Calendar.current.dateComponents([.minute], from: Constants.lastCalibrated, to: Date()).minute, diff > 40 {
             return true
         }
         else {
             return false
-        }
-    }
-    
-    func getBearing(newLat: Double, newLon: Double) -> Double {
-        let x = cos(constants.makkahLat) * sin(constants.makkahLon - newLon)
-        let y = cos(newLat) * sin(constants.makkahLat) - sin(newLat) * cos(constants.makkahLat) * cos(constants.makkahLon - newLon)
-        return atan2(x, y)
-    }
-    
-    func canFindQibla() -> Bool {
-        if CLLocationManager.locationServicesEnabled() == false {
-            enError = "⚠\nPlease enable location services from your device's settings."
-            arError = "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."
-            return false
-        }
-        else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-            enError = "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction."
-            arError = "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."
-            return false
-        }
-        else if CLLocationManager.headingAvailable() == false {
-            enError = "⚠\nYour device does not support true heading directions."
-            arError = "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."
-            return false
-        }
-        else {
-            enError = ""
-            arError = ""
-        }
-        return true
-    }
-    
-    func getErrorMessage(appLanguage: String) -> String {
-        if appLanguage == "en" {
-            return enError
-        }
-        else {
-            return arError
         }
     }
 }

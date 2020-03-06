@@ -7,16 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="SF-Pro-Display-Thin.otf">
-            <string>SFProDisplay-Thin</string>
-        </array>
-    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Qibla Plus View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QiblaPlusView" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +36,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ErrorMessages" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-gi-I6J" userLabel="ErrorLabel">
                                         <rect key="frame" x="40" y="0.0" width="175" height="255"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7sh-5O-MZu">
@@ -76,23 +71,27 @@
                                             <constraint firstAttribute="width" secondItem="lWF-zf-UeS" secondAttribute="height" multiplier="1:1" id="HcV-q8-CFg"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qibla+" lineBreakMode="tailTruncation" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-x8-dKx">
-                                        <rect key="frame" x="71.999999999999986" y="0.0" width="108.00000000000001" height="60"/>
-                                        <fontDescription key="fontDescription" name="SFProDisplay-Thin" family="SF Pro Display" pointSize="41"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-x8-dKx">
+                                        <rect key="frame" x="72" y="11" width="108" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Qibla+">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <font key="NSFont" size="41" name="SFProDisplay-Thin"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Pys-x8-dKx" secondAttribute="bottom" id="L43-aV-nFa"/>
                                     <constraint firstItem="lWF-zf-UeS" firstAttribute="top" secondItem="Rbi-li-CLC" secondAttribute="top" id="MCH-KZ-lau"/>
                                     <constraint firstItem="lWF-zf-UeS" firstAttribute="leading" secondItem="Rbi-li-CLC" secondAttribute="leading" id="YKt-N0-1jO"/>
-                                    <constraint firstItem="Pys-x8-dKx" firstAttribute="leading" secondItem="lWF-zf-UeS" secondAttribute="trailing" constant="12" id="YdG-26-krZ"/>
                                     <constraint firstAttribute="height" constant="60" id="daz-tp-qvq"/>
                                     <constraint firstAttribute="width" constant="180" id="iNR-DE-EUu"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pys-x8-dKx" secondAttribute="trailing" id="kRF-AE-b1e"/>
-                                    <constraint firstItem="Pys-x8-dKx" firstAttribute="top" secondItem="Rbi-li-CLC" secondAttribute="top" id="nWY-Eo-exK"/>
                                     <constraint firstAttribute="bottom" secondItem="lWF-zf-UeS" secondAttribute="bottom" id="qGT-bS-kKk"/>
                                 </constraints>
                             </view>
@@ -172,7 +171,7 @@
                         <outlet property="langBtnOutlet" destination="6TM-qL-dvi" id="AHd-8c-aVz"/>
                         <outlet property="needleImage" destination="X23-WY-u5b" id="wbE-vR-OAn"/>
                         <outlet property="tipsLabel" destination="B2X-eH-2zf" id="fl7-1W-iIx"/>
-                        <outlet property="warningLabel" destination="Djo-gi-I6J" id="sFZ-8L-Yky"/>
+                        <outlet property="warningLabel" destination="Djo-gi-I6J" id="GNl-or-xJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
