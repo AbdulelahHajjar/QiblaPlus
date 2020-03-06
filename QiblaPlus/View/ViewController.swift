@@ -23,8 +23,6 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     let locationController = LocationController()
     let constants = Constants()
     
-    var bearing : Double = 0
-    var locationArray = [CLLocation]()
     var currentLangauge = ""
     
     var animationIsPlaying: Bool = false    //No animation on first launch.
