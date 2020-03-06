@@ -186,11 +186,3 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         showCalibrationIfNeeded()
     }
 }
-
-
-
-//        //Method to check installation date of the application
-//        let urlToDocumentsFolder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
-//        //installDate is NSDate of install
-//        let installDate = (try! FileManager.default.attributesOfItem(atPath: urlToDocumentsFolder.path)[FileAttributeKey.creationDate])
-//        print("This app was installed by the user on \(String(describing: installDate))")
