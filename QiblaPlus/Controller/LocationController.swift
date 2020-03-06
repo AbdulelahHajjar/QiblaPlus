@@ -23,6 +23,9 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     
     let unableToFindLocationError = ["en" : "⚠\nUnable to find device's location.", "ar" : "⚠\nتعذر الحصول على معلومات الموقع الحالي."]
     let compassCalibrationError = ["en" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.", "ar" : "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services."]
+    let disabledLocationError = ["en" : "⚠\nPlease enable location services from your device's settings.", "ar" : "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."]
+    let wrongAuthStatusError = ["en" : "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction.", "ar" : "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."]
+    let noTrueHeadingError = ["en" : "⚠\nYour device does not support true heading directions.", "ar" : "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."]
     
     override init() {
         super.init()
@@ -32,34 +35,12 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
-    }
-    
-    func canFindQibla() -> Bool {
         if CLLocationManager.locationServicesEnabled() == false {
-            enError = "⚠\nPlease enable location services from your device's settings."
-            arError = "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."
-            return false
+            qiblaDirectionDelegate?.didFindError(error: disabledLocationError)
         }
         else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-            enError = "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction."
-            arError = "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."
-            return false
+            qiblaDirectionDelegate?.didFindError(error: wrongAuthStatusError)
         }
-        else if CLLocationManager.headingAvailable() == false {
-            enError = "⚠\nYour device does not support true heading directions."
-            arError = "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."
-            return false
-        }
-        else {
-            enError = ""
-            arError = ""
-        }
-        return true
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -73,22 +54,28 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
         }
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         locationManager.startUpdatingLocation()
         var heading = newHeading.trueHeading
         
-        if heading == -1.0 {
-            qiblaDirectionDelegate?.didFindError(error: compassCalibrationError)
+        if(CLLocationManager.headingAvailable() == false) {
+            qiblaDirectionDelegate?.didFindError(error: noTrueHeadingError)
         }
-            
+        
         else {
-            heading *= Double.pi/180.0
-            if(bearingAngle == nil) {
-                qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
+            if heading == -1.0 {
+                qiblaDirectionDelegate?.didFindError(error: compassCalibrationError)
             }
+                
             else {
-                qiblaDirectionDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
+                heading *= Double.pi/180.0
+                if(bearingAngle == nil) {
+                    qiblaDirectionDelegate?.didFindError(error: unableToFindLocationError)
+                }
+                else {
+                    qiblaDirectionDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
+                }
             }
         }
     }

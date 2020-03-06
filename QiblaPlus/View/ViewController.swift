@@ -48,14 +48,12 @@ class ViewController: UIViewController, QiblaDirectionProtocol {
     
     //MARK: Qibla finding methods (Core)
     func findQibla() {
-        if locationController.canFindQibla() {
-            locationController.locationManager.startUpdatingLocation()
-            locationController.locationManager.startUpdatingHeading()
-            
-            if (firstLaunch || logicController.mustCalibrate()) && !animationIsPlaying {
-                firstLaunch = false
-                showCalibrationDisplay()
-            }
+        locationController.locationManager.startUpdatingLocation()
+        locationController.locationManager.startUpdatingHeading()
+        
+        if (firstLaunch || logicController.mustCalibrate()) && !animationIsPlaying {
+            firstLaunch = false
+            showCalibrationDisplay()
         }
     }
     
