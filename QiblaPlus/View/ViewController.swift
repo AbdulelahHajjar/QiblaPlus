@@ -13,15 +13,6 @@ import LGButton
 
 class ViewController: UIViewController, CLLocationManagerDelegate, QiblaDirectionProtocol {
     
-    func didSuccessfullyFindHeading(rotationAngle: Double) {
-        <#code#>
-    }
-    
-    func didFindError(error: [String : String]) {
-        <#code#>
-    }
-    
-    
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var tipsLabel: UILabel!
     @IBOutlet weak var needleImage: UIImageView!
@@ -80,20 +71,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, QiblaDirectio
         }
     }
     
-    /*
-     did find heading important part
-     else {
-         if !animationIsPlaying {
-             showNeedle()
-             heading *= Double.pi/180.0
-             let rotationAngle = self.bearing - heading + Double.pi * 2
-             
-             UIView.animate(withDuration: 0.200) {
-                 self.needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
-             }
-         }
-     }
-     */
+    func didSuccessfullyFindHeading(rotationAngle: Double) {
+        if !animationIsPlaying {
+            UIView.animate(withDuration: 0.200) {
+            self.needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
+            }
+        }
+    }
+    
+    func didFindError(error: [String : String]) {
+        showWarning(warningText: error[currentLangauge]!)
+    }
     
     //MARK: Language-related methods
     @IBOutlet weak var langBtnOutlet: LGButton!
