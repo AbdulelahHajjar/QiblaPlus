@@ -12,10 +12,10 @@ import CoreLocation
 protocol QiblaDirectionProtocol {
     func didSuccessfullyFindHeading(rotationAngle: Double)
     func didFindError(error: [String : String])
+	func showCalibration(force: Bool)
 }
 
 class LocationController: NSObject, CLLocationManagerDelegate {
-    
     var bearingAngle: Double?
     let locationManager = CLLocationManager()
     var qiblaDirectionDelegate: QiblaDirectionProtocol?
@@ -28,10 +28,14 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager.requestWhenInUseAuthorization()
     }
-    
+	
+	func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
+		return true
+	}
+	
     func startProcess() {
-        findErrors()
-        if(!existsError) {
+        let canFindQibla = findErrors()
+        if(!canFindQibla) {
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
         }
@@ -48,7 +52,12 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             qiblaDirectionDelegate?.didFindError(error: Constants.cannotFindLocation)
         }
     }
-
+	
+	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+		startProcess()
+		qiblaDirectionDelegate?.showCalibration(force: true)
+	}
+	
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         locationManager.startUpdatingLocation()
         var heading = newHeading.trueHeading
@@ -68,21 +77,20 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    func findErrors() {
+	func findErrors() -> Bool {
+		var status = false
         if(CLLocationManager.headingAvailable() == false) {
             qiblaDirectionDelegate?.didFindError(error: Constants.noTrueHeadingError)
-            existsError = true
         }
         else if CLLocationManager.locationServicesEnabled() == false {
             qiblaDirectionDelegate?.didFindError(error: Constants.locationDisabled)
-            existsError = true
         }
         else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
             qiblaDirectionDelegate?.didFindError(error: Constants.wrongAuthInSettings)
-            existsError = true
         }
-        else {
-            existsError = false
-        }
+		else {
+			status = true
+		}
+		return status
     }
 }

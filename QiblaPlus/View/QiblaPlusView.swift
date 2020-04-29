@@ -65,6 +65,11 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         showWarning(warningText: error[currentLangauge!]!)
     }
     
+	func showCalibration(force: Bool) {
+		if force {showCalibrationDisplay()}
+		else {showCalibrationIfNeeded()}
+	}
+	
     //MARK:- Language-related Functions
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
@@ -98,7 +103,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
             showCalibrationDisplay()
         }
     }
-    
+	
     func showWarning(warningText: String) {
         if !animationIsPlaying { //Only show the warning if the calibration display is not being shown at the moment
             warningLabel.text = warningText
@@ -133,6 +138,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     
     func showCalibrationDisplay() {
         animationIsPlaying = true
+		calibrationProgressBar.progress = 0
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
         logicController.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
         needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge!.uppercased() + ".png")
