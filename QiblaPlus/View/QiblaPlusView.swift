@@ -20,7 +20,6 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
     //MARK:- MVC-related Properties
-    let logicController =       LogicController()
     var locationController = LocationController()
     
     //MARK:- Current Status Variables
@@ -33,11 +32,11 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         setBackground()
         hideAllComponents()
         
-        if(logicController.getPrefLanguage() == nil) {
-            setLanguage(lang: logicController.getDeviceLanguage())
+        if(Constants.getPrefLanguage() == nil) {
+            setLanguage(lang: Constants.getDeviceLanguage())
         }
         else {
-            setLanguage(lang: logicController.getPrefLanguage()!)
+            setLanguage(lang: Constants.getPrefLanguage()!)
         }
     }
     
@@ -82,14 +81,14 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         
         lang == "en" ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
         
-        logicController.setPrefLanguage(lang)
+        Constants.setPrefLanguage(lang)
         locationController.startProcess()
 
         UIView.animate(withDuration: 0.250) {
             self.tipsLabel.alpha = 0
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-            self.tipsLabel.attributedText = self.logicController.getTips(lang: lang)
+            self.tipsLabel.attributedText = Constants.getTips(lang: lang)
             UIView.animate(withDuration: 0.250) {
                 self.tipsLabel.alpha = 1.0
             }
@@ -99,7 +98,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     
     //MARK:- UI-related Functions
     func showCalibrationIfNeeded() {
-        if (logicController.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
+        if (Constants.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
             showCalibrationDisplay()
         }
     }
@@ -140,7 +139,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         animationIsPlaying = true
 		calibrationProgressBar.progress = 0
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
-        logicController.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
+        Constants.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
         needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge!.uppercased() + ".png")
         calibrationProgressBar.setProgress(0, animated: false)
         needleImage.alpha = 1
@@ -181,11 +180,11 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     }
     
     @objc func appCameToForeground() {
-        if(logicController.getPrefLanguage() == nil) {
-            setLanguage(lang: logicController.getDeviceLanguage())
+        if(Constants.getPrefLanguage() == nil) {
+            setLanguage(lang: Constants.getDeviceLanguage())
         }
         else {
-            setLanguage(lang: logicController.getPrefLanguage()!)
+            setLanguage(lang: Constants.getPrefLanguage()!)
         }
                 
         locationController.startProcess()

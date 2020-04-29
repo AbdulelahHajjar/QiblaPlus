@@ -54,4 +54,41 @@ class Constants {
         let y = cos(newLat) * sin(makkahLat) - sin(newLat) * cos(makkahLat) * cos(makkahLon - newLon)
         return atan2(x, y)
     }
+	
+	static func mustCalibrate() -> Bool {
+		if let diff = Calendar.current.dateComponents([.minute], from: Constants.lastCalibrated, to: Date()).minute, diff > 40 {
+			return true
+		}
+		else {
+			return false
+		}
+	}
+	
+	static func getDeviceLanguage() -> String {
+		let prefLangArray = Locale.preferredLanguages.first!
+		var prefLanguage: String
+		prefLangArray.contains("ar") ? (prefLanguage = "ar") : (prefLanguage = "en")
+		return prefLanguage
+	}
+	
+	static func getPrefLanguage() -> String? {
+		if let savedLanguage: String = Constants.defaults.object(forKey: "Language") as? String {
+			return savedLanguage
+		}
+		else {
+			return nil
+		}
+	}
+	
+	static func setPrefLanguage(_ lang: String) {
+		Constants.defaults.set(lang, forKey: "Language")
+	}
+	
+	static func getTips(lang: String) -> NSAttributedString {
+		return Constants.getTips()[lang]!
+	}
+	
+	static func setLastCalibrated(calibrationDate: Date) {
+		Constants.lastCalibrated = calibrationDate
+	}
 }
