@@ -11,7 +11,7 @@ import CoreLocation
 import SwiftGifOrigin
 import LGButton
 
-class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
+class MainVC: UIViewController, QiblaDirectionProtocol {
     //MARK:- IBOutlets
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var tipsLabel: UILabel!
@@ -42,9 +42,11 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setObservers()
+        
         locationController.qiblaDirectionDelegate = self
         locationController.startProcess()
-        setObservers()
+        
         showCalibrationDisplay()
     }
     

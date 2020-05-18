@@ -35,7 +35,7 @@ class LocationController: NSObject, CLLocationManagerDelegate {
 	
     func startProcess() {
         let canFindQibla = findErrors()
-        if(!canFindQibla) {
+        if(canFindQibla) {
             locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
         }
