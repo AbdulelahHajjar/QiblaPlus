@@ -32,11 +32,11 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         setBackground()
         hideAllComponents()
         
-        if(Constants.getPrefLanguage() == nil) {
-            setLanguage(lang: Constants.getDeviceLanguage())
+        if(Constants.shared.getPrefLanguage() == nil) {
+            setLanguage(lang: Constants.shared.getDeviceLanguage())
         }
         else {
-            setLanguage(lang: Constants.getPrefLanguage()!)
+            setLanguage(lang: Constants.shared.getPrefLanguage()!)
         }
     }
     
@@ -79,14 +79,14 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         
         lang == "en" ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
         
-        Constants.setPrefLanguage(lang)
+        Constants.shared.setPrefLanguage(lang)
         locationController.startProcess()
 
         UIView.animate(withDuration: 0.250) {
             self.tipsLabel.alpha = 0
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-            self.tipsLabel.attributedText = Constants.getTips(lang: lang)
+            self.tipsLabel.attributedText = Constants.shared.getTips(lang: lang)
             UIView.animate(withDuration: 0.250) {
                 self.tipsLabel.alpha = 1.0
             }
@@ -96,7 +96,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     
     //MARK:- UI-related Functions
     func showCalibrationIfNeeded() {
-        if (Constants.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
+        if (Constants.shared.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
             showCalibrationDisplay()
         }
     }
@@ -137,7 +137,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         animationIsPlaying = true
 		calibrationProgressBar.progress = 0
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
-        Constants.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
+        Constants.shared.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
         needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge!.uppercased() + ".png")
         calibrationProgressBar.setProgress(0, animated: false)
         needleImage.alpha = 1
@@ -178,11 +178,11 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     }
     
     @objc func appCameToForeground() {
-        if(Constants.getPrefLanguage() == nil) {
-            setLanguage(lang: Constants.getDeviceLanguage())
+        if(Constants.shared.getPrefLanguage() == nil) {
+            setLanguage(lang: Constants.shared.getDeviceLanguage())
         }
         else {
-            setLanguage(lang: Constants.getPrefLanguage()!)
+            setLanguage(lang: Constants.shared.getPrefLanguage()!)
         }
                 
         locationController.startProcess()

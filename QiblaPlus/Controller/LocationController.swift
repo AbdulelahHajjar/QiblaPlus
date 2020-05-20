@@ -46,10 +46,10 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         if (lastLocation.horizontalAccuracy > 0) {
             let lat = lastLocation.coordinate.latitude * Double.pi / 180.0
             let lon = lastLocation.coordinate.longitude * Double.pi / 180.0
-            bearingAngle = Constants.getBearing(newLat: lat, newLon: lon)
+            bearingAngle = Constants.shared.getBearing(newLat: lat, newLon: lon)
         }
         else {
-            qiblaDirectionDelegate?.didFindError(error: Constants.cannotFindLocation)
+            qiblaDirectionDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
         }
     }
 	
@@ -63,13 +63,13 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         var heading = newHeading.trueHeading
 
         if heading == -1.0 {
-            qiblaDirectionDelegate?.didFindError(error: Constants.cannotCalibrate)
+            qiblaDirectionDelegate?.didFindError(error: Constants.shared.cannotCalibrate)
         }
             
         else {
             heading *= Double.pi/180.0
             if(bearingAngle == nil) {
-                qiblaDirectionDelegate?.didFindError(error: Constants.cannotFindLocation)
+                qiblaDirectionDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
             }
             else {
                 qiblaDirectionDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
@@ -80,13 +80,13 @@ class LocationController: NSObject, CLLocationManagerDelegate {
 	func findErrors() -> Bool {
 		var status = false
         if(CLLocationManager.headingAvailable() == false) {
-            qiblaDirectionDelegate?.didFindError(error: Constants.noTrueHeadingError)
+            qiblaDirectionDelegate?.didFindError(error: Constants.shared.noTrueHeadingError)
         }
         else if CLLocationManager.locationServicesEnabled() == false {
-            qiblaDirectionDelegate?.didFindError(error: Constants.locationDisabled)
+            qiblaDirectionDelegate?.didFindError(error: Constants.shared.locationDisabled)
         }
         else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-            qiblaDirectionDelegate?.didFindError(error: Constants.wrongAuthInSettings)
+            qiblaDirectionDelegate?.didFindError(error: Constants.shared.wrongAuthInSettings)
         }
 		else {
 			status = true
