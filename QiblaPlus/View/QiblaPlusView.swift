@@ -20,7 +20,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
     //MARK:- MVC-related Properties
-    var locationController = LocationController()
+    var locationController = QiblaController()
     
     //MARK:- Current Status Variables
     var currentLangauge: String?

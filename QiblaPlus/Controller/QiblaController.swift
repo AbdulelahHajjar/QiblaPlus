@@ -1,5 +1,5 @@
 //
-//  LocationController.swift
+//  QiblaController.swift
 //  QiblaPlus
 //
 //  Created by Abdulelah Hajjar on 06/03/2020.
