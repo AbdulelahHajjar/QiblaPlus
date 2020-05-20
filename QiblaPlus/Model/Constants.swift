@@ -9,7 +9,7 @@
 import UIKit
 
 class Constants {
-	private(set) static let shared = Constants()
+	private(set) static var shared = Constants()
 	
     let makkahLat = 0.3738927226761722      //21.4224750 deg
     let makkahLon = 0.6950985611585316      //39.8262139 deg

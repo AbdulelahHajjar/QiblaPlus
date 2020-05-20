@@ -20,11 +20,11 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 	
     var bearingAngle: Double?
     let locationManager = CLLocationManager()
-    var qiblaDirectionDelegate: QiblaDirectionProtocol?
+    var qiblaDelegate: QiblaDirectionProtocol?
     
     var existsError: Bool = false
     
-    override init() {
+    override private init() {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -51,13 +51,13 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
             bearingAngle = Constants.shared.getBearing(newLat: lat, newLon: lon)
         }
         else {
-            qiblaDirectionDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
+            qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
         }
     }
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		startProcess()
-		qiblaDirectionDelegate?.showCalibration(force: true)
+		qiblaDelegate?.showCalibration(force: true)
 	}
 	
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
@@ -65,16 +65,16 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
         var heading = newHeading.trueHeading
 
         if heading == -1.0 {
-            qiblaDirectionDelegate?.didFindError(error: Constants.shared.cannotCalibrate)
+            qiblaDelegate?.didFindError(error: Constants.shared.cannotCalibrate)
         }
             
         else {
             heading *= Double.pi/180.0
             if(bearingAngle == nil) {
-                qiblaDirectionDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
+                qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
             }
             else {
-                qiblaDirectionDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
+                qiblaDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
             }
         }
     }
@@ -82,13 +82,13 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 	func findErrors() -> Bool {
 		var status = false
         if(CLLocationManager.headingAvailable() == false) {
-            qiblaDirectionDelegate?.didFindError(error: Constants.shared.noTrueHeadingError)
+            qiblaDelegate?.didFindError(error: Constants.shared.noTrueHeadingError)
         }
         else if CLLocationManager.locationServicesEnabled() == false {
-            qiblaDirectionDelegate?.didFindError(error: Constants.shared.locationDisabled)
+            qiblaDelegate?.didFindError(error: Constants.shared.locationDisabled)
         }
         else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-            qiblaDirectionDelegate?.didFindError(error: Constants.shared.wrongAuthInSettings)
+            qiblaDelegate?.didFindError(error: Constants.shared.wrongAuthInSettings)
         }
 		else {
 			status = true

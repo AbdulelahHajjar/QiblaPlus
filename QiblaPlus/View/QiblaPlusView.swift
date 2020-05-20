@@ -19,9 +19,6 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
-    //MARK:- MVC-related Properties
-    var locationController = QiblaController()
-    
     //MARK:- Current Status Variables
     var currentLangauge: String?
     var animationIsPlaying: Bool = false    //No animation on first launch.
@@ -42,8 +39,8 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationController.qiblaDirectionDelegate = self
-        locationController.startProcess()
+        QiblaController.shared.qiblaDelegate = self
+        QiblaController.shared.startProcess()
         setObservers()
         showCalibrationDisplay()
     }
@@ -80,7 +77,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         lang == "en" ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
         
         Constants.shared.setPrefLanguage(lang)
-        locationController.startProcess()
+        QiblaController.shared.startProcess()
 
         UIView.animate(withDuration: 0.250) {
             self.tipsLabel.alpha = 0
@@ -96,7 +93,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     
     //MARK:- UI-related Functions
     func showCalibrationIfNeeded() {
-        if (Constants.shared.mustCalibrate()) && !animationIsPlaying && !locationController.existsError {
+        if (Constants.shared.mustCalibrate()) && !animationIsPlaying && !QiblaController.shared.existsError {
             showCalibrationDisplay()
         }
     }
@@ -173,8 +170,8 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     }
     
     @objc func appMovedToBackground() {
-        locationController.locationManager.stopUpdatingHeading()
-        locationController.locationManager.stopUpdatingLocation()
+        QiblaController.shared.locationManager.stopUpdatingHeading()
+        QiblaController.shared.locationManager.stopUpdatingLocation()
     }
     
     @objc func appCameToForeground() {
@@ -185,7 +182,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
             setLanguage(lang: Constants.shared.getPrefLanguage()!)
         }
                 
-        locationController.startProcess()
+        QiblaController.shared.startProcess()
         showCalibrationIfNeeded()
     }
 }
