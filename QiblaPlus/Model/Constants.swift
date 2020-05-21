@@ -1,5 +1,5 @@
 //
-//  QiblaMode.swift
+//  Constants.swift
 //  QiblaPlus
 //
 //  Created by Abdulelah Hajjar on 29/02/2020.

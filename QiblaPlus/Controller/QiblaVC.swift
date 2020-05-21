@@ -67,8 +67,11 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
     
     func setLanguage(lang: Language) {
 		LanguageModel.shared.appLanguage = lang
+
 		langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
 		
+		LanguageModel.shared.appLanguage = lang
+
         QiblaController.shared.startMonitoringQibla()
 
         UIView.animate(withDuration: 0.250) {

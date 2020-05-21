@@ -7,7 +7,7 @@
 */
 
 /* Change language button text */
-"buttonText" = "English";
+"buttonText" = "عــربــي";
 
 /* Tips for more accurate qibla */
 "tips" = "Tips for better qibla accuracy:\n♾ Calibrate compass by moving iPhone in an 8-figure\n🧲  Move away from electronic devices\n📱 Lay your phone flat";
