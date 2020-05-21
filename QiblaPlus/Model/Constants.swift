@@ -24,7 +24,7 @@ class Constants {
 	
 	private init() {}
 	
-    func getTips() -> [String : NSAttributedString] {
+	var tips: [String : NSAttributedString] {
         //Setting paragraph style for the tips
         let enParagraphStyle = NSMutableParagraphStyle()
         enParagraphStyle.lineSpacing = 8
@@ -69,15 +69,16 @@ class Constants {
 			return false
 		}
 	}
+
 	
-	func getDeviceLanguage() -> String {
+	var deviceLanguage: String {
 		let prefLangArray = Locale.preferredLanguages.first!
 		var prefLanguage: String
 		prefLangArray.contains("ar") ? (prefLanguage = "ar") : (prefLanguage = "en")
 		return prefLanguage
 	}
 	
-	func getPrefLanguage() -> String? {
+	var savedLanguage: String? {
 		if let savedLanguage: String = defaults.object(forKey: "Language") as? String {
 			return savedLanguage
 		}
@@ -86,15 +87,11 @@ class Constants {
 		}
 	}
 	
-	func setPrefLanguage(_ lang: String) {
+	func setSavedLanguage(_ lang: String) {
 		defaults.set(lang, forKey: "Language")
 	}
 	
-	func getTips(lang: String) -> NSAttributedString {
-		return getTips()[lang]!
-	}
-	
-	func setLastCalibrated(calibrationDate: Date) {
-		lastCalibrated = calibrationDate
+	func refreshLastCalibrationDate() {
+		lastCalibrated = Date()
 	}
 }

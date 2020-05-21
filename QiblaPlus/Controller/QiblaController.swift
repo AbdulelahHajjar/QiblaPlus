@@ -88,14 +88,14 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 	}
 }
 
-extension CLLocation {
-	var isInvalid: Bool {
-		return horizontalAccuracy < 0
-	}
-}
-
 extension CLLocationDirection {
 	var isInvalid: Bool {
 		return self == -1.0 || self.isNaN
+	}
+}
+
+extension CLLocation {
+	var isInvalid: Bool {
+		return horizontalAccuracy < 0
 	}
 }

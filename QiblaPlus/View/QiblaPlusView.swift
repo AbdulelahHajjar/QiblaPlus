@@ -28,13 +28,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         super.loadView()
         setBackground()
         hideAllComponents()
-        
-        if(Constants.shared.getPrefLanguage() == nil) {
-            setLanguage(lang: Constants.shared.getDeviceLanguage())
-        }
-        else {
-            setLanguage(lang: Constants.shared.getPrefLanguage()!)
-        }
+		setLanguage(lang: Constants.shared.savedLanguage ?? Constants.shared.deviceLanguage)
     }
     
     override func viewDidLoad() {
@@ -77,14 +71,14 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         
         lang == "en" ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
         
-        Constants.shared.setPrefLanguage(lang)
+        Constants.shared.setSavedLanguage(lang)
         QiblaController.shared.startMonitoringQibla()
 
         UIView.animate(withDuration: 0.250) {
             self.tipsLabel.alpha = 0
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-            self.tipsLabel.attributedText = Constants.shared.getTips(lang: lang)
+            self.tipsLabel.attributedText = Constants.shared.tips[lang]
             UIView.animate(withDuration: 0.250) {
                 self.tipsLabel.alpha = 1.0
             }
@@ -135,7 +129,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         animationIsPlaying = true
 		calibrationProgressBar.progress = 0
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
-        Constants.shared.setLastCalibrated(calibrationDate: Date()) //Update last time calib display shown
+        Constants.shared.refreshLastCalibrationDate()
         needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge!.uppercased() + ".png")
         calibrationProgressBar.setProgress(0, animated: false)
         needleImage.alpha = 1
@@ -176,13 +170,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     }
     
     @objc func appCameToForeground() {
-        if(Constants.shared.getPrefLanguage() == nil) {
-            setLanguage(lang: Constants.shared.getDeviceLanguage())
-        }
-        else {
-            setLanguage(lang: Constants.shared.getPrefLanguage()!)
-        }
-                
+		setLanguage(lang: Constants.shared.savedLanguage ?? Constants.shared.deviceLanguage)                
         QiblaController.shared.startMonitoringQibla()
         showCalibrationIfNeeded()
     }
