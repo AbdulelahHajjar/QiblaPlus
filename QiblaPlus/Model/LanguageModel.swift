@@ -10,7 +10,7 @@ import UIKit
 
 enum Language: String {
 	case english = "en"
-	case arabic = "ar"
+	case arabic  = "ar"
 	case unknown = "unknown"
 }
 
@@ -19,13 +19,13 @@ enum DefaultsKeys: String {
 }
 
 enum LocalizedStringKeys: String {
-	case buttonText = "buttonText"
-	case tips = "tips"
-	case cannotFindLocation = "cannotFindLocation"
-	case cannotCalibrate = "cannotCalibrate"
-	case locationDisabled = "locationDisabled"
+	case buttonText          = "buttonText"
+	case tips                = "tips"
+	case cannotFindLocation  = "cannotFindLocation"
+	case cannotCalibrate     = "cannotCalibrate"
+	case locationDisabled    = "locationDisabled"
 	case wrongAuthInSettings = "wrongAuthInSettings"
-	case noTrueHeadingError = "noTrueHeadingError"
+	case noTrueHeadingError  = "noTrueHeadingError"
 }
 
 struct LanguageModel {
