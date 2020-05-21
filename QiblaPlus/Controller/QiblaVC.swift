@@ -27,7 +27,7 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
         super.loadView()
         setBackground()
         hideAllComponents()
-		setLanguage(lang: Constants.shared.appLanguage)
+		setLanguage(lang: LanguageModel.shared.appLanguage)
     }
     
     override func viewDidLoad() {
@@ -49,8 +49,8 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
         }
     }
     
-    func didFindError(error: [String : String]) {
-		showWarning(warningText: error[Constants.shared.appLanguage.rawValue]!)
+    func didFindError(error: String) {
+		showWarning(warningText: error)
     }
     
 	func showCalibration(force: Bool) {
@@ -61,21 +61,21 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
     //MARK:- Language-related Functions
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
-		Constants.shared.appLanguage == .english ? setLanguage(lang: .arabic) : setLanguage(lang: .english)
+		LanguageModel.shared.appLanguage == .english ? setLanguage(lang: .arabic) : setLanguage(lang: .english)
         showCalibrationIfNeeded()
     }
     
     func setLanguage(lang: Language) {
-		lang == .english ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
-        
-        Constants.shared.appLanguage = lang
+		LanguageModel.shared.appLanguage = lang
+		langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
+		
         QiblaController.shared.startMonitoringQibla()
 
         UIView.animate(withDuration: 0.250) {
             self.tipsLabel.alpha = 0
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-			self.tipsLabel.attributedText = Constants.shared.tips[lang.rawValue]
+			self.tipsLabel.attributedText = LanguageModel.shared.tips
             UIView.animate(withDuration: 0.250) {
                 self.tipsLabel.alpha = 1.0
             }
@@ -127,7 +127,7 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
 		calibrationProgressBar.progress = 0
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
         Constants.shared.refreshLastCalibrationDate()
-		needleImage.image = UIImage(named: "NeedleCalibration" + Constants.shared.appLanguage.rawValue.uppercased() + ".png")
+		needleImage.image = UIImage(named: "NeedleCalibration" + LanguageModel.shared.appLanguage.rawValue.uppercased() + ".png")
         calibrationProgressBar.setProgress(0, animated: false)
         needleImage.alpha = 1
         warningLabel.alpha = 0
@@ -167,7 +167,7 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
     }
     
     @objc func appCameToForeground() {
-		setLanguage(lang: Constants.shared.appLanguage)
+		setLanguage(lang: LanguageModel.shared.appLanguage)
         QiblaController.shared.startMonitoringQibla()
         showCalibrationIfNeeded()
     }

@@ -10,6 +10,8 @@
 		4BB44705D9C298B765410E27 /* Pods_QiblaPlusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C808A5BB4E18CA245CD9DE39 /* Pods_QiblaPlusTests.framework */; };
 		9BF1309BBA8221ECE5D5C6A3 /* Pods_QiblaPlusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90F1D8747197AD3B79310CA /* Pods_QiblaPlusUITests.framework */; };
 		EB10649E23F99AD800F2EED1 /* Pods_QiblaPlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0605CE7CFC128E9E92BB0B /* Pods_QiblaPlus.framework */; };
+		EB2916CF2477044800F926FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB2916D12477044800F926FB /* Localizable.strings */; };
+		EB2916D4247715B800F926FB /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2916D3247715B800F926FB /* LanguageModel.swift */; };
 		EB44ACCF232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
 		EB44ACD0232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
 		EB44ACD1232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
@@ -57,6 +59,9 @@
 		AA0605CE7CFC128E9E92BB0B /* Pods_QiblaPlus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiblaPlus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C808A5BB4E18CA245CD9DE39 /* Pods_QiblaPlusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiblaPlusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E90F1D8747197AD3B79310CA /* Pods_QiblaPlusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QiblaPlusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB2916D02477044800F926FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EB2916D22477045300F926FB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EB2916D3247715B800F926FB /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
 		EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		EB450D492411BF59003871FF /* QiblaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaController.swift; sourceTree = "<group>"; };
@@ -168,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				EB5D33AF2409E69600C51112 /* Constants.swift */,
+				EB2916D12477044800F926FB /* Localizable.strings */,
+				EB2916D3247715B800F926FB /* LanguageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -318,6 +325,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = EB9B552E232D2F0A001B2E8C;
 			productRefGroup = EB9B5538232D2F0A001B2E8C /* Products */;
@@ -341,6 +349,7 @@
 				EBAF197A232FE6B60021AD79 /* Dubai-Light.ttf in Resources */,
 				EB44ACD2232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */,
 				EBC4217123F0AE32001505D4 /* README.md in Resources */,
+				EB2916CF2477044800F926FB /* Localizable.strings in Resources */,
 				EB6AAC7524763F2A0047792C /* CompassView.xib in Resources */,
 				EB9B5545232D2F0B001B2E8C /* LaunchScreen.storyboard in Resources */,
 				EB9B5542232D2F0B001B2E8C /* Assets.xcassets in Resources */,
@@ -460,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5D33B02409E69600C51112 /* Constants.swift in Sources */,
+				EB2916D4247715B800F926FB /* LanguageModel.swift in Sources */,
 				EB9B553D232D2F0A001B2E8C /* QiblaVC.swift in Sources */,
 				EB6AAC692476365B0047792C /* CompassView.swift in Sources */,
 				EB450D4A2411BF59003871FF /* QiblaController.swift in Sources */,
@@ -499,6 +509,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		EB2916D12477044800F926FB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB2916D02477044800F926FB /* en */,
+				EB2916D22477045300F926FB /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EB9B553E232D2F0A001B2E8C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -522,6 +541,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -583,6 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

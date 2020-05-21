@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  QiblaPlus
+
+  Created by Abdulelah Hajjar on 21/05/2020.
+  Copyright © 2020 Abdulelah Hajjar. All rights reserved.
+*/
+
+/* Change language button text */
+"buttonText" = "عــربــي";
+
+/* Tips for more accurate qibla */
+"tips" = "نصائح لقبلة أدق:\n♾ عاير البوصلة بتدوير الجهاز على شكل 8\n🧲  ابتعد عن الأجهزة الإلكترونية\n📱 ضع هاتفك بشكل مسطح";
+
+/* Error: Cannot find location error */
+"cannotFindLocation" = "⚠\nتعذر الحصول على معلومات الموقع الحالي.";
+
+/* Error: Cannot calibrate compass */
+"cannotCalibrate" = "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.";
+
+/* Error: Location disabled */
+"locationDisabled" = "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة.";
+
+/* Error: Wrong authentication status in settings */
+"wrongAuthInSettings" = "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة.";
+
+/* Error: Cannot find true heading */
+"noTrueHeadingError" = "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات.";

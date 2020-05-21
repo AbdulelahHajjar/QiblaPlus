@@ -11,7 +11,7 @@ import CoreLocation
 
 protocol QiblaDirectionProtocol {
     func didSuccessfullyFindHeading(rotationAngle: Double)
-    func didFindError(error: [String : String])
+    func didFindError(error: String)
 	func showCalibration(force: Bool)
 }
 
@@ -21,15 +21,15 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var qiblaDelegate: QiblaDirectionProtocol?
         
-	var errorDescription: [String : String]? {
+	var errorDescription: String? {
 		if(CLLocationManager.headingAvailable() == false) {
-			return Constants.shared.noTrueHeadingError
+			return LanguageModel.shared.localizedString(from: .noTrueHeadingError)
 		}
 		else if CLLocationManager.locationServicesEnabled() == false {
-			return Constants.shared.locationDisabled
+			return LanguageModel.shared.localizedString(from: .locationDisabled)
 		}
 		else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-			return Constants.shared.wrongAuthInSettings
+			return LanguageModel.shared.localizedString(from: .wrongAuthInSettings)
 		}
 		else {
 			return nil
@@ -53,7 +53,7 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 			locationManager.startUpdatingLocation()
 			locationManager.startUpdatingHeading()
 		} else {
-			qiblaDelegate?.didFindError(error: errorDescription ?? [:])
+			qiblaDelegate?.didFindError(error: errorDescription ?? "Error: Please restart the app.")
 		}
     }
 	
@@ -62,10 +62,10 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 		let location = manager.location
 		
 		if heading.isInvalid {
-			qiblaDelegate?.didFindError(error: Constants.shared.cannotCalibrate)
+			qiblaDelegate?.didFindError(error: LanguageModel.shared.localizedString(from: .cannotCalibrate))
 		}
 		else if location?.isInvalid ?? true {
-			qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
+			qiblaDelegate?.didFindError(error: LanguageModel.shared.localizedString(from: .cannotFindLocation))
 		}
         else {
 			let latitude = location!.coordinate.latitude
