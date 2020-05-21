@@ -14,6 +14,10 @@ enum Language: String {
 	case unknown = "unknown"
 }
 
+enum DefaultsKeys: String {
+	case language = "Language"
+}
+
 struct Constants {
 	static var shared = Constants()
 	
@@ -33,21 +37,21 @@ struct Constants {
 		else { return false }
 	}
 	
-	var appLanguage: String {
-		get { savedLanguage != nil ? savedLanguage! : deviceLanguage }
+	var appLanguage: Language {
+		get { savedLanguage != .unknown ? savedLanguage : deviceLanguage }
 		set { setSavedLanguage(newValue) }
 	}
 	
-	private var deviceLanguage: String {
-		let preferredLangArray = Locale.preferredLanguages.first!
-		var preferredLanguage: String
-		preferredLangArray.contains("ar") ? (preferredLanguage = "ar") : (preferredLanguage = "en")
-		return preferredLanguage
+	private var deviceLanguage: Language {
+		let deviceLanguagesArray = Locale.preferredLanguages.first!
+		var deviceLanguage: Language
+		deviceLanguagesArray.contains(Language.arabic.rawValue) ? (deviceLanguage = .arabic) : (deviceLanguage = .english)
+		return deviceLanguage
 	}
 	
-	private var savedLanguage: String? {
-		if let savedLanguage = defaults.object(forKey: "Language") as? String { return savedLanguage }
-		else { return nil }
+	private var savedLanguage: Language {
+		if let savedLanguage = defaults.object(forKey: DefaultsKeys.language.rawValue) as? String { return Language(rawValue: savedLanguage) ?? .unknown }
+		else { return .unknown }
 	}
 	
 	var tips: [String : NSAttributedString] {
@@ -89,8 +93,8 @@ struct Constants {
         return atan2(x, y)
     }
 	
-	private func setSavedLanguage(_ lang: String) {
-		defaults.set(lang, forKey: "Language")
+	private func setSavedLanguage(_ language: Language) {
+		defaults.set(language.rawValue, forKey: DefaultsKeys.language.rawValue)
 	}
 	
 	mutating func refreshLastCalibrationDate() {

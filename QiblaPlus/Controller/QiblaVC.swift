@@ -50,7 +50,7 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
     }
     
     func didFindError(error: [String : String]) {
-		showWarning(warningText: error[Constants.shared.appLanguage]!)
+		showWarning(warningText: error[Constants.shared.appLanguage.rawValue]!)
     }
     
 	func showCalibration(force: Bool) {
@@ -61,12 +61,12 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
     //MARK:- Language-related Functions
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
-		Constants.shared.appLanguage == "en" ? setLanguage(lang: "ar") : setLanguage(lang: "en")
+		Constants.shared.appLanguage == .english ? setLanguage(lang: .arabic) : setLanguage(lang: .english)
         showCalibrationIfNeeded()
     }
     
-    func setLanguage(lang: String) {
-        lang == "en" ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
+    func setLanguage(lang: Language) {
+		lang == .english ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
         
         Constants.shared.appLanguage = lang
         QiblaController.shared.startMonitoringQibla()
@@ -75,7 +75,7 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
             self.tipsLabel.alpha = 0
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-            self.tipsLabel.attributedText = Constants.shared.tips[lang]
+			self.tipsLabel.attributedText = Constants.shared.tips[lang.rawValue]
             UIView.animate(withDuration: 0.250) {
                 self.tipsLabel.alpha = 1.0
             }
@@ -127,7 +127,7 @@ class QiblaVC: UIViewController, QiblaDirectionProtocol {
 		calibrationProgressBar.progress = 0
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
         Constants.shared.refreshLastCalibrationDate()
-		needleImage.image = UIImage(named: "NeedleCalibration" + Constants.shared.appLanguage.uppercased() + ".png")
+		needleImage.image = UIImage(named: "NeedleCalibration" + Constants.shared.appLanguage.rawValue.uppercased() + ".png")
         calibrationProgressBar.setProgress(0, animated: false)
         needleImage.alpha = 1
         warningLabel.alpha = 0
