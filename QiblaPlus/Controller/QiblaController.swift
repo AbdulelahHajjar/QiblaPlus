@@ -52,10 +52,14 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
         var heading = newHeading.trueHeading
 		let location = manager.location
 		
-        if heading == -1.0 { qiblaDelegate?.didFindError(error: Constants.shared.cannotCalibrate) }
-		else if location == nil && location?.horizontalAccuracy ?? 0 <= 0 { qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation )}
+		if heading.isNaN || heading.isInvalid { qiblaDelegate?.didFindError(error: Constants.shared.cannotCalibrate) }
+		else if location?.isInvalid ?? true { qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation )}
         else {
-			let bearingAngle = Constants.shared.bearing(lat: location!.coordinate.latitude, lon: location!.coordinate.longitude)
+			let latitude = location!.coordinate.latitude
+			let longitude = location!.coordinate.longitude
+			
+			let bearingAngle = Constants.shared.bearing(lat: latitude, lon: longitude)
+			
             heading *= Double.pi/180.0
 			qiblaDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle - heading + Double.pi * 2)
         }
@@ -77,4 +81,16 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 		}
 		return status
     }
+}
+
+extension CLLocation {
+	var isInvalid: Bool {
+		return horizontalAccuracy < 0
+	}
+}
+
+extension CLLocationDirection {
+	var isInvalid: Bool {
+		return self == -1.0
+	}
 }
