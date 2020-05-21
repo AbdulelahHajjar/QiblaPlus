@@ -61,7 +61,7 @@ class Constants {
         return atan2(x, y)
     }
 	
-	func mustCalibrate() -> Bool {
+	var mustCalibrate: Bool {
 		if let diff = Calendar.current.dateComponents([.minute], from: lastCalibrated, to: Date()).minute, diff > 40 {
 			return true
 		}
@@ -69,7 +69,6 @@ class Constants {
 			return false
 		}
 	}
-
 	
 	var deviceLanguage: String {
 		let prefLangArray = Locale.preferredLanguages.first!
