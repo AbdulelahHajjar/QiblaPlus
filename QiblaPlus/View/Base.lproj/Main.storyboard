@@ -95,7 +95,7 @@
                                     <constraint firstAttribute="bottom" secondItem="lWF-zf-UeS" secondAttribute="bottom" id="qGT-bS-kKk"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
                                 <rect key="frame" x="288.33333333333331" y="60.000000000000007" width="70.666666666666686" height="29.333333333333336"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration">
@@ -148,16 +148,28 @@
                                     <action selector="changeLanguageBtn" destination="BYZ-38-t0r" eventType="touchUpInside" id="cC1-7C-JaF"/>
                                 </connections>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaI-u2-WdN">
+                                <rect key="frame" x="60" y="179" width="255" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oaI-u2-WdN" secondAttribute="height" multiplier="1:1" id="8jw-Jd-OkU"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="0gd-JA-CUA" kind="embed" id="AM2-si-k56"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.2980414629" green="0.29803520439999998" blue="0.29803943630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="oaI-u2-WdN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="5wf-l1-cXH"/>
                             <constraint firstItem="Rbi-li-CLC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Clu-fj-Ggq"/>
                             <constraint firstAttribute="bottom" secondItem="B2X-eH-2zf" secondAttribute="bottom" constant="40" id="HoF-NH-Q6G"/>
                             <constraint firstItem="Rbi-li-CLC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Njg-Jc-f5i"/>
                             <constraint firstItem="B2X-eH-2zf" firstAttribute="top" secondItem="OqI-Zi-cR6" secondAttribute="bottom" constant="10" id="Oa1-oX-9dO"/>
                             <constraint firstItem="OqI-Zi-cR6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Rbi-li-CLC" secondAttribute="bottom" constant="20" id="Tia-LG-Vic"/>
+                            <constraint firstItem="oaI-u2-WdN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="W9c-Yr-6Pa"/>
                             <constraint firstAttribute="trailing" secondItem="B2X-eH-2zf" secondAttribute="trailing" constant="20" id="atH-4f-Y1M"/>
                             <constraint firstAttribute="trailing" secondItem="OqI-Zi-cR6" secondAttribute="trailing" constant="60" id="dhF-QY-D07"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oaI-u2-WdN" secondAttribute="trailing" constant="60" id="eCE-DO-3uM"/>
                             <constraint firstItem="OqI-Zi-cR6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="eaz-An-9P7"/>
                             <constraint firstItem="6TM-qL-dvi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="gqq-7Y-cks"/>
                             <constraint firstItem="B2X-eH-2zf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="h7p-Ru-oWT"/>
@@ -177,6 +189,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="79.064039408867004"/>
+        </scene>
+        <!--CompassVC-->
+        <scene sceneID="0nD-2L-DA1">
+            <objects>
+                <viewController id="0gd-JA-CUA" customClass="CompassVC" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u5P-xF-wpf">
+                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCN-Bp-gs3">
+                                <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QCN-Bp-gs3" secondAttribute="trailing" id="4H3-AR-Uyh"/>
+                            <constraint firstAttribute="bottom" secondItem="QCN-Bp-gs3" secondAttribute="bottom" id="PhY-3I-5Bn"/>
+                            <constraint firstItem="QCN-Bp-gs3" firstAttribute="top" secondItem="u5P-xF-wpf" secondAttribute="top" id="R9c-j9-ZZf"/>
+                            <constraint firstItem="QCN-Bp-gs3" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leading" id="Uyt-Xx-9qp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="base" destination="QCN-Bp-gs3" id="enC-75-g0X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bbh-Lc-KvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763" y="-308"/>
         </scene>
     </scenes>
     <resources>
