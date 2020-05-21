@@ -42,18 +42,6 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
             locationManager.startUpdatingHeading()
         }
     }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let lastLocation = locations.last!
-        if (lastLocation.horizontalAccuracy > 0) {
-            let lat = lastLocation.coordinate.latitude * Double.pi / 180.0
-            let lon = lastLocation.coordinate.longitude * Double.pi / 180.0
-            bearingAngle = Constants.shared.getBearing(newLat: lat, newLon: lon)
-        }
-        else {
-            qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
-        }
-    }
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		startProcess()
@@ -61,21 +49,15 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 	}
 	
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        locationManager.startUpdatingLocation()
         var heading = newHeading.trueHeading
-
-        if heading == -1.0 {
-            qiblaDelegate?.didFindError(error: Constants.shared.cannotCalibrate)
-        }
-            
+		let location = manager.location
+		
+        if heading == -1.0 { qiblaDelegate?.didFindError(error: Constants.shared.cannotCalibrate) }
+		else if location == nil && location?.horizontalAccuracy ?? 0 <= 0 { qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation )}
         else {
+			let bearingAngle = Constants.shared.bearing(lat: location!.coordinate.latitude, lon: location!.coordinate.longitude)
             heading *= Double.pi/180.0
-            if(bearingAngle == nil) {
-                qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
-            }
-            else {
-                qiblaDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle! - heading + Double.pi * 2)
-            }
+			qiblaDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle - heading + Double.pi * 2)
         }
     }
     

@@ -53,7 +53,9 @@ class Constants {
         return ["en" : enTipsAttributed, "ar" : arTipsAttributed]
     }
     
-    func getBearing(newLat: Double, newLon: Double) -> Double {
+    func bearing(lat: Double, lon: Double) -> Double {
+		let newLat = lat * Double.pi / 180.0
+		let newLon = lon * Double.pi / 180.0
         let x = cos(makkahLat) * sin(makkahLon - newLon)
         let y = cos(newLat) * sin(makkahLat) - sin(newLat) * cos(makkahLat) * cos(makkahLon - newLon)
         return atan2(x, y)
