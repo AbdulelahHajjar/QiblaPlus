@@ -217,6 +217,7 @@
                     </view>
                     <connections>
                         <outlet property="base" destination="QCN-Bp-gs3" id="enC-75-g0X"/>
+                        <outlet property="needle" destination="rd3-xX-W9X" id="EHn-hM-mrJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbh-Lc-KvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -8,18 +8,34 @@
 
 import UIKit
 
-class CompassVC: UIViewController {
+class CompassVC: UIViewController, QiblaDirectionProtocol {
+	func didSuccessfullyFindHeading(rotationAngle: Double) {
+		
+	}
+	
+	func didFindError(error: String) {
+		
+	}
+	
+	func showCalibration(force: Bool) {
+		
+	}
+	
 	@IBOutlet weak var base: UIView!
+	@IBOutlet weak var needle: UIImageView!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		setUpBase()
+    }
+	
+	func setUpBase() {
 		base.layer.cornerRadius = base.frame.size.width / 2
 		base.clipsToBounds = true
 		base.layer.borderColor = UIColor.black.cgColor
 		base.layer.borderWidth = 2
-    }
-
-
+	}
+	
     /*
     // MARK: - Navigation
 
