@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Constants {
+struct Constants {
 	private(set) static var shared = Constants()
 	
     let makkahLat = 0.3738927226761722      //21.4224750 deg
@@ -90,7 +90,7 @@ class Constants {
 		defaults.set(lang, forKey: "Language")
 	}
 	
-	func refreshLastCalibrationDate() {
+	mutating func refreshLastCalibrationDate() {
 		lastCalibrated = Date()
 	}
 }

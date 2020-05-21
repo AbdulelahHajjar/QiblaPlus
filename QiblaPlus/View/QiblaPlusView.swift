@@ -88,7 +88,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     
     //MARK:- UI-related Functions
     func showCalibrationIfNeeded() {
-        if (Constants.shared.mustCalibrate()) && !animationIsPlaying && QiblaController.shared.canFindQibla {
+        if (Constants.shared.mustCalibrate) && !animationIsPlaying && QiblaController.shared.canFindQibla {
             showCalibrationDisplay()
         }
     }
