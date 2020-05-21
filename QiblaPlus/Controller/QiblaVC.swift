@@ -1,6 +1,6 @@
 //
-//  QiblaPlusView.swift
-//  AccurateQiblaFinder
+//  QiblaVC.swift
+//  QiblaPlus
 //
 //  Created by Abdulelah Hajjar on 04/08/2019.
 //  Copyright © 2019 Abdulelah Hajjar. All rights reserved.
@@ -11,7 +11,7 @@ import CoreLocation
 import SwiftGifOrigin
 import LGButton
 
-class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
+class QiblaVC: UIViewController, QiblaDirectionProtocol {
     //MARK:- IBOutlets
     @IBOutlet var backgroundView: UIView!
     @IBOutlet weak var tipsLabel: UILabel!
@@ -20,7 +20,6 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     @IBOutlet weak var calibrationProgressBar: UIProgressView!
     
     //MARK:- Current Status Variables
-    var currentLangauge: String?
     var animationIsPlaying: Bool = false    //No animation on first launch.
     
     //MARK:- Overridden Functions
@@ -28,7 +27,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         super.loadView()
         setBackground()
         hideAllComponents()
-		setLanguage(lang: Constants.shared.savedLanguage ?? Constants.shared.deviceLanguage)
+		setLanguage(lang: Constants.shared.appLanguage)
     }
     
     override func viewDidLoad() {
@@ -51,7 +50,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     }
     
     func didFindError(error: [String : String]) {
-        showWarning(warningText: error[currentLangauge!]!)
+		showWarning(warningText: error[Constants.shared.appLanguage]!)
     }
     
 	func showCalibration(force: Bool) {
@@ -62,16 +61,14 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     //MARK:- Language-related Functions
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
-        currentLangauge == "en" ? setLanguage(lang: "ar") : setLanguage(lang: "en")
+		Constants.shared.appLanguage == "en" ? setLanguage(lang: "ar") : setLanguage(lang: "en")
         showCalibrationIfNeeded()
     }
     
     func setLanguage(lang: String) {
-        currentLangauge = lang
-        
         lang == "en" ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
         
-        Constants.shared.setSavedLanguage(lang)
+        Constants.shared.appLanguage = lang
         QiblaController.shared.startMonitoringQibla()
 
         UIView.animate(withDuration: 0.250) {
@@ -130,7 +127,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
 		calibrationProgressBar.progress = 0
         needleImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(0))
         Constants.shared.refreshLastCalibrationDate()
-        needleImage.image = UIImage(named: "NeedleCalibration" + currentLangauge!.uppercased() + ".png")
+		needleImage.image = UIImage(named: "NeedleCalibration" + Constants.shared.appLanguage.uppercased() + ".png")
         calibrationProgressBar.setProgress(0, animated: false)
         needleImage.alpha = 1
         warningLabel.alpha = 0
@@ -170,7 +167,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     }
     
     @objc func appCameToForeground() {
-		setLanguage(lang: Constants.shared.savedLanguage ?? Constants.shared.deviceLanguage)                
+		setLanguage(lang: Constants.shared.appLanguage)
         QiblaController.shared.startMonitoringQibla()
         showCalibrationIfNeeded()
     }

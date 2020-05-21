@@ -8,8 +8,14 @@
 
 import UIKit
 
+enum Language: String {
+	case english = "en"
+	case arabic = "ar"
+	case unknown = "unknown"
+}
+
 struct Constants {
-	private(set) static var shared = Constants()
+	static var shared = Constants()
 	
     let makkahLat = 0.3738927226761722      //21.4224750 deg
     let makkahLon = 0.6950985611585316      //39.8262139 deg
@@ -23,28 +29,25 @@ struct Constants {
     let noTrueHeadingError = ["en" : "⚠\nYour device does not support true heading directions.", "ar" : "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."]
 		
 	var mustCalibrate: Bool {
-		if let diff = Calendar.current.dateComponents([.minute], from: lastCalibrated, to: Date()).minute, diff > 40 {
-			return true
-		}
-		else {
-			return false
-		}
+		if let diff = Calendar.current.dateComponents([.minute], from: lastCalibrated, to: Date()).minute, diff > 40 { return true }
+		else { return false }
 	}
 	
-	var deviceLanguage: String {
-		let prefLangArray = Locale.preferredLanguages.first!
-		var prefLanguage: String
-		prefLangArray.contains("ar") ? (prefLanguage = "ar") : (prefLanguage = "en")
-		return prefLanguage
+	var appLanguage: String {
+		get { savedLanguage != nil ? savedLanguage! : deviceLanguage }
+		set { setSavedLanguage(newValue) }
 	}
 	
-	var savedLanguage: String? {
-		if let savedLanguage: String = defaults.object(forKey: "Language") as? String {
-			return savedLanguage
-		}
-		else {
-			return nil
-		}
+	private var deviceLanguage: String {
+		let preferredLangArray = Locale.preferredLanguages.first!
+		var preferredLanguage: String
+		preferredLangArray.contains("ar") ? (preferredLanguage = "ar") : (preferredLanguage = "en")
+		return preferredLanguage
+	}
+	
+	private var savedLanguage: String? {
+		if let savedLanguage = defaults.object(forKey: "Language") as? String { return savedLanguage }
+		else { return nil }
 	}
 	
 	var tips: [String : NSAttributedString] {
@@ -86,7 +89,7 @@ struct Constants {
         return atan2(x, y)
     }
 	
-	func setSavedLanguage(_ lang: String) {
+	private func setSavedLanguage(_ lang: String) {
 		defaults.set(lang, forKey: "Language")
 	}
 	

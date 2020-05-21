@@ -18,8 +18,10 @@
 		EB44ACD4232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */; };
 		EB450D4A2411BF59003871FF /* QiblaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450D492411BF59003871FF /* QiblaController.swift */; };
 		EB5D33B02409E69600C51112 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D33AF2409E69600C51112 /* Constants.swift */; };
+		EB6AAC692476365B0047792C /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6AAC682476365B0047792C /* CompassView.swift */; };
+		EB6AAC7524763F2A0047792C /* CompassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB6AAC7424763F2A0047792C /* CompassView.xib */; };
 		EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */; };
-		EB9B553D232D2F0A001B2E8C /* QiblaPlusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553C232D2F0A001B2E8C /* QiblaPlusView.swift */; };
+		EB9B553D232D2F0A001B2E8C /* QiblaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553C232D2F0A001B2E8C /* QiblaVC.swift */; };
 		EB9B5540232D2F0A001B2E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9B553E232D2F0A001B2E8C /* Main.storyboard */; };
 		EB9B5542232D2F0B001B2E8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB9B5541232D2F0B001B2E8C /* Assets.xcassets */; };
 		EB9B5545232D2F0B001B2E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9B5543232D2F0B001B2E8C /* LaunchScreen.storyboard */; };
@@ -59,9 +61,11 @@
 		EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		EB450D492411BF59003871FF /* QiblaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaController.swift; sourceTree = "<group>"; };
 		EB5D33AF2409E69600C51112 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EB6AAC682476365B0047792C /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
+		EB6AAC7424763F2A0047792C /* CompassView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompassView.xib; sourceTree = "<group>"; };
 		EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiblaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB9B553C232D2F0A001B2E8C /* QiblaPlusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaPlusView.swift; sourceTree = "<group>"; };
+		EB9B553C232D2F0A001B2E8C /* QiblaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaVC.swift; sourceTree = "<group>"; };
 		EB9B553F232D2F0A001B2E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB9B5541232D2F0B001B2E8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB9B5544232D2F0B001B2E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		EB0EB2DD240A7B0A00BD37FC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB9B553C232D2F0A001B2E8C /* QiblaVC.swift */,
 				EB450D492411BF59003871FF /* QiblaController.swift */,
 			);
 			path = Controller;
@@ -153,7 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				EB9B553E232D2F0A001B2E8C /* Main.storyboard */,
-				EB9B553C232D2F0A001B2E8C /* QiblaPlusView.swift */,
+				EB6AAC682476365B0047792C /* CompassView.swift */,
+				EB6AAC7424763F2A0047792C /* CompassView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				EBAF197A232FE6B60021AD79 /* Dubai-Light.ttf in Resources */,
 				EB44ACD2232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */,
 				EBC4217123F0AE32001505D4 /* README.md in Resources */,
+				EB6AAC7524763F2A0047792C /* CompassView.xib in Resources */,
 				EB9B5545232D2F0B001B2E8C /* LaunchScreen.storyboard in Resources */,
 				EB9B5542232D2F0B001B2E8C /* Assets.xcassets in Resources */,
 				EB9B5540232D2F0A001B2E8C /* Main.storyboard in Resources */,
@@ -453,7 +460,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB5D33B02409E69600C51112 /* Constants.swift in Sources */,
-				EB9B553D232D2F0A001B2E8C /* QiblaPlusView.swift in Sources */,
+				EB9B553D232D2F0A001B2E8C /* QiblaVC.swift in Sources */,
+				EB6AAC692476365B0047792C /* CompassView.swift in Sources */,
 				EB450D4A2411BF59003871FF /* QiblaController.swift in Sources */,
 				EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */,
 			);
