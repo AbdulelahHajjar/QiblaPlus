@@ -21,9 +21,26 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
     var bearingAngle: Double?
     let locationManager = CLLocationManager()
     var qiblaDelegate: QiblaDirectionProtocol?
-    
-    var existsError: Bool = false
-    
+        
+	var errorDescription: [String : String]? {
+		if(CLLocationManager.headingAvailable() == false) {
+			return Constants.shared.noTrueHeadingError
+		}
+		else if CLLocationManager.locationServicesEnabled() == false {
+			return Constants.shared.locationDisabled
+		}
+		else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
+			return Constants.shared.wrongAuthInSettings
+		}
+		else {
+			return nil
+		}
+	}
+	
+	var canFindQibla: Bool {
+		errorDescription == nil
+	}
+	
     override private init() {
         super.init()
         locationManager.delegate = self
@@ -31,22 +48,14 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
     }
 	
-	func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
-		return true
-	}
-	
     func startProcess() {
-        let canFindQibla = findErrors()
-        if(canFindQibla) {
-            locationManager.startUpdatingLocation()
-            locationManager.startUpdatingHeading()
-        }
+		if canFindQibla {
+			locationManager.startUpdatingLocation()
+			locationManager.startUpdatingHeading()
+		} else {
+			qiblaDelegate?.didFindError(error: errorDescription ?? [:])
+		}
     }
-	
-	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-		startProcess()
-		qiblaDelegate?.showCalibration(force: true)
-	}
 	
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         var heading = newHeading.trueHeading
@@ -64,23 +73,15 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 			qiblaDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle - heading + Double.pi * 2)
         }
     }
-    
-	func findErrors() -> Bool {
-		var status = false
-        if(CLLocationManager.headingAvailable() == false) {
-            qiblaDelegate?.didFindError(error: Constants.shared.noTrueHeadingError)
-        }
-        else if CLLocationManager.locationServicesEnabled() == false {
-            qiblaDelegate?.didFindError(error: Constants.shared.locationDisabled)
-        }
-        else if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.authorizedWhenInUse {
-            qiblaDelegate?.didFindError(error: Constants.shared.wrongAuthInSettings)
-        }
-		else {
-			status = true
-		}
-		return status
-    }
+	
+	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+		startProcess()
+		qiblaDelegate?.showCalibration(force: true)
+	}
+	
+	func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
+		return true
+	}
 }
 
 extension CLLocation {
