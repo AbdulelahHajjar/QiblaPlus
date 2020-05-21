@@ -199,16 +199,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCN-Bp-gs3">
-                                <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
+                                <rect key="frame" x="17" y="17" width="221" height="221"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="rd3-xX-W9X">
+                                <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="QCN-Bp-gs3" secondAttribute="trailing" id="4H3-AR-Uyh"/>
-                            <constraint firstAttribute="bottom" secondItem="QCN-Bp-gs3" secondAttribute="bottom" id="PhY-3I-5Bn"/>
-                            <constraint firstItem="QCN-Bp-gs3" firstAttribute="top" secondItem="u5P-xF-wpf" secondAttribute="top" id="R9c-j9-ZZf"/>
-                            <constraint firstItem="QCN-Bp-gs3" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leading" id="Uyt-Xx-9qp"/>
+                            <constraint firstItem="QCN-Bp-gs3" firstAttribute="top" secondItem="u5P-xF-wpf" secondAttribute="top" constant="17" id="1T3-mp-DC8"/>
+                            <constraint firstAttribute="trailing" secondItem="QCN-Bp-gs3" secondAttribute="trailing" constant="17" id="4H3-AR-Uyh"/>
+                            <constraint firstAttribute="bottom" secondItem="QCN-Bp-gs3" secondAttribute="bottom" constant="17" id="PhY-3I-5Bn"/>
+                            <constraint firstItem="QCN-Bp-gs3" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leading" constant="17" id="Uyt-Xx-9qp"/>
                         </constraints>
                     </view>
                     <connections>

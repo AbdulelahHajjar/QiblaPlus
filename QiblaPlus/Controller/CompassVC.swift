@@ -14,7 +14,9 @@ class CompassVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		base.layer.cornerRadius = base.frame.size.width / 2
-        // Do any additional setup after loading the view.
+		base.clipsToBounds = true
+		base.layer.borderColor = UIColor.black.cgColor
+		base.layer.borderWidth = 2
     }
 
 
