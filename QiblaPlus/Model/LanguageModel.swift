@@ -31,6 +31,7 @@ enum LocalizedStringKeys: String {
 struct LanguageModel {
 	static var shared = LanguageModel()
 	let defaults = UserDefaults.standard
+	let appLanguageNotification = Notification.Name("didChangeAppLanguage")
 	
 	var appLanguage: Language {
 		get { savedLanguage != .unknown ? savedLanguage : deviceLanguage }
@@ -61,16 +62,24 @@ struct LanguageModel {
 		return NSAttributedString(string: localizedString(from: .tips), attributes: tipsAttributes as [NSAttributedString.Key : Any])
 	}
 	
-	private init() {}
+	mutating func toggleLanguage() {
+		appLanguage = appLanguage == .arabic ? .english : .arabic
+	}
 	
 	private func setSavedLanguage(_ language: Language) {
 		defaults.set(language.rawValue, forKey: DefaultsKeys.language.rawValue)
+		postAppLanguageChangeNotification()
 	}
 	
 	func localizedString(from key: LocalizedStringKeys) -> String {
+		print("here", key)
 		guard let bundlePath = Bundle.main.path(forResource: appLanguage.rawValue, ofType: "lproj"), let bundle = Bundle(path: bundlePath) else {
 			return NSLocalizedString(key.rawValue, comment: "")
 		}
 		return NSLocalizedString(key.rawValue, tableName: nil, bundle: bundle, comment: "")
+	}
+	
+	func postAppLanguageChangeNotification() {
+		NotificationCenter.default.post(name: appLanguageNotification, object: nil, userInfo: ["AppLanguage" : appLanguage])
 	}
 }

@@ -20,33 +20,15 @@ class QiblaVC: UIViewController {
     override func loadView() {
         super.loadView()
         setBackground()
-		setLanguage(lang: LanguageModel.shared.appLanguage)
 		setObservers()
+		tipsLabel.attributedText = LanguageModel.shared.tips
     }
 	
     //MARK:- Language-related Functions
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
-		LanguageModel.shared.appLanguage == .english ? setLanguage(lang: .arabic) : setLanguage(lang: .english)
-//        showCalibrationIfNeeded()
+		LanguageModel.shared.toggleLanguage()
     }
-    
-    func setLanguage(lang: Language) {
-		LanguageModel.shared.appLanguage = lang
-		langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
-//        QiblaController.shared.startMonitoringQibla()
-
-        UIView.animate(withDuration: 0.250) {
-            self.tipsLabel.alpha = 0
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-			self.tipsLabel.attributedText = LanguageModel.shared.tips
-            UIView.animate(withDuration: 0.250) {
-                self.tipsLabel.alpha = 1.0
-            }
-        }
-    }
-    
     
     //MARK:- UI-related
     func setBackground() {
@@ -64,16 +46,31 @@ class QiblaVC: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+		notificationCenter.addObserver(self, selector: #selector(onDidChangeAppLanguage(_:)), name: LanguageModel.shared.appLanguageNotification, object: nil)
     }
     
+	@objc func onDidChangeAppLanguage(_ notification: Notification) {
+		DispatchQueue.main.async {
+			self.langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
+		}
+		UIView.animate(withDuration: 0.250) {
+			self.tipsLabel.alpha = 0
+		}
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
+			self.tipsLabel.attributedText = LanguageModel.shared.tips
+			UIView.animate(withDuration: 0.250) {
+				self.tipsLabel.alpha = 1.0
+			}
+		}
+	}
+	
     @objc func appMovedToBackground() {
         QiblaController.shared.locationManager.stopUpdatingHeading()
         QiblaController.shared.locationManager.stopUpdatingLocation()
     }
     
     @objc func appCameToForeground() {
-		setLanguage(lang: LanguageModel.shared.appLanguage)
         QiblaController.shared.startMonitoringQibla()
-//        showCalibrationIfNeeded()
+		//showcalibrationifneeded
     }
 }

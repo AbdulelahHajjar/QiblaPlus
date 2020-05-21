@@ -36,9 +36,10 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	}
 	
 	func didFindError(error: String) {
-		print(error)
-		show(component: .warning)
-		warning.text = error
+		if !isAnimationPlaying {
+			show(component: .warning)
+			warning.text = error
+		}
 	}
 	
 	func showCalibration() {
@@ -47,28 +48,24 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	
 	//MARK:- UI Components Related Methods
 	func show(component: CompassComponent) {
-		if !isAnimationPlaying {
-			hideAllComponents()
-			
-			switch component {
-			case .needle:
-				needle.alpha = 1
-			case .warning:
-				warning.alpha = 1
-			case .calibration:
-				calibration.alpha = 1
-				progressBar.alpha = 1
-			}
+		hideAllComponents()
+		
+		switch component {
+		case .needle:
+			needle.alpha = 1
+		case .warning:
+			warning.alpha = 1
+		case .calibration:
+			calibration.alpha = 1
+			progressBar.alpha = 1
 		}
 	}
 	
 	func hideAllComponents() {
-		if !isAnimationPlaying {
-			needle.alpha = 0
-			warning.alpha = 0
-			progressBar.alpha = 0
-			calibration.alpha = 0
-		}
+		needle.alpha = 0
+		warning.alpha = 0
+		progressBar.alpha = 0
+		calibration.alpha = 0
 	}
 	
 	func rotateNeedle(rotationAngle: Double) {
