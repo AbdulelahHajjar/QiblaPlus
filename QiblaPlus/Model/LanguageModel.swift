@@ -50,18 +50,15 @@ struct LanguageModel {
 	}
 	
 	var tips: NSAttributedString {
+		let paragraphStyle = NSMutableParagraphStyle()
+		paragraphStyle.lineSpacing = 8
+		paragraphStyle.alignment = appLanguage == .arabic ? .right : .left
+		
 		let tipsAttributes = [NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Light", size: 15),
 							  NSAttributedString.Key.paragraphStyle : paragraphStyle,
 							  NSAttributedString.Key.foregroundColor : UIColor.white]
 		
 		return NSAttributedString(string: localizedString(from: .tips), attributes: tipsAttributes as [NSAttributedString.Key : Any])
-	}
-	
-	var paragraphStyle: NSMutableParagraphStyle {
-		let enParagraphStyle = NSMutableParagraphStyle()
-		enParagraphStyle.lineSpacing = 8
-		enParagraphStyle.alignment = appLanguage == .arabic ? .right : .left
-		return enParagraphStyle
 	}
 	
 	private init() {}
