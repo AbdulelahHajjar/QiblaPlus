@@ -40,9 +40,10 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         QiblaController.shared.qiblaDelegate = self
-        QiblaController.shared.startProcess()
         setObservers()
-        showCalibrationDisplay()
+		if QiblaController.shared.canFindQibla {
+			showCalibrationDisplay()
+		}
     }
     
     //MARK:- QiblaDirectionProtocol Delegate Functions
@@ -77,7 +78,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
         lang == "en" ? (langBtnOutlet.titleString = "عــربــي") : (langBtnOutlet.titleString = "English")
         
         Constants.shared.setPrefLanguage(lang)
-        QiblaController.shared.startProcess()
+        QiblaController.shared.startMonitoringQibla()
 
         UIView.animate(withDuration: 0.250) {
             self.tipsLabel.alpha = 0
@@ -182,7 +183,7 @@ class QiblaPlusView: UIViewController, QiblaDirectionProtocol {
             setLanguage(lang: Constants.shared.getPrefLanguage()!)
         }
                 
-        QiblaController.shared.startProcess()
+        QiblaController.shared.startMonitoringQibla()
         showCalibrationIfNeeded()
     }
 }

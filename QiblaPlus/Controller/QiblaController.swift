@@ -18,7 +18,6 @@ protocol QiblaDirectionProtocol {
 class QiblaController: NSObject, CLLocationManagerDelegate {
 	private(set) static var shared = QiblaController()
 	
-    var bearingAngle: Double?
     let locationManager = CLLocationManager()
     var qiblaDelegate: QiblaDirectionProtocol?
         
@@ -45,10 +44,11 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager.requestWhenInUseAuthorization()
+		startMonitoringQibla()
     }
 	
-    func startProcess() {
+    func startMonitoringQibla() {
+		locationManager.requestWhenInUseAuthorization()
 		if canFindQibla {
 			locationManager.startUpdatingLocation()
 			locationManager.startUpdatingHeading()
@@ -61,8 +61,12 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
         var heading = newHeading.trueHeading
 		let location = manager.location
 		
-		if heading.isNaN || heading.isInvalid { qiblaDelegate?.didFindError(error: Constants.shared.cannotCalibrate) }
-		else if location?.isInvalid ?? true { qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation )}
+		if heading.isInvalid {
+			qiblaDelegate?.didFindError(error: Constants.shared.cannotCalibrate)
+		}
+		else if location?.isInvalid ?? true {
+			qiblaDelegate?.didFindError(error: Constants.shared.cannotFindLocation)
+		}
         else {
 			let latitude = location!.coordinate.latitude
 			let longitude = location!.coordinate.longitude
@@ -75,7 +79,7 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
     }
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-		startProcess()
+		startMonitoringQibla()
 		qiblaDelegate?.showCalibration(force: true)
 	}
 	
@@ -92,6 +96,6 @@ extension CLLocation {
 
 extension CLLocationDirection {
 	var isInvalid: Bool {
-		return self == -1.0
+		return self == -1.0 || self.isNaN
 	}
 }
