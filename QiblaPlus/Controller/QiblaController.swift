@@ -12,14 +12,16 @@ import CoreLocation
 protocol QiblaDirectionProtocol {
     func didSuccessfullyFindHeading(rotationAngle: Double)
     func didFindError(error: String)
-	func showCalibration(force: Bool)
+	func showCalibration()
 }
 
 class QiblaController: NSObject, CLLocationManagerDelegate {
 	private(set) static var shared = QiblaController()
 	
     let locationManager = CLLocationManager()
-    var qiblaDelegate: QiblaDirectionProtocol?
+	var qiblaDelegate: QiblaDirectionProtocol? {
+		willSet { if newValue != nil { startMonitoringQibla() } }
+	}
         
 	var errorDescription: String? {
 		if(CLLocationManager.headingAvailable() == false) {
@@ -44,12 +46,13 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-		startMonitoringQibla()
     }
 	
     func startMonitoringQibla() {
 		locationManager.requestWhenInUseAuthorization()
+		
 		if canFindQibla {
+			qiblaDelegate?.showCalibration()
 			locationManager.startUpdatingLocation()
 			locationManager.startUpdatingHeading()
 		} else {
@@ -80,7 +83,7 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		startMonitoringQibla()
-		qiblaDelegate?.showCalibration(force: true)
+		qiblaDelegate?.showCalibration()
 	}
 	
 	func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
