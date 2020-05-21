@@ -21,8 +21,31 @@ class Constants {
     let locationDisabled = ["en" : "⚠\nPlease enable location services from your device's settings.", "ar" : "⚠\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة."]
     let wrongAuthInSettings = ["en" : "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction.", "ar" : "⚠\nالرجاء إعطاء هذا التطبيق صلاحيات الموقع \"أثناء الإستخدام\" لمعرفة القبلة."]
     let noTrueHeadingError = ["en" : "⚠\nYour device does not support true heading directions.", "ar" : "⚠\nجهازك لا يدعم إستخدام مستشعر الإتجاهات."]
+		
+	var mustCalibrate: Bool {
+		if let diff = Calendar.current.dateComponents([.minute], from: lastCalibrated, to: Date()).minute, diff > 40 {
+			return true
+		}
+		else {
+			return false
+		}
+	}
 	
-	private init() {}
+	var deviceLanguage: String {
+		let prefLangArray = Locale.preferredLanguages.first!
+		var prefLanguage: String
+		prefLangArray.contains("ar") ? (prefLanguage = "ar") : (prefLanguage = "en")
+		return prefLanguage
+	}
+	
+	var savedLanguage: String? {
+		if let savedLanguage: String = defaults.object(forKey: "Language") as? String {
+			return savedLanguage
+		}
+		else {
+			return nil
+		}
+	}
 	
 	var tips: [String : NSAttributedString] {
         //Setting paragraph style for the tips
@@ -53,6 +76,8 @@ class Constants {
         return ["en" : enTipsAttributed, "ar" : arTipsAttributed]
     }
     
+	private init() {}
+	
     func bearing(lat: Double, lon: Double) -> Double {
 		let newLat = lat * Double.pi / 180.0
 		let newLon = lon * Double.pi / 180.0
@@ -60,31 +85,6 @@ class Constants {
         let y = cos(newLat) * sin(makkahLat) - sin(newLat) * cos(makkahLat) * cos(makkahLon - newLon)
         return atan2(x, y)
     }
-	
-	var mustCalibrate: Bool {
-		if let diff = Calendar.current.dateComponents([.minute], from: lastCalibrated, to: Date()).minute, diff > 40 {
-			return true
-		}
-		else {
-			return false
-		}
-	}
-	
-	var deviceLanguage: String {
-		let prefLangArray = Locale.preferredLanguages.first!
-		var prefLanguage: String
-		prefLangArray.contains("ar") ? (prefLanguage = "ar") : (prefLanguage = "en")
-		return prefLanguage
-	}
-	
-	var savedLanguage: String? {
-		if let savedLanguage: String = defaults.object(forKey: "Language") as? String {
-			return savedLanguage
-		}
-		else {
-			return nil
-		}
-	}
 	
 	func setSavedLanguage(_ lang: String) {
 		defaults.set(lang, forKey: "Language")
