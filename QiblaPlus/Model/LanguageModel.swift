@@ -69,8 +69,10 @@ struct LanguageModel {
 	}
 	
 	private func setSavedLanguage(_ language: Language) {
-		defaults.set(language.rawValue, forKey: DefaultsKeys.language.rawValue)
-		postAppLanguageChangeNotification()
+		DispatchQueue.main.async {
+			self.defaults.set(language.rawValue, forKey: DefaultsKeys.language.rawValue)
+			self.postAppLanguageChangeNotification()
+		}
 	}
 	
 	func localizedString(from key: LocalizedStringKeys) -> String {

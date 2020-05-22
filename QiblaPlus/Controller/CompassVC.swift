@@ -116,8 +116,6 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	}
 	
 	@objc func onDidChangeAppLanguage(_ notification: Notification) {
-		DispatchQueue.main.async {
-			QiblaController.shared.startMonitoringQibla()
-		}
+		QiblaController.shared.startMonitoringQibla()
 	}
 }

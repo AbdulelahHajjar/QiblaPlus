@@ -49,9 +49,7 @@ class QiblaVC: UIViewController {
     }
     
 	@objc func onDidChangeAppLanguage(_ notification: Notification) {
-		DispatchQueue.main.async {
-			self.langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
-		}
+		self.langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
 		UIView.animate(withDuration: 0.250) {
 			self.tipsLabel.alpha = 0
 		}
