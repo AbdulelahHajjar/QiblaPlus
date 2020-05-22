@@ -10,7 +10,7 @@ import UIKit
 
 enum Language: String {
 	case english = "en"
-	case arabic = "ar"
+	case arabic  = "ar"
 	case unknown = "unknown"
 }
 
@@ -19,19 +19,21 @@ enum DefaultsKeys: String {
 }
 
 enum LocalizedStringKeys: String {
-	case buttonText = "buttonText"
-	case tips = "tips"
-	case cannotFindLocation = "cannotFindLocation"
-	case cannotCalibrate = "cannotCalibrate"
-	case locationDisabled = "locationDisabled"
+	case buttonText          = "buttonText"
+	case tips                = "tips"
+	case cannotFindLocation  = "cannotFindLocation"
+	case cannotCalibrate     = "cannotCalibrate"
+	case locationDisabled    = "locationDisabled"
 	case wrongAuthInSettings = "wrongAuthInSettings"
-	case noTrueHeadingError = "noTrueHeadingError"
+	case noTrueHeadingError  = "noTrueHeadingError"
 }
 
 struct LanguageModel {
-	static var shared = LanguageModel()
-	let defaults = UserDefaults.standard
+	static var shared           = LanguageModel()
+	let defaults                = UserDefaults.standard
+	let appLanguageNotification = Notification.Name("didChangeAppLanguage")
 	
+	//MARK:- Language-Related Computed Variables
 	var appLanguage: Language {
 		get { savedLanguage != .unknown ? savedLanguage : deviceLanguage }
 		set { setSavedLanguage(newValue) }
@@ -61,10 +63,14 @@ struct LanguageModel {
 		return NSAttributedString(string: localizedString(from: .tips), attributes: tipsAttributes as [NSAttributedString.Key : Any])
 	}
 	
-	private init() {}
+	//MARK:- Language-related Methods
+	mutating func toggleLanguage() {
+		appLanguage = appLanguage == .arabic ? .english : .arabic
+	}
 	
 	private func setSavedLanguage(_ language: Language) {
 		defaults.set(language.rawValue, forKey: DefaultsKeys.language.rawValue)
+		postAppLanguageChangeNotification()
 	}
 	
 	func localizedString(from key: LocalizedStringKeys) -> String {
@@ -72,5 +78,9 @@ struct LanguageModel {
 			return NSLocalizedString(key.rawValue, comment: "")
 		}
 		return NSLocalizedString(key.rawValue, tableName: nil, bundle: bundle, comment: "")
+	}
+	
+	func postAppLanguageChangeNotification() {
+		NotificationCenter.default.post(name: appLanguageNotification, object: nil, userInfo: nil)
 	}
 }
