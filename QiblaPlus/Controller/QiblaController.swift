@@ -56,7 +56,7 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 			if Constants.shared.mustCalibrate {
 				qiblaDelegate?.showCalibration()
 			}
-			
+			locationManager.pausesLocationUpdatesAutomatically = false
 			locationManager.startUpdatingLocation()
 			locationManager.startUpdatingHeading()
 		} else {
