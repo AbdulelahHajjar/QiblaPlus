@@ -21,6 +21,7 @@ class QiblaVC: UIViewController {
         super.loadView()
         setBackground()
 		setObservers()
+		langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
 		tipsLabel.attributedText = LanguageModel.shared.tips
     }
 	
@@ -44,8 +45,6 @@ class QiblaVC: UIViewController {
     //MARK:- App Background Activity Observer
     func setObservers() {
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
 		notificationCenter.addObserver(self, selector: #selector(onDidChangeAppLanguage(_:)), name: LanguageModel.shared.appLanguageNotification, object: nil)
     }
     
@@ -63,14 +62,4 @@ class QiblaVC: UIViewController {
 			}
 		}
 	}
-	
-    @objc func appMovedToBackground() {
-        QiblaController.shared.locationManager.stopUpdatingHeading()
-        QiblaController.shared.locationManager.stopUpdatingLocation()
-    }
-    
-    @objc func appCameToForeground() {
-        QiblaController.shared.startMonitoringQibla()
-		//showcalibrationifneeded
-    }
 }

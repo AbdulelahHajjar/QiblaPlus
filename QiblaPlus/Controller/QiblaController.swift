@@ -6,7 +6,7 @@
 //  Copyright © 2020 Abdulelah Hajjar. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreLocation
 
 protocol QiblaDirectionProtocol {
@@ -39,11 +39,12 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 	}
 	
 	var canFindQibla: Bool {
-		errorDescription == nil
+		return errorDescription == nil
 	}
 	
     override private init() {
         super.init()
+		setObservers()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
     }
@@ -52,7 +53,10 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 		locationManager.requestWhenInUseAuthorization()
 		
 		if canFindQibla {
-			qiblaDelegate?.showCalibration()
+			if Constants.shared.mustCalibrate {
+				qiblaDelegate?.showCalibration()
+			}
+			
 			locationManager.startUpdatingLocation()
 			locationManager.startUpdatingHeading()
 		} else {
@@ -83,11 +87,26 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		startMonitoringQibla()
-		qiblaDelegate?.showCalibration()
+		if canFindQibla { qiblaDelegate?.showCalibration() }
 	}
 	
 	func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
 		return true
+	}
+	
+	func setObservers() {
+		let notificationCenter = NotificationCenter.default
+		notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+		notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+	}
+	
+	@objc func appMovedToBackground() {
+		QiblaController.shared.locationManager.stopUpdatingHeading()
+		QiblaController.shared.locationManager.stopUpdatingLocation()
+	}
+	
+	@objc func appCameToForeground() {
+		QiblaController.shared.startMonitoringQibla()
 	}
 }
 

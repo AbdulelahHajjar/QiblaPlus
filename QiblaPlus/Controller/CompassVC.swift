@@ -26,6 +26,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setUpBase()
+		setObservers()
 		hideAllComponents()
 		QiblaController.shared.qiblaDelegate = self
 	}
@@ -36,10 +37,8 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	}
 	
 	func didFindError(error: String) {
-		if !isAnimationPlaying {
-			show(component: .warning)
-			warning.text = error
-		}
+		show(component: .warning)
+		warning.text = error
 	}
 	
 	func showCalibration() {
@@ -107,6 +106,18 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 					})
 				})
 			})
+		}
+	}
+	
+	//MARK:- App Background Activity Observer
+	func setObservers() {
+		let notificationCenter = NotificationCenter.default
+		notificationCenter.addObserver(self, selector: #selector(onDidChangeAppLanguage(_:)), name: LanguageModel.shared.appLanguageNotification, object: nil)
+	}
+	
+	@objc func onDidChangeAppLanguage(_ notification: Notification) {
+		DispatchQueue.main.async {
+			QiblaController.shared.startMonitoringQibla()
 		}
 	}
 }

@@ -74,7 +74,6 @@ struct LanguageModel {
 	}
 	
 	func localizedString(from key: LocalizedStringKeys) -> String {
-		print("here", key)
 		guard let bundlePath = Bundle.main.path(forResource: appLanguage.rawValue, ofType: "lproj"), let bundle = Bundle(path: bundlePath) else {
 			return NSLocalizedString(key.rawValue, comment: "")
 		}
@@ -82,6 +81,6 @@ struct LanguageModel {
 	}
 	
 	func postAppLanguageChangeNotification() {
-		NotificationCenter.default.post(name: appLanguageNotification, object: nil, userInfo: ["AppLanguage" : appLanguage])
+		NotificationCenter.default.post(name: appLanguageNotification, object: nil, userInfo: nil)
 	}
 }
