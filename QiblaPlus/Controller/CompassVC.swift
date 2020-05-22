@@ -77,7 +77,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	func setUpBase() {
 		base.layer.cornerRadius = base.frame.size.width / 2
 		base.clipsToBounds = true
-		base.layer.borderColor = UIColor.systemGray.cgColor
+		base.layer.borderColor = UIColor.lightGray.cgColor
 		base.layer.borderWidth = 2
 	}
 	
