@@ -33,7 +33,10 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	
 	//MARK:- Qibla Direction Delegate Methods
 	func didSuccessfullyFindHeading(rotationAngle: Double) {
-		if !isAnimationPlaying { rotateNeedle(rotationAngle: rotationAngle) }
+		if !isAnimationPlaying {
+			show(component: .needle)
+			rotateNeedle(rotationAngle: rotationAngle)
+		}
 	}
 	
 	func didFindError(error: String) {
@@ -69,7 +72,6 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	
 	func rotateNeedle(rotationAngle: Double) {
 		UIView.animate(withDuration: 0.200) {
-			self.show(component: .needle)
 			self.needle.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
 		}
 	}
