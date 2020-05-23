@@ -28,7 +28,7 @@ enum LocalizedStringKeys: String {
 	case noTrueHeadingError  = "noTrueHeadingError"
 }
 
-struct LanguageModel {
+class LanguageModel {
 	static var shared           = LanguageModel()
 	let defaults                = UserDefaults.standard
 	let appLanguageNotification = Notification.Name("didChangeAppLanguage")
@@ -36,7 +36,7 @@ struct LanguageModel {
 	//MARK:- Language-Related Computed Variables
 	var appLanguage: Language {
 		get { savedLanguage != .unknown ? savedLanguage : deviceLanguage }
-		set { setSavedLanguage(newValue) }
+		set { saveLanguage(newValue) }
 	}
 	
 	private var deviceLanguage: Language {
@@ -64,15 +64,13 @@ struct LanguageModel {
 	}
 	
 	//MARK:- Language-related Methods
-	mutating func toggleLanguage() {
+	func toggleLanguage() {
 		appLanguage = appLanguage == .arabic ? .english : .arabic
 	}
 	
-	private func setSavedLanguage(_ language: Language) {
-		DispatchQueue.main.async {
-			self.defaults.set(language.rawValue, forKey: DefaultsKeys.language.rawValue)
-			self.postAppLanguageChangeNotification()
-		}
+	private func saveLanguage(_ language: Language) {
+		defaults.set(language.rawValue, forKey: DefaultsKeys.language.rawValue)
+		postAppLanguageChangeNotification()
 	}
 	
 	func localizedString(from key: LocalizedStringKeys) -> String {
