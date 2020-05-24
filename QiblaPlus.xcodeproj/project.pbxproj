@@ -19,7 +19,7 @@
 		EB44ACD2232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */; };
 		EB44ACD3232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */; };
 		EB44ACD4232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */; };
-		EB450D4A2411BF59003871FF /* QiblaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450D492411BF59003871FF /* QiblaController.swift */; };
+		EB450D4A2411BF59003871FF /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450D492411BF59003871FF /* LocationDelegate.swift */; };
 		EB5D33B02409E69600C51112 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D33AF2409E69600C51112 /* Constants.swift */; };
 		EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */; };
 		EB9B553D232D2F0A001B2E8C /* QiblaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553C232D2F0A001B2E8C /* QiblaVC.swift */; };
@@ -63,7 +63,7 @@
 		EB2916D524771BAA00F926FB /* CompassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassVC.swift; sourceTree = "<group>"; };
 		EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
-		EB450D492411BF59003871FF /* QiblaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaController.swift; sourceTree = "<group>"; };
+		EB450D492411BF59003871FF /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
 		EB5D33AF2409E69600C51112 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiblaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				EB9B553C232D2F0A001B2E8C /* QiblaVC.swift */,
-				EB450D492411BF59003871FF /* QiblaController.swift */,
+				EB450D492411BF59003871FF /* LocationDelegate.swift */,
 				EB2916D524771BAA00F926FB /* CompassVC.swift */,
 			);
 			path = Controller;
@@ -464,7 +464,7 @@
 				EB2916D724771BAA00F926FB /* CompassVC.swift in Sources */,
 				EB2916D4247715B800F926FB /* LanguageModel.swift in Sources */,
 				EB9B553D232D2F0A001B2E8C /* QiblaVC.swift in Sources */,
-				EB450D4A2411BF59003871FF /* QiblaController.swift in Sources */,
+				EB450D4A2411BF59003871FF /* LocationDelegate.swift in Sources */,
 				EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

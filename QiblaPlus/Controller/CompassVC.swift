@@ -30,8 +30,8 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 		setUpBase()
 		setObservers()
 		hideAllComponents()
-		QiblaController.shared.qiblaDelegate = self
-		QiblaController.shared.startMonitoringQibla()
+		LocationDelegate.shared.qiblaDelegate = self
+		LocationDelegate.shared.startMonitoringQibla()
 	}
 	
 	//MARK:- Qibla Direction Delegate Methods
@@ -128,6 +128,6 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	}
 	
 	@objc func onDidChangeAppLanguage(_ notification: Notification) {
-		QiblaController.shared.startMonitoringQibla()
+		LocationDelegate.shared.startMonitoringQibla()
 	}
 }
