@@ -21,8 +21,8 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
 	var qiblaDelegate: QiblaDirectionProtocol?
 	
-	var errorDescription: String? {
-		if(CLLocationManager.headingAvailable() == false) {
+	private var errorDescription: String? {
+		if CLLocationManager.headingAvailable() == false {
 			return LanguageModel.shared.localizedString(from: .noTrueHeadingError)
 		}
 		else if CLLocationManager.locationServicesEnabled() == false {
