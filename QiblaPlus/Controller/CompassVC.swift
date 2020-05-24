@@ -16,7 +16,7 @@ enum CompassComponent {
 
 class CompassVC: UIViewController, QiblaDirectionProtocol {
 	@IBOutlet weak var base: UIView!
-	@IBOutlet weak var needle: UIImageView!
+	@IBOutlet weak var arrow: UIImageView!
 	@IBOutlet weak var warning: UILabel!
 	@IBOutlet weak var calibration: UIImageView!
 	@IBOutlet weak var progressBar: UIProgressView!
@@ -35,7 +35,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	//MARK:- Qibla Direction Delegate Methods
 	func didSuccessfullyFindHeading(rotationAngle: Double) {
 		rotateNeedle(rotationAngle: rotationAngle)
-		if !isAnimationPlaying && needle.alpha != 1 { show(component: .needle) }
+		if !isAnimationPlaying && arrow.alpha != 1 { show(component: .needle) }
 	}
 	
 	func didFindError(error: String) {
@@ -53,7 +53,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 		
 		switch component {
 		case .needle:
-			needle.alpha = 1
+			arrow.alpha = 1
 		case .warning:
 			warning.alpha = 1
 		case .calibration:
@@ -63,7 +63,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	}
 	
 	func hideAllComponents() {
-		needle.alpha = 0
+		arrow.alpha = 0
 		warning.alpha = 0
 		progressBar.alpha = 0
 		calibration.alpha = 0
@@ -71,7 +71,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	
 	func rotateNeedle(rotationAngle: Double) {
 		UIView.animate(withDuration: 0.200) {
-			self.needle.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
+			self.arrow.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
 		}
 	}
 	
