@@ -48,6 +48,11 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
     }
 	
     func startMonitoringQibla() {
+		if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.notDetermined ||
+		CLLocationManager.authorizationStatus() == CLAuthorizationStatus.denied {
+			locationManager.requestWhenInUseAuthorization()
+		}
+		
 		locationManager.requestWhenInUseAuthorization()
 		
 		if canFindQibla {
