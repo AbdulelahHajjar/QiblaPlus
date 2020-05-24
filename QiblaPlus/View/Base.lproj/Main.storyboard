@@ -196,11 +196,11 @@
                         <viewLayoutGuide key="safeArea" id="iaA-LW-UhE"/>
                     </view>
                     <connections>
-                        <outlet property="arrow" destination="rd3-xX-W9X" id="EHn-hM-mrJ"/>
-                        <outlet property="base" destination="QCN-Bp-gs3" id="enC-75-g0X"/>
-                        <outlet property="calibration" destination="oUb-XC-PQf" id="dP5-4F-tjo"/>
+                        <outlet property="arrowImage" destination="rd3-xX-W9X" id="EHn-hM-mrJ"/>
+                        <outlet property="baseImage" destination="QCN-Bp-gs3" id="enC-75-g0X"/>
+                        <outlet property="calibrationImage" destination="oUb-XC-PQf" id="dP5-4F-tjo"/>
+                        <outlet property="errorLabel" destination="64e-Ys-pbf" id="4eE-W7-MB7"/>
                         <outlet property="progressBar" destination="Nxg-lN-mBW" id="Hml-g9-e3G"/>
-                        <outlet property="warning" destination="64e-Ys-pbf" id="4eE-W7-MB7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbh-Lc-KvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -15,10 +15,12 @@ enum CompassComponent {
 }
 
 class CompassVC: UIViewController, QiblaDirectionProtocol {
-	@IBOutlet weak var base: UIView!
-	@IBOutlet weak var arrow: UIImageView!
-	@IBOutlet weak var warning: UILabel!
-	@IBOutlet weak var calibration: UIImageView!
+	
+	//MARK:- Outlets
+	@IBOutlet weak var baseImage: UIView!
+	@IBOutlet weak var arrowImage: UIImageView!
+	@IBOutlet weak var errorLabel: UILabel!
+	@IBOutlet weak var calibrationImage: UIImageView!
 	@IBOutlet weak var progressBar: UIProgressView!
 	
 	var isAnimationPlaying = false
@@ -34,13 +36,13 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	
 	//MARK:- Qibla Direction Delegate Methods
 	func didSuccessfullyFindHeading(rotationAngle: Double) {
-		rotateNeedle(rotationAngle: rotationAngle)
-		if !isAnimationPlaying && arrow.alpha != 1 { show(component: .needle) }
+		rotateArrow(angle: rotationAngle)
+		if !isAnimationPlaying && arrowImage.alpha != 1 { show(component: .needle) }
 	}
 	
 	func didFindError(error: String) {
 		show(component: .warning)
-		warning.text = error
+		errorLabel.text = error
 	}
 	
 	func showCalibration() {
@@ -53,49 +55,49 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 		
 		switch component {
 		case .needle:
-			arrow.alpha = 1
+			arrowImage.alpha = 1
 		case .warning:
-			warning.alpha = 1
+			errorLabel.alpha = 1
 		case .calibration:
-			calibration.alpha = 1
+			calibrationImage.alpha = 1
 			progressBar.alpha = 1
 		}
 	}
 	
 	func hideAllComponents() {
-		arrow.alpha = 0
-		warning.alpha = 0
+		arrowImage.alpha = 0
+		errorLabel.alpha = 0
 		progressBar.alpha = 0
-		calibration.alpha = 0
+		calibrationImage.alpha = 0
 	}
 	
-	func rotateNeedle(rotationAngle: Double) {
+	func rotateArrow(angle: Double) {
 		UIView.animate(withDuration: 0.200) {
-			self.arrow.transform = CGAffineTransform.init(rotationAngle: CGFloat(rotationAngle))
+			self.arrowImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(angle))
 		}
 	}
 	
 	func setUpBase() {
 		let gradient = CAGradientLayer()
-		gradient.frame = base.bounds
+		gradient.frame = baseImage.bounds
 		gradient.colors = [UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).cgColor,
 						   UIColor(cgColor: #colorLiteral(red: 0.8392156863, green: 0.878935039, blue: 0.878935039, alpha: 1)).cgColor]
 		
 		gradient.endPoint = CGPoint.init(x: 0, y: 1)
 		gradient.startPoint = CGPoint.init(x: 1  , y: 0)
 		
-		base.layer.insertSublayer(gradient, at: 0)
-		base.layer.cornerRadius = base.frame.size.width / 2
-		base.clipsToBounds = true
-		base.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.7843137255, green: 0.8374213576, blue: 0.8374213576, alpha: 1)).cgColor
-		base.layer.borderWidth = 2
+		baseImage.layer.insertSublayer(gradient, at: 0)
+		baseImage.layer.cornerRadius = baseImage.frame.size.width / 2
+		baseImage.clipsToBounds = true
+		baseImage.layer.borderColor = UIColor(cgColor: #colorLiteral(red: 0.7843137255, green: 0.8374213576, blue: 0.8374213576, alpha: 1)).cgColor
+		baseImage.layer.borderWidth = 2
 	}
 	
 	func showCalibrationDisplay() {
 		isAnimationPlaying = true
 		Constants.shared.refreshLastCalibrationDate()
 		progressBar.setProgress(0, animated: false)
-		calibration.image = UIImage.gif(asset: "Calibration")
+		calibrationImage.image = UIImage.gif(asset: "Calibration")
 		
 		UIView.animate(withDuration: 0.400, animations: {
 			self.show(component: .calibration)
@@ -110,7 +112,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 						}, completion: { (Bool) in
 							DispatchQueue.main.asyncAfter(deadline: .now() + 0.400, execute: {
 								self.isAnimationPlaying = false
-								self.calibration.image = nil
+								self.calibrationImage.image = nil
 							})
 						})
 					})
