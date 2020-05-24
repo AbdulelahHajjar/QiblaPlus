@@ -81,7 +81,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 		let gradient = CAGradientLayer()
 		gradient.frame = baseImage.bounds
 		gradient.colors = [UIColor(cgColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)).cgColor,
-						   UIColor(cgColor: #colorLiteral(red: 0.8392156863, green: 0.878935039, blue: 0.878935039, alpha: 1)).cgColor]
+						   UIColor(cgColor: #colorLiteral(red: 0.8392156863, green: 0.8784313725, blue: 0.8784313725, alpha: 1)).cgColor]
 		
 		gradient.endPoint = CGPoint.init(x: 0, y: 1)
 		gradient.startPoint = CGPoint.init(x: 1  , y: 0)
