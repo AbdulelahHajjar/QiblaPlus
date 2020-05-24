@@ -26,3 +26,6 @@
 
 /* Error: Cannot find true heading */
 "noTrueHeadingError" = "⚠️\nYour device does not support true heading directions.";
+
+/* Calibration Instructions Image Name */
+"calibrationInstructionsImage" = "NeedleCalibrationEN";

@@ -26,3 +26,6 @@
 
 /* Error: Cannot find true heading */
 "noTrueHeadingError" = "⚠️\nجهازك لا يدعم إستخدام مستشعر الإتجاهات.";
+
+/* Calibration Instructions Image Name */
+"calibrationInstructionsImage" = "NeedleCalibrationAR";

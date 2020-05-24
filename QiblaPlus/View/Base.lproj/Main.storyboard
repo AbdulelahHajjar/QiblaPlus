@@ -13,19 +13,19 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="QiblaVC" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2X-eH-2zf" userLabel="tips">
-                                <rect key="frame" x="20" y="676" width="335" height="96"/>
+                                <rect key="frame" x="20" y="360" width="280" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="B2X-eH-2zf" secondAttribute="height" multiplier="335:96" id="00N-cH-9cG"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
-                                <rect key="frame" x="287.66666666666669" y="59.999999999999993" width="71.333333333333314" height="29.666666666666664"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="232.5" y="16" width="71.5" height="29.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
@@ -78,7 +78,7 @@
                                 </connections>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaI-u2-WdN">
-                                <rect key="frame" x="60" y="411" width="255" height="255"/>
+                                <rect key="frame" x="60" y="150" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oaI-u2-WdN" secondAttribute="height" multiplier="1:1" id="8jw-Jd-OkU"/>
@@ -88,7 +88,7 @@
                                 </connections>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ajm-Im-1MP">
-                                <rect key="frame" x="104.66666666666667" y="94" width="165.66666666666663" height="50"/>
+                                <rect key="frame" x="77" y="50" width="166" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="lWF-zf-UeS">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -97,7 +97,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pys-x8-dKx">
-                                        <rect key="frame" x="57.999999999999979" y="0.0" width="107.66666666666669" height="50"/>
+                                        <rect key="frame" x="58" y="0.0" width="108" height="50"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Qibla+">
                                                 <attributes>
@@ -146,28 +146,32 @@
             <objects>
                 <viewController id="0gd-JA-CUA" customClass="CompassVC" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u5P-xF-wpf">
-                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCN-Bp-gs3">
-                                <rect key="frame" x="17" y="17" width="221" height="221"/>
+                                <rect key="frame" x="17" y="17" width="166" height="166"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="rd3-xX-W9X">
-                                <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeedleCalibrationAR" translatesAutoresizingMaskIntoConstraints="NO" id="kXp-V3-DFK" userLabel="Calibration Instructions Image">
+                                <rect key="frame" x="17" y="17" width="166" height="166"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="64e-Ys-pbf">
-                                <rect key="frame" x="40" y="0.0" width="175" height="255"/>
+                                <rect key="frame" x="40" y="0.0" width="120" height="200"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nxg-lN-mBW">
-                                <rect key="frame" x="88" y="197" width="79" height="2"/>
+                                <rect key="frame" x="88" y="142" width="24" height="2"/>
                             </progressView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oUb-XC-PQf" userLabel="Calibration">
-                                <rect key="frame" x="17" y="17" width="221" height="221"/>
+                                <rect key="frame" x="17" y="17" width="166" height="166"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,17 +179,21 @@
                             <constraint firstItem="oUb-XC-PQf" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leading" constant="17" id="00f-Ta-gbS"/>
                             <constraint firstItem="QCN-Bp-gs3" firstAttribute="top" secondItem="u5P-xF-wpf" secondAttribute="top" constant="17" id="1T3-mp-DC8"/>
                             <constraint firstAttribute="trailing" secondItem="QCN-Bp-gs3" secondAttribute="trailing" constant="17" id="4H3-AR-Uyh"/>
-                            <constraint firstItem="rd3-xX-W9X" firstAttribute="top" secondItem="iaA-LW-UhE" secondAttribute="top" id="8PB-8u-0WR"/>
+                            <constraint firstItem="rd3-xX-W9X" firstAttribute="top" secondItem="u5P-xF-wpf" secondAttribute="top" id="8PB-8u-0WR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nxg-lN-mBW" secondAttribute="trailing" constant="72" id="CyQ-tQ-j5u"/>
-                            <constraint firstItem="iaA-LW-UhE" firstAttribute="trailing" secondItem="rd3-xX-W9X" secondAttribute="trailing" id="Hej-HF-408"/>
+                            <constraint firstAttribute="trailing" secondItem="rd3-xX-W9X" secondAttribute="trailing" id="Hej-HF-408"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Nxg-lN-mBW" secondAttribute="bottom" constant="56" id="JKj-Un-t2M"/>
+                            <constraint firstItem="iaA-LW-UhE" firstAttribute="trailing" secondItem="kXp-V3-DFK" secondAttribute="trailing" constant="17" id="LMi-4v-mS1"/>
                             <constraint firstItem="oUb-XC-PQf" firstAttribute="top" secondItem="u5P-xF-wpf" secondAttribute="top" constant="17" id="Mja-rM-y76"/>
                             <constraint firstAttribute="bottom" secondItem="QCN-Bp-gs3" secondAttribute="bottom" constant="17" id="PhY-3I-5Bn"/>
-                            <constraint firstItem="iaA-LW-UhE" firstAttribute="bottom" secondItem="rd3-xX-W9X" secondAttribute="bottom" id="Rce-M1-ppN"/>
+                            <constraint firstAttribute="bottom" secondItem="rd3-xX-W9X" secondAttribute="bottom" id="Rce-M1-ppN"/>
+                            <constraint firstItem="kXp-V3-DFK" firstAttribute="top" secondItem="iaA-LW-UhE" secondAttribute="top" constant="17" id="UUD-9Q-45F"/>
+                            <constraint firstItem="iaA-LW-UhE" firstAttribute="bottom" secondItem="kXp-V3-DFK" secondAttribute="bottom" constant="17" id="UhH-yZ-Ntt"/>
                             <constraint firstItem="QCN-Bp-gs3" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leading" constant="17" id="Uyt-Xx-9qp"/>
                             <constraint firstAttribute="trailing" secondItem="oUb-XC-PQf" secondAttribute="trailing" constant="17" id="V90-B4-vh1"/>
                             <constraint firstAttribute="trailing" secondItem="64e-Ys-pbf" secondAttribute="trailing" constant="40" id="Vw8-xu-bUk"/>
-                            <constraint firstItem="rd3-xX-W9X" firstAttribute="leading" secondItem="iaA-LW-UhE" secondAttribute="leading" id="WUS-ih-u0K"/>
+                            <constraint firstItem="rd3-xX-W9X" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leading" id="WUS-ih-u0K"/>
+                            <constraint firstItem="kXp-V3-DFK" firstAttribute="leading" secondItem="iaA-LW-UhE" secondAttribute="leading" constant="17" id="ce8-WU-DGM"/>
                             <constraint firstItem="64e-Ys-pbf" firstAttribute="top" secondItem="u5P-xF-wpf" secondAttribute="top" id="el1-lz-VVA"/>
                             <constraint firstAttribute="bottom" secondItem="64e-Ys-pbf" secondAttribute="bottom" id="gUM-z1-aw6"/>
                             <constraint firstItem="64e-Ys-pbf" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leading" constant="40" id="uxz-TG-070"/>
@@ -198,6 +206,7 @@
                         <outlet property="arrowImage" destination="rd3-xX-W9X" id="EHn-hM-mrJ"/>
                         <outlet property="baseImage" destination="QCN-Bp-gs3" id="enC-75-g0X"/>
                         <outlet property="calibrationImage" destination="oUb-XC-PQf" id="dP5-4F-tjo"/>
+                        <outlet property="calibrationInstructionImage" destination="kXp-V3-DFK" id="BzV-PE-2bA"/>
                         <outlet property="errorLabel" destination="64e-Ys-pbf" id="4eE-W7-MB7"/>
                         <outlet property="progressBar" destination="Nxg-lN-mBW" id="Hml-g9-e3G"/>
                     </connections>
@@ -209,6 +218,7 @@
     </scenes>
     <resources>
         <image name="Needle" width="600" height="600"/>
+        <image name="NeedleCalibrationAR" width="512" height="512"/>
         <image name="logo" width="177" height="186"/>
     </resources>
 </document>

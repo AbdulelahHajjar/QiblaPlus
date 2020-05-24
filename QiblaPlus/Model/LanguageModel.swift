@@ -26,6 +26,7 @@ enum LocalizedStringKeys: String {
 	case locationDisabled    = "locationDisabled"
 	case wrongAuthInSettings = "wrongAuthInSettings"
 	case noTrueHeadingError  = "noTrueHeadingError"
+	case calibrationInstructionsImage = "calibrationInstructionsImage"
 }
 
 struct LanguageModel {

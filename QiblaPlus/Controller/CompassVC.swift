@@ -20,6 +20,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	@IBOutlet weak var baseImage: UIView!
 	@IBOutlet weak var arrowImage: UIImageView!
 	@IBOutlet weak var errorLabel: UILabel!
+	@IBOutlet weak var calibrationInstructionImage: UIImageView!
 	@IBOutlet weak var calibrationImage: UIImageView!
 	@IBOutlet weak var progressBar: UIProgressView!
 	
@@ -27,11 +28,15 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setUpBase()
 		setObservers()
 		hideAllComponents()
 		LocationDelegate.shared.qiblaDelegate = self
 		LocationDelegate.shared.startMonitoringQibla()
+	}
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		setUpBase()
 	}
 	
 	//MARK:- Qibla Direction Delegate Methods
@@ -60,6 +65,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 			errorLabel.alpha = 1
 		case .calibration:
 			calibrationImage.alpha = 1
+			calibrationInstructionImage.alpha = 1
 			progressBar.alpha = 1
 		}
 	}
@@ -69,6 +75,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 		errorLabel.alpha = 0
 		progressBar.alpha = 0
 		calibrationImage.alpha = 0
+		calibrationInstructionImage.alpha = 0
 	}
 	
 	func rotateArrow(angle: Double) {
@@ -98,6 +105,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 		Constants.shared.refreshLastCalibrationDate()
 		progressBar.setProgress(0, animated: false)
 		calibrationImage.image = UIImage.gif(asset: "Calibration")
+		calibrationInstructionImage.image = UIImage(named: LanguageModel.shared.localizedString(from: .calibrationInstructionsImage))
 		
 		UIView.animate(withDuration: 0.400, animations: {
 			self.show(component: .calibration)
