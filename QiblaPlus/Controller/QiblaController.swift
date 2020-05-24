@@ -19,10 +19,8 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 	private(set) static var shared = QiblaController()
 	
     let locationManager = CLLocationManager()
-	var qiblaDelegate: QiblaDirectionProtocol? {
-		willSet { if newValue != nil { startMonitoringQibla() } }
-	}
-        
+	var qiblaDelegate: QiblaDirectionProtocol?
+	
 	var errorDescription: String? {
 		if(CLLocationManager.headingAvailable() == false) {
 			return LanguageModel.shared.localizedString(from: .noTrueHeadingError)
@@ -87,7 +85,7 @@ class QiblaController: NSObject, CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		startMonitoringQibla()
-		if canFindQibla { qiblaDelegate?.showCalibration() }
+		if canFindQibla && Constants.shared.mustCalibrate { qiblaDelegate?.showCalibration() }
 	}
 	
 	func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {

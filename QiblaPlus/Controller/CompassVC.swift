@@ -29,6 +29,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 		setObservers()
 		hideAllComponents()
 		QiblaController.shared.qiblaDelegate = self
+		QiblaController.shared.startMonitoringQibla()
 	}
 	
 	//MARK:- Qibla Direction Delegate Methods
