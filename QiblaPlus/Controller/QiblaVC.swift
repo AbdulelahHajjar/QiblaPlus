@@ -19,11 +19,14 @@ class QiblaVC: UIViewController {
 	//MARK:- Overridden Functions
     override func loadView() {
         super.loadView()
-        setBackground()
 		setObservers()
-		langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
-		tipsLabel.attributedText = LanguageModel.shared.tips
     }
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		setBackground()
+		setComponents()
+	}
 	
     //MARK:- Language-related Functions
     @IBOutlet weak var langBtnOutlet: LGButton!
@@ -41,6 +44,16 @@ class QiblaVC: UIViewController {
         gradient.startPoint = CGPoint.init(x: 1  , y: 0)
         backgroundView.layer.insertSublayer(gradient, at: 0)
     }
+	
+	func setComponents() {
+		UIView.animate(withDuration: 0.250, animations: {
+			self.tipsLabel.alpha = 0
+			self.langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
+		}, completion: { status in
+			self.tipsLabel.attributedText = LanguageModel.shared.tips
+			UIView.animate(withDuration: 0.250, animations: { self.tipsLabel.alpha = 1} )
+		})
+	}
     
     //MARK:- App Background Activity Observer
     func setObservers() {
@@ -49,15 +62,6 @@ class QiblaVC: UIViewController {
     }
     
 	@objc func onDidChangeAppLanguage(_ notification: Notification) {
-		self.langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
-		UIView.animate(withDuration: 0.250) {
-			self.tipsLabel.alpha = 0
-		}
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.250) {
-			self.tipsLabel.attributedText = LanguageModel.shared.tips
-			UIView.animate(withDuration: 0.250) {
-				self.tipsLabel.alpha = 1.0
-			}
-		}
+		setComponents()
 	}
 }
