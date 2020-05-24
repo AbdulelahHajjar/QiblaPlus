@@ -28,16 +28,13 @@ enum LocalizedStringKeys: String {
 	case noTrueHeadingError  = "noTrueHeadingError"
 }
 
-class LanguageModel {
+struct LanguageModel {
 	static var shared           = LanguageModel()
 	let defaults                = UserDefaults.standard
 	let appLanguageNotification = Notification.Name("didChangeAppLanguage")
 	
 	//MARK:- Language-Related Computed Variables
-	var appLanguage: Language {
-		get { savedLanguage != .unknown ? savedLanguage : deviceLanguage }
-		set { saveLanguage(newValue) }
-	}
+	var currentLanguage: Language { savedLanguage != .unknown ? savedLanguage : deviceLanguage }
 	
 	private var deviceLanguage: Language {
 		let deviceLanguagesArray = Locale.preferredLanguages.first!
@@ -54,7 +51,7 @@ class LanguageModel {
 	var tips: NSAttributedString {
 		let paragraphStyle = NSMutableParagraphStyle()
 		paragraphStyle.lineSpacing = 8
-		paragraphStyle.alignment = appLanguage == .arabic ? .right : .left
+		paragraphStyle.alignment = currentLanguage == .arabic ? .right : .left
 		
 		let tipsAttributes = [NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Light", size: 15),
 							  NSAttributedString.Key.paragraphStyle : paragraphStyle,
@@ -65,16 +62,17 @@ class LanguageModel {
 	
 	//MARK:- Language-related Methods
 	func toggleLanguage() {
-		appLanguage = appLanguage == .arabic ? .english : .arabic
+		let newLanguage: Language = currentLanguage == .english ? .arabic : .english
+		saveLanguage(newLanguage)
+		postAppLanguageChangeNotification()
 	}
 	
 	private func saveLanguage(_ language: Language) {
 		defaults.set(language.rawValue, forKey: DefaultsKeys.language.rawValue)
-		postAppLanguageChangeNotification()
 	}
 	
 	func localizedString(from key: LocalizedStringKeys) -> String {
-		guard let bundlePath = Bundle.main.path(forResource: appLanguage.rawValue, ofType: "lproj"), let bundle = Bundle(path: bundlePath) else {
+		guard let bundlePath = Bundle.main.path(forResource: currentLanguage.rawValue, ofType: "lproj"), let bundle = Bundle(path: bundlePath) else {
 			return NSLocalizedString(key.rawValue, comment: "")
 		}
 		return NSLocalizedString(key.rawValue, tableName: nil, bundle: bundle, comment: "")
