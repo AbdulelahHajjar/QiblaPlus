@@ -13,16 +13,16 @@
 "tips" = "Tips for better qibla accuracy:\n♾ Calibrate compass by moving iPhone in an 8-figure\n🧲  Move away from electronic devices\n📱 Lay your phone flat";
 
 /* Error: Cannot find location error */
-"cannotFindLocation" = "⚠\nUnable to find device's location.";
+"cannotFindLocation" = "⚠️\nUnable to find device's location.";
 
 /* Error: Cannot calibrate compass */
-"cannotCalibrate" = "⚠\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.";
+"cannotCalibrate" = "⚠️\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.";
 
 /* Error: Location disabled */
-"locationDisabled" = "⚠\nPlease enable location services from your device's settings.";
+"locationDisabled" = "⚠️\nPlease enable location services from your device's settings.";
 
 /* Error: Wrong authentication status in settings */
-"wrongAuthInSettings" = "⚠\nPlease allow this app \"When In Use\" location privileges to determine qibla direction.";
+"wrongAuthInSettings" = "⚠️\nPlease allow this app \"When In Use\" location privileges to determine qibla direction.";
 
 /* Error: Cannot find true heading */
-"noTrueHeadingError" = "⚠\nYour device does not support true heading directions.";
+"noTrueHeadingError" = "⚠️\nYour device does not support true heading directions.";
