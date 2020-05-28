@@ -70,11 +70,12 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         var heading = newHeading.trueHeading
 		let location = manager.location
+		let locationAndHeadingSecondsDiff = abs(newHeading.timestamp.timeIntervalSince(location?.timestamp ?? Date(timeInterval: 200, since: Date())))
 		
 		if heading.isInvalid {
 			qiblaDelegate?.didFindError(error: LanguageModel.shared.localizedString(from: .cannotCalibrate))
 		}
-		else if location?.isInvalid ?? true {
+		else if location?.isInvalid ?? true || locationAndHeadingSecondsDiff > 120 {
 			qiblaDelegate?.didFindError(error: LanguageModel.shared.localizedString(from: .cannotFindLocation))
 		}
         else {
