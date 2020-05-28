@@ -26,6 +26,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	
 	var isAnimationPlaying = false
 	var isNewAppSession = true
+	var isNeedlePointingToKaaba = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -93,8 +94,18 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	}
 	
 	func rotateArrow(angle: Double) {
-		UIView.animate(withDuration: 0.200) {
-			self.arrowImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(angle))
+		if abs(angle) >= 6.25 && abs(angle) <= 6.31 {
+			if !isNeedlePointingToKaaba { UIImpactFeedbackGenerator(style: .light).impactOccurred() }
+			isNeedlePointingToKaaba = true
+			UIView.animate(withDuration: 0.200) {
+				self.arrowImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(Double.pi * 2))
+			}
+		}
+		else {
+			UIView.animate(withDuration: 0.200) {
+				self.arrowImage.transform = CGAffineTransform.init(rotationAngle: CGFloat(angle))
+			}
+			isNeedlePointingToKaaba = false
 		}
 	}
 	

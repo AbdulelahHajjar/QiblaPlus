@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 import SwiftGifOrigin
 import LGButton
 
@@ -15,8 +14,8 @@ class QiblaVC: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet var backgroundView: UIView!
 	@IBOutlet weak var tipsLabel: UILabel!
-	
 	@IBOutlet weak var reviewButton: UIButton!
+	
 	//MARK:- Overridden Functions
     override func loadView() {
         super.loadView()

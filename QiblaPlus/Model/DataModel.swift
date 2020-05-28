@@ -66,11 +66,11 @@ extension DataModel {
 	func requestAppStoreReview() {
 		SKStoreReviewController.requestReview()
 		UserDefaults.standard.set(currentAppVersion, forKey: DefaultsKeys.lastVersionPromptedForReviewKey.rawValue)
-		setSessionNumber(0)
+		resetSessionNumber()
 	}
 	
-	func setSessionNumber(_ number: Int) {
-		defaults.set(number, forKey: DefaultsKeys.sessions.rawValue)
+	func resetSessionNumber() {
+		defaults.set(0, forKey: DefaultsKeys.sessions.rawValue)
 	}
 	
 	/*
