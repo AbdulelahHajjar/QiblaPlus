@@ -47,6 +47,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 			show(component: .needle)
 		}
 		
+		//App Store Review Request
 		if isNewAppSession {
 			DataModel.shared.incrementSuccessSessionNumberIfNeeded()
 			if DataModel.shared.shouldAskForReview {

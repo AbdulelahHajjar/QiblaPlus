@@ -44,7 +44,12 @@ struct DataModel {
 }
 
 //MARK:- App Store Review Related
+//Review request is done at didSuccessfullyFindHeading method in CompassVC after a successful qibla finding.
 extension DataModel {
+	/*
+		I chose the appSessions to be 2 or more because people generally only lookup the direction maybe once or twice and then they memorize it, and possibly never open the app again.
+		However, if the App Store Connect Review team think 2 is not enough and it should be increased I am open to change it.
+	*/
 	var shouldAskForReview: Bool { appSessions >= 2 && currentAppVersion != lastPromptedForReviewAppVersion }
 	
 	var appSessions: Int { defaults.object(forKey: DefaultsKeys.sessions.rawValue) as? Int ?? 0 }
@@ -68,6 +73,10 @@ extension DataModel {
 		defaults.set(number, forKey: DefaultsKeys.sessions.rawValue)
 	}
 	
+	/*
+		I am only incrementing the usage if the currentAppVersion != lastPromptedForReviewAppVersion.
+		Because otherwise, a new app version could possibly ask for a review at its first launch. (I am resetting the session number in requestAppStoreReview() method
+	*/
 	func incrementSuccessSessionNumberIfNeeded() {
 		if currentAppVersion != lastPromptedForReviewAppVersion {
 			let newSessionNumber = appSessions + 1
