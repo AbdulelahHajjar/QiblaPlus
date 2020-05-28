@@ -6,8 +6,14 @@
   Copyright © 2020 Abdulelah Hajjar. All rights reserved.
 */
 
+/* Title text */
+"titleText" = "Qibla +";
+
 /* Change language button text */
 "buttonText" = "عــربــي";
+
+/* Rate me button text */
+"rateMeButtonText" = "Rate me";
 
 /* Tips for more accurate qibla */
 "tips" = "Tips for better qibla accuracy:\n♾ Calibrate compass by moving iPhone in an 8-figure\n🧲  Move away from electronic devices\n📱 Lay your phone flat";

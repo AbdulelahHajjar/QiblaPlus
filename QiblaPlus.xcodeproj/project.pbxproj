@@ -13,6 +13,12 @@
 		EB2916CF2477044800F926FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EB2916D12477044800F926FB /* Localizable.strings */; };
 		EB2916D4247715B800F926FB /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2916D3247715B800F926FB /* LanguageModel.swift */; };
 		EB2916D724771BAA00F926FB /* CompassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2916D524771BAA00F926FB /* CompassVC.swift */; };
+		EB313C292480405700B4A316 /* Tajawal-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB313C282480405700B4A316 /* Tajawal-ExtraLight.ttf */; };
+		EB313C2A2480405700B4A316 /* Tajawal-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB313C282480405700B4A316 /* Tajawal-ExtraLight.ttf */; };
+		EB313C2B2480405700B4A316 /* Tajawal-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB313C282480405700B4A316 /* Tajawal-ExtraLight.ttf */; };
+		EB313C2D2480416D00B4A316 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB313C2C2480416D00B4A316 /* Tajawal-Light.ttf */; };
+		EB313C2E2480416D00B4A316 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB313C2C2480416D00B4A316 /* Tajawal-Light.ttf */; };
+		EB313C2F2480416D00B4A316 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB313C2C2480416D00B4A316 /* Tajawal-Light.ttf */; };
 		EB44ACCF232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
 		EB44ACD0232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
 		EB44ACD1232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */; };
@@ -62,11 +68,13 @@
 		EB2916D22477045300F926FB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EB2916D3247715B800F926FB /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
 		EB2916D524771BAA00F926FB /* CompassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassVC.swift; sourceTree = "<group>"; };
+		EB313C282480405700B4A316 /* Tajawal-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-ExtraLight.ttf"; sourceTree = "<group>"; };
+		EB313C2C2480416D00B4A316 /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
 		EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		EB450D492411BF59003871FF /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
 		EB5D33AF2409E69600C51112 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		EB9B5537232D2F0A001B2E8C /* Qibla +.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qibla +.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiblaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB9B553C232D2F0A001B2E8C /* QiblaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaVC.swift; sourceTree = "<group>"; };
 		EB9B553F232D2F0A001B2E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +159,8 @@
 		EB4644AB240B33CC002992C6 /* Addons */ = {
 			isa = PBXGroup;
 			children = (
+				EB313C2C2480416D00B4A316 /* Tajawal-Light.ttf */,
+				EB313C282480405700B4A316 /* Tajawal-ExtraLight.ttf */,
 				EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */,
 				EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */,
 				EBA566C9240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf */,
@@ -193,7 +203,7 @@
 		EB9B5538232D2F0A001B2E8C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EB9B5537232D2F0A001B2E8C /* Qibla +.app */,
+				EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */,
 				EB9B554B232D2F0B001B2E8C /* QiblaPlusTests.xctest */,
 				EB9B5556232D2F0B001B2E8C /* QiblaPlusUITests.xctest */,
 			);
@@ -252,7 +262,7 @@
 			);
 			name = QiblaPlus;
 			productName = QiblaPlus;
-			productReference = EB9B5537232D2F0A001B2E8C /* Qibla +.app */;
+			productReference = EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EB9B554A232D2F0B001B2E8C /* QiblaPlusTests */ = {
@@ -345,6 +355,8 @@
 				EB44ACCF232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */,
 				EBA566CA240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				EB44ACD2232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */,
+				EB313C292480405700B4A316 /* Tajawal-ExtraLight.ttf in Resources */,
+				EB313C2D2480416D00B4A316 /* Tajawal-Light.ttf in Resources */,
 				EBC4217123F0AE32001505D4 /* README.md in Resources */,
 				EB2916CF2477044800F926FB /* Localizable.strings in Resources */,
 				EB9B5545232D2F0B001B2E8C /* LaunchScreen.storyboard in Resources */,
@@ -358,7 +370,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB313C2A2480405700B4A316 /* Tajawal-ExtraLight.ttf in Resources */,
 				EB44ACD3232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */,
+				EB313C2E2480416D00B4A316 /* Tajawal-Light.ttf in Resources */,
 				EB44ACD0232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +381,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB313C2B2480405700B4A316 /* Tajawal-ExtraLight.ttf in Resources */,
 				EB44ACD4232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */,
+				EB313C2F2480416D00B4A316 /* Tajawal-Light.ttf in Resources */,
 				EB44ACD1232D305A001592DA /* SF-Pro-Display-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,7 +693,7 @@
 				);
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = hajjar.AccuQibla;
-				PRODUCT_NAME = "Qibla +";
+				PRODUCT_NAME = QiblaPlus;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -699,7 +715,7 @@
 				);
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = hajjar.AccuQibla;
-				PRODUCT_NAME = "Qibla +";
+				PRODUCT_NAME = QiblaPlus;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

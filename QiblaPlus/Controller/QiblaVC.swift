@@ -13,8 +13,8 @@ import LGButton
 class QiblaVC: UIViewController {
     //MARK:- IBOutlets
     @IBOutlet var backgroundView: UIView!
+	@IBOutlet weak var logoTitle: UILabel!
 	@IBOutlet weak var tipsLabel: UILabel!
-	@IBOutlet weak var reviewButton: UIButton!
 	
 	//MARK:- Overridden Functions
     override func loadView() {
@@ -34,11 +34,15 @@ class QiblaVC: UIViewController {
 		LanguageModel.shared.toggleLanguage()
     }
     
+	
+	@IBOutlet weak var requestReviewButtonOutlet: LGButton!
 	@IBAction func requestReviewButton(_ sender: Any) {
 		guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1475861567?action=write-review")
 			else { return }
 		UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
 	}
+	
+	
 	
 	//MARK:- UI-related
     func setBackground() {
@@ -53,11 +57,17 @@ class QiblaVC: UIViewController {
 	
 	func setComponents() {
 		UIView.animate(withDuration: 0.250, animations: {
+			self.logoTitle.alpha = 0
 			self.tipsLabel.alpha = 0
 			self.langBtnOutlet.titleString = LanguageModel.shared.localizedString(from: .buttonText)
+			self.requestReviewButtonOutlet.titleString = LanguageModel.shared.localizedString(from: .rateMeButtonText)
 		}, completion: { status in
+			self.logoTitle.attributedText = LanguageModel.shared.titleText
 			self.tipsLabel.attributedText = LanguageModel.shared.tips
-			UIView.animate(withDuration: 0.250, animations: { self.tipsLabel.alpha = 1} )
+			UIView.animate(withDuration: 0.250, animations: {
+				self.logoTitle.alpha = 1
+				self.tipsLabel.alpha = 1
+			})
 		})
 	}
     

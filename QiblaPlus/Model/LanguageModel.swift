@@ -15,7 +15,9 @@ enum Language: String {
 }
 
 enum LocalizedStringKeys: String {
+	case titleText			 = "titleText"
 	case buttonText          = "buttonText"
+	case rateMeButtonText	 = "rateMeButtonText"
 	case tips                = "tips"
 	case cannotFindLocation  = "cannotFindLocation"
 	case cannotCalibrate     = "cannotCalibrate"
@@ -45,12 +47,24 @@ struct LanguageModel {
 		else { return .unknown }
 	}
 	
+	var titleText: NSAttributedString {
+		let paragraphStyle = NSMutableParagraphStyle()
+		paragraphStyle.alignment = .center
+		paragraphStyle.lineHeightMultiple = currentLanguage == .arabic ? 1.2 : 1
+		
+		let tipsAttributes = [NSAttributedString.Key.font : UIFont(name: currentLanguage == .arabic ? "Tajawal-ExtraLight" : "SFProDisplay-Thin", size: 42),
+							  NSAttributedString.Key.paragraphStyle : paragraphStyle,
+							  NSAttributedString.Key.foregroundColor : UIColor.white]
+		
+		return NSAttributedString(string: localizedString(from: .titleText), attributes: tipsAttributes as [NSAttributedString.Key : Any])
+	}
+	
 	var tips: NSAttributedString {
 		let paragraphStyle = NSMutableParagraphStyle()
-		paragraphStyle.lineSpacing = 8
+		paragraphStyle.lineSpacing = currentLanguage == .arabic ? 12 : 8
 		paragraphStyle.alignment = currentLanguage == .arabic ? .right : .left
 		
-		let tipsAttributes = [NSAttributedString.Key.font : UIFont(name: "SFProDisplay-Light", size: 15),
+		let tipsAttributes = [NSAttributedString.Key.font : UIFont(name: currentLanguage == .arabic ? "Tajawal-Light" : "SFProDisplay-Light", size: 15),
 							  NSAttributedString.Key.paragraphStyle : paragraphStyle,
 							  NSAttributedString.Key.foregroundColor : UIColor.white]
 		

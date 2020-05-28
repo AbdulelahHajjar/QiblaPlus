@@ -6,8 +6,14 @@
   Copyright © 2020 Abdulelah Hajjar. All rights reserved.
 */
 
+/* Title text */
+"titleText" = "قبلة +";
+
 /* Change language button text */
 "buttonText" = "English";
+
+/* Rate me button text */
+"rateMeButtonText" = "قيمني";
 
 /* Tips for more accurate qibla */
 "tips" = "نصائح لقبلة أدق:\n♾ عاير البوصلة بتدوير الجهاز على شكل 8\n🧲  ابتعد عن الأجهزة الإلكترونية\n📱 ضع هاتفك بشكل مسطح";
@@ -16,7 +22,7 @@
 "cannotFindLocation" = "⚠️\nتعذر الحصول على معلومات الموقع الحالي.";
 
 /* Error: Cannot calibrate compass */
-"cannotCalibrate" = "⚠️\nPlease enable\n\"Compass Calibration\" in:\nSettings -> Privacy -> Location Services -> System Services.";
+"cannotCalibrate" = "⚠️\nالرجاء تفعيل\n\"معايرة البوصلة\" in:\nالإعدادات -> الخصوصية -> خدمات الموقع -> خدمات النظام.";
 
 /* Error: Location disabled */
 "locationDisabled" = "⚠️\nالرجاء تفعيل خدمات الموقع من الإعدادات لمعرفة القبلة.";
