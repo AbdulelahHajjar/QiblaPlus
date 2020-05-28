@@ -29,6 +29,7 @@
 		EB9B5550232D2F0B001B2E8C /* QiblaPlusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B554F232D2F0B001B2E8C /* QiblaPlusTests.swift */; };
 		EB9B555B232D2F0B001B2E8C /* QiblaPlusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B555A232D2F0B001B2E8C /* QiblaPlusUITests.swift */; };
 		EBA566CA240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EBA566C9240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf */; };
+		EBB6B4FA247F582A000B40CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBB6B4FC247F582A000B40CA /* InfoPlist.strings */; };
 		EBC4217123F0AE32001505D4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EBC4217023F0AE32001505D4 /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +66,7 @@
 		EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		EB450D492411BF59003871FF /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
 		EB5D33AF2409E69600C51112 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiblaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9B5537232D2F0A001B2E8C /* Qibla +.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qibla +.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB9B553C232D2F0A001B2E8C /* QiblaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaVC.swift; sourceTree = "<group>"; };
 		EB9B553F232D2F0A001B2E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +80,8 @@
 		EB9B555A232D2F0B001B2E8C /* QiblaPlusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaPlusUITests.swift; sourceTree = "<group>"; };
 		EB9B555C232D2F0B001B2E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA566C9240332BC00DDFAC4 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
+		EBB6B4FB247F582A000B40CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EBB6B4FD247F582C000B40CA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EBC4217023F0AE32001505D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F132CBF9E1B731CAB36E1E22 /* Pods-QiblaPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiblaPlus.debug.xcconfig"; path = "Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus.debug.xcconfig"; sourceTree = "<group>"; };
 		FD483695A890C168B2E4577D /* Pods-QiblaPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiblaPlus.release.xcconfig"; path = "Target Support Files/Pods-QiblaPlus/Pods-QiblaPlus.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 				EB5D33AF2409E69600C51112 /* DataModel.swift */,
 				EB2916D12477044800F926FB /* Localizable.strings */,
 				EB2916D3247715B800F926FB /* LanguageModel.swift */,
+				EBB6B4FC247F582A000B40CA /* InfoPlist.strings */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,7 +193,7 @@
 		EB9B5538232D2F0A001B2E8C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */,
+				EB9B5537232D2F0A001B2E8C /* Qibla +.app */,
 				EB9B554B232D2F0B001B2E8C /* QiblaPlusTests.xctest */,
 				EB9B5556232D2F0B001B2E8C /* QiblaPlusUITests.xctest */,
 			);
@@ -248,7 +252,7 @@
 			);
 			name = QiblaPlus;
 			productName = QiblaPlus;
-			productReference = EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */;
+			productReference = EB9B5537232D2F0A001B2E8C /* Qibla +.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EB9B554A232D2F0B001B2E8C /* QiblaPlusTests */ = {
@@ -345,6 +349,7 @@
 				EB2916CF2477044800F926FB /* Localizable.strings in Resources */,
 				EB9B5545232D2F0B001B2E8C /* LaunchScreen.storyboard in Resources */,
 				EB9B5542232D2F0B001B2E8C /* Assets.xcassets in Resources */,
+				EBB6B4FA247F582A000B40CA /* InfoPlist.strings in Resources */,
 				EB9B5540232D2F0A001B2E8C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +531,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		EBB6B4FC247F582A000B40CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBB6B4FB247F582A000B40CA /* en */,
+				EBB6B4FD247F582C000B40CA /* ar */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -653,6 +667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TP338A8XKT;
 				INFOPLIST_FILE = QiblaPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -660,8 +675,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = hajjar.AccuQibla;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Qibla +";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -673,6 +689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TP338A8XKT;
 				INFOPLIST_FILE = QiblaPlus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
@@ -680,8 +697,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = hajjar.AccuQibla;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Qibla +";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
