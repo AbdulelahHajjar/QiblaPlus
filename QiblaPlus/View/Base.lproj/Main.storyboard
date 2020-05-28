@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,19 +13,19 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="QiblaVC" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2X-eH-2zf" userLabel="tips">
-                                <rect key="frame" x="20" y="360" width="280" height="80"/>
+                                <rect key="frame" x="20" y="531" width="335" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="B2X-eH-2zf" secondAttribute="height" multiplier="335:96" id="00N-cH-9cG"/>
                                 </constraints>
                                 <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
-                                <rect key="frame" x="232.5" y="16" width="71.5" height="29.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-qL-dvi" customClass="LGButton" customModule="LGButton">
+                                <rect key="frame" x="287" y="16" width="72" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES"/>
@@ -78,7 +78,7 @@
                                 </connections>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaI-u2-WdN">
-                                <rect key="frame" x="60" y="150" width="200" height="200"/>
+                                <rect key="frame" x="60" y="266" width="255" height="255"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oaI-u2-WdN" secondAttribute="height" multiplier="1:1" id="8jw-Jd-OkU"/>
@@ -88,7 +88,7 @@
                                 </connections>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ajm-Im-1MP">
-                                <rect key="frame" x="77" y="50" width="166" height="50"/>
+                                <rect key="frame" x="104.5" y="50" width="166" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="lWF-zf-UeS">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -114,6 +114,20 @@
                                     <constraint firstAttribute="height" constant="50" id="ywb-ej-sbs"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vk-fu-gQF">
+                                <rect key="frame" x="24" y="12" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="YZO-oq-v7h"/>
+                                    <constraint firstAttribute="height" constant="37" id="ozp-pe-r1Y"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="star">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="ultraLight"/>
+                                </state>
+                                <connections>
+                                    <action selector="requestReviewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5iJ-ty-p4w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2980414629" green="0.29803520439999998" blue="0.29803943630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -121,6 +135,8 @@
                             <constraint firstItem="oaI-u2-WdN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ajm-Im-1MP" secondAttribute="bottom" constant="20" id="GEI-fF-ZDQ"/>
                             <constraint firstItem="ajm-Im-1MP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Gqr-Dv-al0"/>
                             <constraint firstAttribute="bottom" secondItem="B2X-eH-2zf" secondAttribute="bottom" constant="40" id="HoF-NH-Q6G"/>
+                            <constraint firstItem="3Vk-fu-gQF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Isx-Hp-tqs"/>
+                            <constraint firstItem="3Vk-fu-gQF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="VrP-qw-WkO"/>
                             <constraint firstItem="oaI-u2-WdN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="W9c-Yr-6Pa"/>
                             <constraint firstItem="B2X-eH-2zf" firstAttribute="top" secondItem="oaI-u2-WdN" secondAttribute="bottom" constant="10" id="Zzz-4U-iZb"/>
                             <constraint firstAttribute="trailing" secondItem="B2X-eH-2zf" secondAttribute="trailing" constant="20" id="atH-4f-Y1M"/>
@@ -134,6 +150,7 @@
                     <connections>
                         <outlet property="backgroundView" destination="8bC-Xf-vdC" id="rgV-SJ-vvc"/>
                         <outlet property="langBtnOutlet" destination="6TM-qL-dvi" id="AHd-8c-aVz"/>
+                        <outlet property="reviewButton" destination="3Vk-fu-gQF" id="WTG-OO-er3"/>
                         <outlet property="tipsLabel" destination="B2X-eH-2zf" id="69a-QF-eOl"/>
                     </connections>
                 </viewController>
@@ -146,32 +163,32 @@
             <objects>
                 <viewController id="0gd-JA-CUA" customClass="CompassVC" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u5P-xF-wpf">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCN-Bp-gs3">
-                                <rect key="frame" x="17" y="17" width="166" height="166"/>
+                                <rect key="frame" x="17" y="17" width="221" height="221"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Needle" translatesAutoresizingMaskIntoConstraints="NO" id="rd3-xX-W9X">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NeedleCalibrationAR" translatesAutoresizingMaskIntoConstraints="NO" id="kXp-V3-DFK" userLabel="Calibration Instructions Image">
-                                <rect key="frame" x="17" y="17" width="166" height="166"/>
+                                <rect key="frame" x="17" y="17" width="221" height="221"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="64e-Ys-pbf">
-                                <rect key="frame" x="40" y="0.0" width="120" height="200"/>
+                                <rect key="frame" x="40" y="0.0" width="175" height="255"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nxg-lN-mBW">
-                                <rect key="frame" x="88" y="142" width="24" height="2"/>
+                                <rect key="frame" x="88" y="197" width="79" height="2"/>
                             </progressView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oUb-XC-PQf" userLabel="Calibration">
-                                <rect key="frame" x="17" y="17" width="166" height="166"/>
+                                <rect key="frame" x="17" y="17" width="221" height="221"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,5 +237,6 @@
         <image name="Needle" width="600" height="600"/>
         <image name="NeedleCalibrationAR" width="512" height="512"/>
         <image name="logo" width="177" height="186"/>
+        <image name="star" width="72" height="72"/>
     </resources>
 </document>

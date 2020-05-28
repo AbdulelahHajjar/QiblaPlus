@@ -16,6 +16,7 @@ class QiblaVC: UIViewController {
     @IBOutlet var backgroundView: UIView!
 	@IBOutlet weak var tipsLabel: UILabel!
 	
+	@IBOutlet weak var reviewButton: UIButton!
 	//MARK:- Overridden Functions
     override func loadView() {
         super.loadView()
@@ -28,13 +29,19 @@ class QiblaVC: UIViewController {
 		setComponents()
 	}
 	
-    //MARK:- Language-related Functions
+    //MARK:- IBAction Methods
     @IBOutlet weak var langBtnOutlet: LGButton!
     @IBAction func changeLanguageBtn() {
 		LanguageModel.shared.toggleLanguage()
     }
     
-    //MARK:- UI-related
+	@IBAction func requestReviewButton(_ sender: Any) {
+		guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1475861567?action=write-review")
+			else { return }
+		UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
+	}
+	
+	//MARK:- UI-related
     func setBackground() {
         let gradient = CAGradientLayer()
         gradient.frame = backgroundView.bounds

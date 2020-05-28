@@ -20,7 +20,7 @@
 		EB44ACD3232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */; };
 		EB44ACD4232D305A001592DA /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */; };
 		EB450D4A2411BF59003871FF /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB450D492411BF59003871FF /* LocationDelegate.swift */; };
-		EB5D33B02409E69600C51112 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D33AF2409E69600C51112 /* Constants.swift */; };
+		EB5D33B02409E69600C51112 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5D33AF2409E69600C51112 /* DataModel.swift */; };
 		EB9B553B232D2F0A001B2E8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */; };
 		EB9B553D232D2F0A001B2E8C /* QiblaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9B553C232D2F0A001B2E8C /* QiblaVC.swift */; };
 		EB9B5540232D2F0A001B2E8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9B553E232D2F0A001B2E8C /* Main.storyboard */; };
@@ -64,7 +64,7 @@
 		EB44ACCD232D305A001592DA /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		EB44ACCE232D305A001592DA /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		EB450D492411BF59003871FF /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
-		EB5D33AF2409E69600C51112 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EB5D33AF2409E69600C51112 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		EB9B5537232D2F0A001B2E8C /* QiblaPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiblaPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9B553A232D2F0A001B2E8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB9B553C232D2F0A001B2E8C /* QiblaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaVC.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		EB5D33B12409E79A00C51112 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EB5D33AF2409E69600C51112 /* Constants.swift */,
+				EB5D33AF2409E69600C51112 /* DataModel.swift */,
 				EB2916D12477044800F926FB /* Localizable.strings */,
 				EB2916D3247715B800F926FB /* LanguageModel.swift */,
 			);
@@ -460,7 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB5D33B02409E69600C51112 /* Constants.swift in Sources */,
+				EB5D33B02409E69600C51112 /* DataModel.swift in Sources */,
 				EB2916D724771BAA00F926FB /* CompassVC.swift in Sources */,
 				EB2916D4247715B800F926FB /* LanguageModel.swift in Sources */,
 				EB9B553D232D2F0A001B2E8C /* QiblaVC.swift in Sources */,
@@ -581,7 +581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -637,7 +637,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -655,7 +655,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TP338A8XKT;
 				INFOPLIST_FILE = QiblaPlus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -675,7 +675,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TP338A8XKT;
 				INFOPLIST_FILE = QiblaPlus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

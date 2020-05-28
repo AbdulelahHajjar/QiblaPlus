@@ -14,10 +14,6 @@ enum Language: String {
 	case unknown = "unknown"
 }
 
-enum DefaultsKeys: String {
-	case language = "Language"
-}
-
 enum LocalizedStringKeys: String {
 	case buttonText          = "buttonText"
 	case tips                = "tips"

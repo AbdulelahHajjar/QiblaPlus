@@ -25,6 +25,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	@IBOutlet weak var progressBar: UIProgressView!
 	
 	var isAnimationPlaying = false
+	var isNewAppSession = true
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,7 +43,19 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	//MARK:- Qibla Direction Delegate Methods
 	func didSuccessfullyFindHeading(rotationAngle: Double) {
 		rotateArrow(angle: rotationAngle)
-		if !isAnimationPlaying && arrowImage.alpha != 1 { show(component: .needle) }
+		if !isAnimationPlaying && arrowImage.alpha != 1 {
+			show(component: .needle)
+		}
+		
+		if isNewAppSession {
+			DataModel.shared.incrementSuccessSessionNumberIfNeeded()
+			if DataModel.shared.shouldAskForReview {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+					DataModel.shared.requestAppStoreReview()
+				}
+			}
+			isNewAppSession = false
+		}
 	}
 	
 	func didFindError(error: String) {
@@ -102,7 +115,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	
 	func showCalibrationDisplay() {
 		isAnimationPlaying = true
-		Constants.shared.refreshLastCalibrationDate()
+		DataModel.shared.refreshLastCalibrationDate()
 		progressBar.setProgress(0, animated: false)
 		calibrationImage.image = UIImage.gif(asset: "Calibration")
 		calibrationInstructionImage.image = UIImage(named: LanguageModel.shared.localizedString(from: .calibrationInstructionsImage))
@@ -133,9 +146,14 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	func setObservers() {
 		let notificationCenter = NotificationCenter.default
 		notificationCenter.addObserver(self, selector: #selector(onDidChangeAppLanguage(_:)), name: LanguageModel.shared.appLanguageNotification, object: nil)
+		notificationCenter.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
 	}
 	
 	@objc func onDidChangeAppLanguage(_ notification: Notification) {
 		LocationDelegate.shared.startMonitoringQibla()
+	}
+	
+	@objc func appCameToForeground() {
+		isNewAppSession = true
 	}
 }

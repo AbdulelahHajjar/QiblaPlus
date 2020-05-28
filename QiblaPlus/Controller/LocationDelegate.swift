@@ -56,7 +56,7 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
 		locationManager.requestWhenInUseAuthorization()
 		
 		if canFindQibla {
-			if Constants.shared.mustCalibrate {
+			if DataModel.shared.mustCalibrate {
 				qiblaDelegate?.showCalibration()
 			}
 			locationManager.pausesLocationUpdatesAutomatically = false
@@ -81,7 +81,7 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
 			let latitude = location!.coordinate.latitude
 			let longitude = location!.coordinate.longitude
 			
-			let bearingAngle = Constants.shared.bearing(lat: latitude, lon: longitude)
+			let bearingAngle = DataModel.shared.bearing(lat: latitude, lon: longitude)
 			
             heading *= Double.pi/180.0
 			qiblaDelegate?.didSuccessfullyFindHeading(rotationAngle: bearingAngle - heading + Double.pi * 2)
@@ -90,7 +90,7 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		startMonitoringQibla()
-		if canFindQibla && Constants.shared.mustCalibrate { qiblaDelegate?.showCalibration() }
+		if canFindQibla && DataModel.shared.mustCalibrate { qiblaDelegate?.showCalibration() }
 	}
 	
 	func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool {
