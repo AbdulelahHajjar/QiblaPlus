@@ -43,6 +43,12 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 		hideAllComponents()
 		LocationDelegate.shared.qiblaDelegate = self
 		LocationDelegate.shared.startMonitoringQibla()
+		
+		if #available(iOS 13.0, *) {
+			loadingIndicator.style = .large
+		} else {
+			loadingIndicator.style = .whiteLarge
+		}
 	}
 	
 	override func viewDidLayoutSubviews() {
