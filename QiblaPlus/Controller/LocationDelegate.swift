@@ -13,6 +13,7 @@ protocol QiblaDirectionProtocol {
     func didSuccessfullyFindHeading(rotationAngle: Double)
     func didFindError(error: String)
 	func showCalibration()
+	func showLoadingIndicator()
 }
 
 class LocationDelegate: NSObject, CLLocationManagerDelegate {
@@ -70,13 +71,19 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         var heading = newHeading.trueHeading
 		let location = manager.location
-		let locationAndHeadingSecondsDiff = abs(newHeading.timestamp.timeIntervalSince(location?.timestamp ?? Date(timeInterval: 200, since: Date())))
+		
+		let locationAndHeadingMismatch = abs(newHeading.timestamp.timeIntervalSince(location?.timestamp ?? Date(timeInterval: 200, since: Date()))) > 60
+		let isOldLocation = abs(location?.timestamp.timeIntervalSince(Date()) ?? 100) > 60
+		let isOldHeading = abs(newHeading.timestamp.timeIntervalSince(Date())) > 60
 		
 		if heading.isInvalid {
 			qiblaDelegate?.didFindError(error: LanguageModel.shared.localizedString(from: .cannotCalibrate))
 		}
-		else if location?.isInvalid ?? true || locationAndHeadingSecondsDiff > 120 {
+		else if location?.isInvalid ?? true {
 			qiblaDelegate?.didFindError(error: LanguageModel.shared.localizedString(from: .cannotFindLocation))
+		}
+		else if locationAndHeadingMismatch || isOldLocation || isOldHeading {
+			qiblaDelegate?.showLoadingIndicator()
 		}
         else {
 			let latitude = location!.coordinate.latitude

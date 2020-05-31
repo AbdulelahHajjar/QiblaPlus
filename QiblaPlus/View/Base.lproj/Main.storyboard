@@ -11,7 +11,7 @@
         <!--QiblaVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="QiblaVC" customModule="Qibla__" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QiblaVC" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,7 +233,7 @@
         <!--CompassVC-->
         <scene sceneID="0nD-2L-DA1">
             <objects>
-                <viewController id="0gd-JA-CUA" customClass="CompassVC" customModule="Qibla__" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0gd-JA-CUA" customClass="CompassVC" customModule="QiblaPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u5P-xF-wpf">
                         <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,6 +262,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oUb-XC-PQf" userLabel="Calibration">
                                 <rect key="frame" x="17" y="17" width="221" height="221"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="aW5-39-xTx">
+                                <rect key="frame" x="117.66666666666667" y="117.66666666666667" width="20.000000000000014" height="20.000000000000014"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -276,6 +279,7 @@
                             <constraint firstItem="oUb-XC-PQf" firstAttribute="top" secondItem="u5P-xF-wpf" secondAttribute="top" constant="17" id="Mja-rM-y76"/>
                             <constraint firstAttribute="bottom" secondItem="QCN-Bp-gs3" secondAttribute="bottom" constant="17" id="PhY-3I-5Bn"/>
                             <constraint firstAttribute="bottom" secondItem="rd3-xX-W9X" secondAttribute="bottom" id="Rce-M1-ppN"/>
+                            <constraint firstItem="aW5-39-xTx" firstAttribute="centerX" secondItem="u5P-xF-wpf" secondAttribute="centerX" id="RdW-rt-5dH"/>
                             <constraint firstItem="kXp-V3-DFK" firstAttribute="top" secondItem="iaA-LW-UhE" secondAttribute="top" constant="17" id="UUD-9Q-45F"/>
                             <constraint firstItem="iaA-LW-UhE" firstAttribute="bottom" secondItem="kXp-V3-DFK" secondAttribute="bottom" constant="17" id="UhH-yZ-Ntt"/>
                             <constraint firstItem="QCN-Bp-gs3" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leading" constant="17" id="Uyt-Xx-9qp"/>
@@ -285,6 +289,7 @@
                             <constraint firstItem="kXp-V3-DFK" firstAttribute="leading" secondItem="iaA-LW-UhE" secondAttribute="leading" constant="17" id="ce8-WU-DGM"/>
                             <constraint firstItem="64e-Ys-pbf" firstAttribute="top" secondItem="u5P-xF-wpf" secondAttribute="top" id="el1-lz-VVA"/>
                             <constraint firstAttribute="bottom" secondItem="64e-Ys-pbf" secondAttribute="bottom" id="gUM-z1-aw6"/>
+                            <constraint firstItem="aW5-39-xTx" firstAttribute="centerY" secondItem="u5P-xF-wpf" secondAttribute="centerY" id="t4h-U6-Uer"/>
                             <constraint firstItem="64e-Ys-pbf" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leading" constant="40" id="uxz-TG-070"/>
                             <constraint firstAttribute="bottom" secondItem="oUb-XC-PQf" secondAttribute="bottom" constant="17" id="wpV-x1-mNe"/>
                             <constraint firstItem="Nxg-lN-mBW" firstAttribute="leading" secondItem="u5P-xF-wpf" secondAttribute="leadingMargin" constant="72" id="wsd-fZ-HFt"/>
@@ -297,6 +302,7 @@
                         <outlet property="calibrationImage" destination="oUb-XC-PQf" id="dP5-4F-tjo"/>
                         <outlet property="calibrationInstructionImage" destination="kXp-V3-DFK" id="BzV-PE-2bA"/>
                         <outlet property="errorLabel" destination="64e-Ys-pbf" id="4eE-W7-MB7"/>
+                        <outlet property="loadingIndicator" destination="aW5-39-xTx" id="hfG-Mz-oYQ"/>
                         <outlet property="progressBar" destination="Nxg-lN-mBW" id="Hml-g9-e3G"/>
                     </connections>
                 </viewController>

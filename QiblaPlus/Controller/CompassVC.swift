@@ -12,9 +12,17 @@ enum CompassComponent {
 	case needle
 	case warning
 	case calibration
+	case loadingIndicator
 }
 
 class CompassVC: UIViewController, QiblaDirectionProtocol {
+	
+	func showLoadingIndicator() {
+		if !isAnimationPlaying && loadingIndicator.alpha != 1 {
+			show(component: .loadingIndicator)
+		}
+	}
+	
 	
 	//MARK:- Outlets
 	@IBOutlet weak var baseImage: UIView!
@@ -23,6 +31,7 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 	@IBOutlet weak var calibrationInstructionImage: UIImageView!
 	@IBOutlet weak var calibrationImage: UIImageView!
 	@IBOutlet weak var progressBar: UIProgressView!
+	@IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 	
 	var isAnimationPlaying = false
 	var isNewAppSession = true
@@ -82,6 +91,9 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 			calibrationImage.alpha = 1
 			calibrationInstructionImage.alpha = 1
 			progressBar.alpha = 1
+		case .loadingIndicator:
+			loadingIndicator.alpha = 1
+			loadingIndicator.startAnimating()
 		}
 	}
 	
@@ -91,6 +103,8 @@ class CompassVC: UIViewController, QiblaDirectionProtocol {
 		progressBar.alpha = 0
 		calibrationImage.alpha = 0
 		calibrationInstructionImage.alpha = 0
+		loadingIndicator.alpha = 0
+		loadingIndicator.stopAnimating()
 	}
 	
 	func rotateArrow(angle: Double) {

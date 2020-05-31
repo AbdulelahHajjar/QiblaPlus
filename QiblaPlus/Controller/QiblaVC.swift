@@ -34,15 +34,12 @@ class QiblaVC: UIViewController {
 		LanguageModel.shared.toggleLanguage()
     }
     
-	
 	@IBOutlet weak var requestReviewButtonOutlet: LGButton!
 	@IBAction func requestReviewButton(_ sender: Any) {
 		guard let writeReviewURL = URL(string: "https://itunes.apple.com/app/id1475861567?action=write-review")
 			else { return }
 		UIApplication.shared.open(writeReviewURL, options: [:], completionHandler: nil)
 	}
-	
-	
 	
 	//MARK:- UI-related
     func setBackground() {
