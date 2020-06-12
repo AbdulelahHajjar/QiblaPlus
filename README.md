@@ -1,4 +1,4 @@
-# Qibla+ | قبلة+
+# Qibla + قبلة +
 
 Qibla+ is an app in which its design is influenced by simplicity and clarity. Its feature is to show the Qibla direction with the least amount of effort done by the user. It supports both English and Arabic languages.
 
