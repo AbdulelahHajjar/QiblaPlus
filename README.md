@@ -1,7 +1,8 @@
 # Qibla + قبلة +
 
-Qibla+ is an app in which its design is influenced by simplicity and clarity. Its feature is to show the Qibla direction with the least amount of effort done by the user. It supports both English and Arabic languages.
+<a href="https://codebeat.co/projects/github-com-abdulelahhajjar-qiblaplus-master"><img alt="codebeat badge" src="https://codebeat.co/badges/58bfdbfb-c614-435c-a495-0cd2e2a73de9" /></a>
 
+Qibla+ is an app in which its design is influenced by simplicity and clarity. Its feature is to show the Qibla direction with the least amount of effort done by the user. It supports both English and Arabic languages.
 
 ## Get it from the AppStore!
 
